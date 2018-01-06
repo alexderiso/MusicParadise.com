@@ -1,0 +1,1196 @@
+
+.pld .floatleft {
+    float: left
+}
+.pld .floatright {
+    float: right
+}
+.pld .alignleft {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px
+}
+.pld .alignright {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px
+}
+.pld .aligncenter {
+    display: block;
+    margin: 0 auto 15px
+}
+.pld a:focus {
+    outline: 0px solid;
+    text-decoration: none;
+}
+.pld img {
+    max-width: 100%;
+    height: auto;
+}
+.pld .hero-feature .thumbnail img {
+    border: transparent;
+}
+.pld .fix {
+    overflow: hidden
+}
+.pld p {
+    margin: 0 0 15px;
+    font-weight: 300;
+}
+.pld h1,
+.pld h2,
+.pld h3,
+.pld h4,
+.pld h5,
+.pld h6 {
+    margin: 0 0 10px;
+}
+.pld a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #444444;
+}
+.pld a:hover {
+    color: #808080;
+    text-decoration: none;
+}
+.pld a:active,
+.pld a:hover {
+    outline: 0 none;
+}
+.pld ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0
+}
+.pld .clear {
+    clear: both
+}
+*::-moz-selection {
+    background: #808080 none repeat scroll 0 0;
+    color: #fff;
+    text-shadow: none;
+}
+.pld .browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.pld .section-padding {
+    padding: 100px 0;
+}
+.pld .section-padding-2,
+.contact-form-area {
+    padding-bottom: 80px;
+}
+.pld .no-padding {
+    padding: 0 !important;
+}
+.pld .no-margin {
+    margin: 0 !important;
+}
+.pld .mobile-menu,
+.pld #ship-box-info,
+.pld .mobile-menu-area {
+    display: none;
+}
+.pld .btn-default:hover {
+    color: #F39300 !important;
+    background-color: transparent;
+    border-color: #F39300 !important;
+}
+/*----------------------------------------*/
+/*  4.	slider CSS
+/*----------------------------------------*/
+
+.pld .slider-height {
+    height: 100%
+}
+.pld .cap-shop {
+    display: block;
+    line-height: 49px;
+}
+.pld .cap-title h2 {
+    font-family: lato;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 60px;
+    margin-bottom: 45px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .cap-shop a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #fff;
+    font-family: lato;
+    padding: 14px 15px;
+    text-transform: capitalize;
+}
+.pld .slide-text {
+    position: absolute;
+    top: 27%;
+}
+.pld .cap-shop a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #fff;
+    font-family: lato;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 13px 40px;
+    text-transform: capitalize;
+}
+.pld .cap-shop a:hover {
+    background: #808080 none repeat scroll 0 0;
+    border: 1px solid #808080;
+}
+/*----------------------------------------*/
+/*  5.	New Product Area
+/*----------------------------------------*/
+
+.pld .col-50 {
+    width: 50%;
+    float: left;
+}
+.pld .padding-left {
+    padding-left: 5px;
+}
+.pld .new-product-top {
+    padding-top: 30px;
+}
+.pld .overlay-content h3 {
+    font-size: 16px;
+    left: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.cart_down_area .cart_single a:hover,
+.check-register.login-button > a:hover,
+.wishlist-table-area .t-product-name h3 a:hover,
+.wishlist-table-area .product-edit p a:hover,
+.product-cart p a:hover,
+.product-remove > a:hover,
+.icolor,
+.widget-shop-by .sidebar-menu li:hover span:not(.widget-hover),
+.breadcrumbs a:hover,
+.footer-list a:hover,
+.testimonial-text > a:hover,
+.color,
+.overlay-content h2:hover,
+.overlay-content h4:hover,
+.left-content h2:hover {
+    color: #ffc107;
+}
+.pld .single-top-product > img,
+.pld .new-trend-list .col-md-4,
+.pld .featured-product-list .col-md-3,
+.pld .blog-list .col-md-4,
+.pld .single-new-trend img,
+.pld .single-new-trend img {
+    width: 100%;
+}
+.pld .single-top-product {
+    margin-bottom: 10px;
+    position: relative;
+}
+.pld .btn-product {
+    border: 1px solid #767676;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 25px;
+    position: absolute;
+    text-transform: capitalize;
+    font-weight: 700;
+    transition: .3s;
+}
+.pld .btn-product:hover {
+    border: 1px solid #808080;
+    background: #808080;
+    color: #fff;
+}
+.pld button.price-offer {
+    background: #555555 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    height: 66px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 66px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .single-top-product:last-child {
+    margin-bottom: 0;
+}
+/*----------------------------------------*/
+/*  6.	Section CSS
+/*----------------------------------------*/
+
+.pld .section-title::after {
+    background: rgba(0, 0, 0, 0);
+    content: "";
+    height: 18px;
+    margin-left: -195px;
+    position: absolute;
+    width: 390px;
+}
+.pld .section-title {
+    color: #444444;
+    position: relative;
+    text-align: center;
+}
+.pld .section-title h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+/*----------------------------------------*/
+/*  7.	New Trend CSS
+/*----------------------------------------*/
+
+.pld .new-trend-list,
+.pld .featured-product-list,
+.pld .blog-list,
+.pld .brand-list,
+.pld .our-team-list {
+    margin-top: 62px;
+}
+.pld .single-new-trend {
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.pld .single-new-trend > a,
+.pld .product-tabs a,
+.pld .widget-image > a,
+.pld .single-brand > a,
+.pld .blog-img > a {
+    display: block;
+}
+.pld .single-new-trend:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.pld .overlay-content h2 {
+    color: #5a5a5a;
+    font-size: 22px;
+    font-weight: 700;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    transition: all 0.3s ease 0s;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .btn-small {
+    background: #808080 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    top: 10px;
+}
+.pld .overlay-content a.btn-small:hover,
+.pld a.cart-btn:hover,
+.pld .shop-tab-pill .shop-pagination ul li a:hover i,
+.pld .tag-list a:hover,
+.pld .breadcrumbs a,
+.pld .breadcrumbs span,
+.pld .testimonial-text,
+.pld .product-action li a:hover i {
+    color: #fff;
+}
+.pld .product-action li i {
+    color: #767676;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .product-action a {
+    border: 1px solid #ddd;
+    display: block;
+    height: 42px;
+    line-height: 38px;
+    text-align: center;
+    width: 42px;
+}
+.pld .product-action > ul,
+.pld #checkout-review-table thead,
+.pld .single-brand {
+    text-align: center;
+}
+.pld .product-action li,
+.pld .all-adress-info,
+.pld .product-attributes > span,
+.pld .left-content span,
+.pld .shop-tab-pill ul li,
+.pld .team-member > a,
+.pld .footer-left > a {
+    display: inline-block;
+}
+.pld .overlay-content .product-action {
+    bottom: 75px;
+    left: 40%;
+    position: absolute;
+}
+.pld .product-action a:hover {
+    background: #808080 none repeat scroll 0 0;
+    border: 1px solid #808080;
+    color: #fff !important;
+}
+.pld .overlay-content h4 {
+    bottom: 10px;
+    color: #5a5a5a;
+    font-size: 15px;
+    font-weight: 700;
+    left: 10px;
+    margin: 0;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+}
+.pld .pro-rating {
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+}
+.pld .pro-rating i {
+    cursor: pointer;
+}
+.pld .indicator-style .owl-buttons {
+    position: absolute;
+    right: 15px;
+    top: -80px;
+    z-index: 99999;
+}
+.pld .indicator-style .owl-theme .owl-controls {
+    margin-top: 0;
+}
+.pld .indicator-style.owl-theme .owl-controls .owl-buttons div {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #7f7f7f;
+    border-radius: 2px;
+    color: #7f7f7f;
+    display: inline-block;
+    height: 23px;
+    line-height: 20px;
+    margin: 0 5px 0 0;
+    opacity: 1;
+    padding: 0;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    width: 23px;
+}
+.pld .indicator-style.owl-theme .owl-controls .owl-buttons i,
+.pld .indicator-style2 .owl-buttons i {
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .indicator-style.owl-theme .owl-controls .owl-buttons div:hover,
+.pld .indicator-style2.owl-theme .owl-controls .owl-buttons div:hover {
+    border: 1px solid #121212;
+    color: #121212;
+}
+/*----------------------------------------*/
+/*  20.	Single Product Page CSS
+/*----------------------------------------*/
+
+.pld .product-simple-area {
+    margin-top: 80px;
+}
+.pld .product-tabs li {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+.pld .product-tabs li:last-child {
+    margin-right: 0;
+}
+.pld .list-pro-rating {
+    margin-bottom: 10px;
+}
+.pld .single-product-details > h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .single-product-details > h4 {
+    font-size: 13px;
+    margin-bottom: 13px;
+}
+.pld .single-product-details > p {
+    color: #6a6a6a;
+    font-size: 13px;
+}
+.pld .single-product-details {
+    color: #222222;
+}
+.pld .single-product-price > h2::before {
+    background: #222222 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.pld .single-product-price > h2::after {
+    background: #222222 none repeat scroll 0 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .single-product-price > h2 {
+    display: inline-block;
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    position: relative;
+}
+.pld .single-shop-select > label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .single-shop-select > select {
+    -moz-appearance: none;
+    -moz-user-select: none;
+    border: 1px solid #dfdfdf;
+    color: #898989;
+    font-size: 12px;
+    height: 40px;
+    padding-left: 5px;
+    position: relative;
+    width: 100%;
+}
+.pld #quantity-wanted-p .qtybutton {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+}
+.pld #quantity-wanted-p {
+    background: #ffffff none repeat scroll 0 0;
+    border: 2px solid #e1e1e1;
+    display: inline-block;
+    margin-right: 10px;
+}
+.pld #quantity-wanted-p input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none !important;
+    height: 51px;
+    line-height: 47px;
+    text-align: center;
+    width: 45px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .cart-btn {
+    color: #ffffff;
+    display: block;
+    height: 55px;
+    line-height: 53px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+.pld a.cart-btn i {
+    font-size: 20px;
+    position: relative;
+    top: 0;
+}
+.pld .cart-btn i,
+.pld .wish-btn i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.pld .cart-btn > span {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 30px 6px 50px;
+    text-transform: capitalize;
+}
+.pld .add-to-wishlist a {
+    color: #545454;
+    line-height: 1;
+}
+.pld .product-attributes {
+    margin-bottom: 10px;
+}
+.pld .wish-btn > span {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .add-to-wishlist {
+    margin-bottom: 45px;
+}
+.pld .single-product-categories > label {
+    text-transform: capitalize;
+}
+.pld .single-product-categories {
+    font-size: 12px;
+}
+.pld .single-product-categories > span {
+    color: #545454;
+}
+.pld .comments-advices a.open-comment-form::before {
+    content: "Ã¯Â�â‚¬";
+}
+.pld .comments-advices a::before {
+    background: #929292 none repeat scroll 0 0;
+    border-radius: 50px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: 15px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 6px;
+    text-align: center;
+    width: 30px;
+}
+.pld .comments-advices li {
+    display: inline-block;
+    line-height: 30px;
+}
+.pld .comments-advices {
+    clear: both;
+    padding-top: 2px;
+}
+.pld #product-comments-block-extra {
+    background: #fbfbfb none repeat scroll 0 0;
+    border: 1px solid #d6d4d4;
+    font-weight: bold;
+    line-height: 18px;
+    margin-top: 50px;
+    padding: 8px 10px 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .p-details-tab ul.p-details-nav-tab li {
+    display: inline-block;
+    margin-right: 30px;
+}
+.pld .p-details-tab ul.p-details-nav-tab li a {
+    color: #c8c8c8;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: capitalize;
+}
+.pld .p-details-tab ul.p-details-nav-tab li.active a {
+    color: #444444;
+    display: block;
+    position: relative;
+}
+.pld .p-details-tab ul.p-details-nav-tab li.active a::before {
+    background: #808080 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100%;
+}
+.pld .p-details-tab ul.p-details-nav-tab li a:hover::before {
+    background: #808080 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100%;
+}
+.pld .p-details-tab {
+    margin-top: 80px;
+}
+.pld #more-info > p {
+    color: #666666;
+    margin: 0;
+}
+.pld .table-data-sheet {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #d6d4d4;
+    width: 100%;
+}
+.pld .table-data-sheet tr {
+    border-top: 1px solid #d6d4d4;
+}
+.pld .table-data-sheet tr td:first-child {
+    border-right: 1px solid #d6d4d4;
+    color: #333333;
+    font-weight: 700;
+    width: 30%;
+}
+.pld .table-data-sheet tr td {
+    padding: 10px 20px 11px;
+}
+.pld #product-comments-block-tab a {
+    background: #6f6f6f none repeat scroll 0 0;
+    border-color: #666666 #5f5f5f #292929;
+    border-image: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
+}
+.pld #product-comments-block-tab a span {
+    border: 1px solid #8b8a8a;
+    display: block;
+    padding: 3px 8px;
+}
+/*----------------------------------------*/
+/*  22.	Cart Page CSS
+/*----------------------------------------*/
+
+.pld .t-product-name {
+    width: 170px;
+}
+.pld .product-edit {
+    width: 112px;
+}
+.pld .product-unit-price,
+.pld .product-quantity,
+.pld .product-subtotal {
+    width: 165px;
+}
+.pld .product-remove > a {
+    color: #666666;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .shopping-cart-area .product-image {
+    width: 265px;
+}
+.pld .shopping-cart-area .product-image img {
+    margin: 25px 0;
+    border: 1px solid #ccc;
+}
+.pld .wishlist-table-area .t-product-name h3 a {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+}
+.pld .wishlist-table-area .product-edit p a {
+    bottom: 0;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 300;
+}
+.pld .product-unit-price > p,
+.product-quantity > p {
+    color: #666666;
+    font-size: 14px;
+    font-weight: 300;
+}
+.pld .product-cart-details > input[type="number"] {
+    border: 1px solid #dddddd;
+    font-size: 16px;
+    font-weight: 600;
+    height: 40px;
+    margin-top: 10px;
+    text-align: center;
+    width: 105px;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .discount-main-area {
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+.pld .discount-top {
+    border-bottom: 1px solid #dddddd;
+    padding: 35px 0;
+}
+.pld .discount-top h3 {
+    font-size: 16px;
+}
+.pld .discount-top > p {
+    font-size: 14px;
+    margin: 0;
+    text-transform: none;
+}
+.pld .discount-middle {
+    padding: 52px 70px;
+}
+.pld .discount-middle > input {
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin: auto auto 20px;
+    padding: 10px;
+    width: 100%;
+}
+.pld .discount-middle > a,
+.pld .subtotal-main-area > a {
+    color: #ffffff;
+    float: right;
+    padding: 10px;
+}
+.pld .discount-middle > a,
+.pld .subtotal-main-area > a:hover {
+    opacity: 0.8;
+}
+.pld .subtotal-main-area {
+    border: 1px solid #dddddd;
+}
+.pld .subtotal-area h2 {
+    background: #f4f4f4 none repeat scroll 0 0;
+    border-bottom: 1px solid #dddddd;
+    font-size: 16px;
+    margin: 0;
+    padding: 20px;
+}
+.pld .subtotal-area span {
+    float: right;
+}
+.pld .subtotal-main-area > a {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.pld .subtotal-main-area > p {
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 43px;
+    padding-top: 100px;
+    text-align: center;
+    text-transform: none;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld .wishlist-right-area table,
+.pld .shopping-cart-area table {
+    border-color: #bbbbbb;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 20px;
+    text-align: center;
+    width: 100%;
+}
+.pld .shopping-cart-area table th {
+    border-top: medium none;
+    color: #545454;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 20px 10px;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: #f0f0f0;
+}
+.pld .shopingcart-bottom-area a {
+    background: #808080 none repeat scroll 0 0;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 25px;
+    text-transform: capitalize;
+}
+.pld .shopingcart-bottom-area a:hover {
+    opacity: 0.8;
+}
+.pld .shopingcart-bottom-area .right-shoping-cart {
+    margin-top: 10px;
+    padding: 10px 25px !important;
+    text-align: center;
+}
+/* Smartphones (portrait and landscape) --  --  --  --  -- - */
+
+@media screen and (min-width: 304px) and (max-width: 667px) {
+    /* Styles */
+    
+    .pld .shopingcart-bottom-area a {
+        display: block;
+        text-align: center;
+    }
+    .pld .shopingcart-bottom-area .right-shoping-cart {
+        display: inline-block;
+        width: 100%;
+    }
+    .pld .cart-btn > span {
+        padding: 10px;
+    }
+    .pld .discount-middle {
+        padding: 50px 10px;
+    }
+    .pld .subtotal-main-area > p {
+        padding-bottom: 30px;
+        padding-top: 70px;
+    }
+    .pld .subtotal-main-area > a {
+        margin-right: 10px;
+    }
+    .pld .single-new-trend > a,
+    .pld .product-tabs a,
+    .pld .widget-image > a,
+    .pld .single-brand > a,
+    .pld .blog-img > a {
+        display: block;
+        float: left;
+        margin: 10px 5px;
+        width: 30%;
+    }
+    .pld .product-tabs li {
+        display: inline;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+/* iPads (portrait and landscape) --  --  --  --  -- - */
+
+@media screen and (min-width: 668px) and (max-width: 1223px) {
+    .pld .discount-middle {
+        padding: 52px 20px;
+    }
+    .pld .subtotal-main-area > a {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .pld .cart-btn > span {
+        padding: 14px;
+    }
+    .pld .single-new-trend > a,
+    .pld .product-tabs a,
+    .pld .widget-image > a,
+    .pld .single-brand > a,
+    .pld .blog-img > a {
+        display: block;
+        float: left;
+        margin: 10px 5px;
+        width: 30%;
+    }
+    .pld .product-tabs li {
+        display: inline;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+/*----------------------------------------*/
+/*  23.	Checkout Page CSS
+/*----------------------------------------*/
+
+.pld .checkout-area {
+    padding-top: 100px;
+}
+.pld .panel-heading h4 {
+    color: #666666;
+    font-size: 14px;
+    margin: 0;
+    text-transform: capitalize;
+}
+.pld .check-out-area {
+    background: #ffffff none repeat scroll 0 0;
+    color: #666666;
+    padding: 40px 0;
+}
+.pld .check-out-area .panel-heading h4 span {
+    background: #808080 none repeat scroll 0 0;
+    color: #ffffff;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 15px;
+    text-align: center;
+    width: 26px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.pld .check-out-area .panel.panel-default {
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.pld .panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.pld .check-out-area .panel-body {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: transparent;
+}
+.pld .collapse-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.pld .check-out-area h5 {
+    font-size: 15px;
+    margin-bottom: 26px;
+    text-transform: capitalize;
+}
+.pld .check-register label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+.pld .check-register {
+    margin-bottom: 5px;
+}
+.pld .form-row > label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.pld .form-row > input {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #2b2b2b;
+    font-size: 13px;
+    font-weight: 400;
+    height: 30px;
+    padding-left: 10px;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.pld .form-row,
+.pld .shop-select {
+    margin-bottom: 23px;
+}
+.pld .login-button {
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+.pld .check-out-area button {
+    margin-top: 0px;
+}
+.pld .check-register.login-button > a {
+    color: #666666;
+    margin-right: 15px;
+}
+.pld .checkout-widget a {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0;
+    text-transform: capitalize;
+}
+.pld .widget-title {
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.pld .checkout-widget a:hover {
+    color: #808080;
+    margin-left: 10px;
+}
+.pld .required {
+    color: #333;
+}
+.pld .shop-select label {
+    font-weight: 500;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.pld .shop-select select {
+    -moz-appearance: none;
+    -moz-user-select: none;
+    background: #fbfbfb url("../img/select-icon.png") no-repeat scroll right center;
+    border-color: #dddddd -moz-use-text-color #dddddd #dddddd;
+    border-style: solid none solid solid;
+    border-width: 1px medium 1px 1px;
+    color: #9c9b9b;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 400;
+    height: 27px;
+    padding-inline-end: 35px;
+    padding-inline-start: 5px;
+    width: 99.99%;
+}
+.pld .checbox-info input {
+    margin-right: 5px;
+}
+.pld .checbox-info {
+    margin-bottom: 30px;
+}
+.pld .form-row > input:focus {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #dddddd;
+}
+.pld .ship-different-title label {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.pld .order-notes textarea {
+    border: 1px solid #dddddd;
+    font-family: poppins;
+    font-weight: 500;
+    height: 90px;
+    padding: 15px;
+    resize: none;
+    width: 100%;
+}
+.pld #billing-form li.control input.radio,
+.pld #billing-form li.control input.checkbox,
+.pld #payment-form li.control input.radio {
+    float: left;
+    margin-right: 7px;
+    margin-top: 6px;
+}
+.pld #billing-form li.control label,
+.pld #payment-form li.control label,
+.pld ul.form-list li.control label {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+.pld .buttons-set {
+    border-top: 1px solid #f2f2f2;
+    clear: both;
+    margin: 20px 0 0;
+    padding: 8px 0 0;
+    text-align: right;
+}
+.pld .payment-met {
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+.pld #checkout-review-table {
+    background: #ffffff none repeat scroll 0 0;
+    border-color: #f2f2f2 #f2f2f2 #d9dde3;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+}
+.pld #checkout-review-table tbody tr:first-child {
+    font-size: 16px;
+}
+.pld #checkout-review-table tbody tr {
+    border-top: 1px solid #f2f2f2;
+}
+.pld #checkout-review-table tbody tr td:first-child {
+    text-align: left;
+}
+.pld #checkout-review-table tbody tr td {
+    font-weight: normal;
+    text-align: center;
+}
+.pld #checkout-review-table tbody tr td {
+    border-bottom: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+    font-weight: normal;
+    padding: 6px 10px;
+    text-align: center;
+    vertical-align: top;
+}
+.pld #checkout-review-table tbody tr td .product-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 7px 0 5px;
+}
+.pld .checkout-review-table .product-name {
+    width: 170px;
+}
+.pld .cart-price .price {
+    color: #444444;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+.pld #checkout-review-table tfoot tr {
+    font-weight: normal;
+    text-align: right;
+}
+.pld #checkout-review-table tfoot tr td {
+    border-right: 1px solid #f2f2f2;
+    padding: 6px 10px;
+    vertical-align: top;
+}
+.pld #review-buttons-container {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    margin: 0;
+    padding: 20px 30px;
+    text-align: right;
+}
+.pld #review-buttons-container p {
+    color: #808080;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0;
+}
+.pld #review-buttons-container p a {
+    color: #393939;
+}
+.pld .checkout-left-area .panel-group a {
+    color: #666666 !important;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+.pld #checkout-review-table thead tr th {
+    border-right: 1px solid #f2f2f2;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+}
+.pld #checkout-review-table thead tr th:first-child {
+    width: 70%;
+}
+.pld .data-table thead th {
+    background-color: #808080;
+    border-right: 1px solid #eaeeef;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.pld .panel-default > .panel-heading {
+    background-image: linear-gradient(#f7f7f7, #ededed);
+    border-color: #cacaca #b7b7b7 #9a9a9a !important;
+    border-image: none;
+    border-radius: 4px 4px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    color: #333 !important;
+    display: block;
+    font: 600 16px/20px "Open Sans", sans-serif;
+    overflow: hidden;
+    text-decoration: none;
+    text-shadow: 0 1px #ffffff;
+    text-transform: capitalize;
+}
+.pld .panel-title>a,
+.panel-title>small,
+.pld .panel-title>.small,
+.pld .panel-title>small>a,
+.pld .panel-title>.small>a {
+    color: inherit;
+}
