@@ -34,6 +34,11 @@ import Model.GestoreOrdineModel;
 /**
  * Servlet implementation class AccediControl
  */
+
+/**
+ * Classe che modella la servlet per eseguire la login all'interno del sito
+ * @author Alessandro
+ */
 @WebServlet("/AccediControl")
 public class AccediControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -48,6 +53,10 @@ public class AccediControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#HttpServlet()
+	 * 
+	 */
+	/**
+	 * Costruttore Vuoto
 	 */
 	public AccediControl() {
 		super();
@@ -55,6 +64,14 @@ public class AccediControl extends HttpServlet {
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP GET per effettuare il login
+	 * @param request
+	 * @param respose
+	 * @throws IOExceprion
+	 * @author Alessandro
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -64,6 +81,19 @@ public class AccediControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
+
+    /**
+     * Effettua una richiesta HTTP POST per il login
+     * @param request
+     * @param response
+     * @throws IOException
+     * @author Alessandro.....................
+     * 
+     * ..
+     * 
+     */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 

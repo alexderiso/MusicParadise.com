@@ -21,16 +21,25 @@ import Model.ProdottoModel;
 /**
  * Servlet implementation class RicercaProdottoControl
  */
+
+/**
+* Servlet dedicata alla ricerca dei prodotti all'interno del database in base ad una certa chiave di ricerca
+* @author Alessandro
+*/
 @WebServlet("/RicercaProdottoControl")
 public class RicercaProdottoControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+		
+		//Variabili di instanza
 	  static ProdottoModel model;
 	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
+	  /**
+	   * Costruttore vuoto
+	   */
     public RicercaProdottoControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -39,6 +48,17 @@ public class RicercaProdottoControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+	
+    /**
+     * utilizziamo una richiesta http get, per gestire la ricerca dei prodotti, esso richiama
+     * ProdottoModel
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		model = new ProdottoModel();
@@ -129,6 +149,15 @@ public class RicercaProdottoControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
+	/**
+     * Vuoto
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

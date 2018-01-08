@@ -16,12 +16,21 @@ import Model.CarrelloModel;
 /**
  * Servlet implementation class LogoutControl
  */
+
+/**
+ * Classe che modella la servlet per eseguire il logout all'interno del sito
+ * @author Alessandro
+ */
 @WebServlet("/LogoutControl")
 public class LogoutControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
+	 */
+	
+	/**
+	 * Costruttore Vuoto
 	 */
 	public LogoutControl() {
 		super();
@@ -33,6 +42,15 @@ public class LogoutControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
+	/**
+     * Effettua una richiesta HTTP GET per effettuare il logout
+     * @param request
+     * @param response
+     * @throws IOException
+     * @author Alessandro
+     */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String action = request.getParameter("action");
