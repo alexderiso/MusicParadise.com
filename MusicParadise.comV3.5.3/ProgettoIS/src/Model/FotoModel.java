@@ -10,9 +10,15 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+/**
+ * Classe che gestisce la transazione delle foto dei prodotti
+ *
+ */
 public class FotoModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -27,7 +33,12 @@ public class FotoModel {
 
 	private static final String TABLE_NAME_FOTO= "foto";
 	
-	
+	/**
+	 * Metodo che salva le foto dei prodotti all'interno del database
+	 * @param url
+	 * @param cod
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(String url, int cod) throws SQLException {
 
 		Connection connection = null;
@@ -53,7 +64,11 @@ public class FotoModel {
 				}
 			}
 		}
-	
+/**
+ * Metodo che genera il codice di ogni foto 	
+ * @return rowCount
+ * @throws SQLException
+ */
 public synchronized int generaCodice() throws SQLException{
 	Connection connection = null;
 	PreparedStatement preparedStatement = null;

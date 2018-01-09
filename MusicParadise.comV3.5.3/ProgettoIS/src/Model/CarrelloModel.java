@@ -17,12 +17,13 @@ import Bean.ProdottoCatalogoBean;
 import Bean.UtenteBean;
 /**
  * Classe che gestisce la transazione del carrello
-
  *
  */
 public class CarrelloModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();

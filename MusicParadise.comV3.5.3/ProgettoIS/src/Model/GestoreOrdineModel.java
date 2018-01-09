@@ -10,10 +10,15 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import Bean.GestoreOrdiniBean;
-
+/**
+ * Classe che gestisce la transazione del gestore ordini
+ *
+ */
 public class GestoreOrdineModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -27,7 +32,14 @@ public class GestoreOrdineModel {
 	}
 	
 	private static final String TABLE_NAME = "gestoreordini";
-	
+	/**
+	 * Metodo che legge dal database i dati del gestore ordini
+	 * @param nick
+	 * @param password
+	 * @return bean
+	 * @return null
+	 * @throws SQLException
+	 */
 	public synchronized GestoreOrdiniBean leggi(String nick, String password) throws SQLException{
 		Connection connection = ds.getConnection();
 		java.sql.Statement statement = connection.createStatement();

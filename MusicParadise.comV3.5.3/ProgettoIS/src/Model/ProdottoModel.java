@@ -26,7 +26,9 @@ import Bean.ProdottoCatalogoBean;
  */
 public class ProdottoModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();

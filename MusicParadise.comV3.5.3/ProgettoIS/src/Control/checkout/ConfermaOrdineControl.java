@@ -27,8 +27,7 @@ import Model.ProdottoOrdineModel;
  */
 
 /**
- * Servlet per confermare
- * @author Alex
+ * Servlet per confermare un ordine
  *
  */
 @WebServlet("/ConfermaOrdineControl")
@@ -38,6 +37,9 @@ public class ConfermaOrdineControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public ConfermaOrdineControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -52,6 +54,9 @@ public class ConfermaOrdineControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    /**
+     * Vuoto
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
@@ -59,6 +64,10 @@ public class ConfermaOrdineControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP POST per gestire la conferma dell'ordine
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

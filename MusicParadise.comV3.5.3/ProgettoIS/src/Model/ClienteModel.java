@@ -11,11 +11,16 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import Bean.ClienteBean;
-
+/**
+ * Classe che gestisce la transazione dei clienti
+ *
+ */
 public class ClienteModel {
 	private static final String TABLE_NAME = "cliente";
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -27,7 +32,11 @@ public class ClienteModel {
 			System.out.println("Error:" + e.getMessage());
 		}
 	}
-	
+	/**
+	 * Metodo che salva un nuovo cliente all'inteno del database
+	 * @param utente
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(ClienteBean utente) throws SQLException {
 
 		Connection connection = null;
@@ -59,7 +68,14 @@ public class ClienteModel {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo che legge i clienti presenti nel database 
+	 * @param nick
+	 * @param password
+	 * @return bean
+	 * @return null
+	 * @throws SQLException
+	 */
 	public synchronized ClienteBean leggi(String nick, String password) throws SQLException{
 		Connection connection = ds.getConnection();
 		java.sql.Statement statement = connection.createStatement();
@@ -92,7 +108,12 @@ public class ClienteModel {
 		}
 		return null;
 	}
-	
+	/**
+	 * Metodo che verifica se un nickname è presente nel database
+	 * @param nickname
+	 * @return nickB
+	 * @throws SQLException
+	 */
 	public synchronized boolean verificaNick(String nickname) throws SQLException{
 		boolean nickB = true;
 		Connection connection = ds.getConnection();
@@ -117,6 +138,12 @@ public class ClienteModel {
 		}
 		return nickB;
 	}
+	/**
+	 * Metodo che verifica se un e-mail è presente nel database
+	 * @param email
+	 * @return emailB
+	 * @throws SQLException
+	 */
 	public synchronized boolean verificaEmail(String email) throws SQLException{
 		boolean emailB = true;
 		Connection connection = ds.getConnection();

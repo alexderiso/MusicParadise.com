@@ -15,9 +15,15 @@ import Bean.ProdottoBean;
 import Bean.ProdottoCatalogoBean;
 import Bean.ProdottoOrdineBean;
 
+/**
+ * Classe che gestisce la transazione dei prodotti di un ordine 
+ *
+ */
 public class ProdottoOrdineModel {
 	private static DataSource ds;
-
+/**
+ * Connessione al Database
+ */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -33,7 +39,11 @@ public class ProdottoOrdineModel {
 	private static final String TABLE_NAME_PROD= "prodottoordine";
 	private static final String TABLE_NAME_COMP= "composizione";
 
-	
+	/**
+	 * Metodo che salva i prodotti nel database
+	 * @param prodotti
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException {
 
 		Connection connection = null;
@@ -70,7 +80,11 @@ public class ProdottoOrdineModel {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo che genera un codice per i prodotti
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -95,7 +109,12 @@ public class ProdottoOrdineModel {
 
 		return rowCount;
 	}
-	
+	/**
+	 * Metodo che gestisce i prodotti presenti in un ordine
+	 * @param codiceOrdine
+	 * @return prodottiOrdine
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<ProdottoOrdineBean> prodottiOrdine(int codiceOrdine) throws SQLException{
 		ArrayList<ProdottoOrdineBean> prdoottiOrdine = new ArrayList<ProdottoOrdineBean>();
 		Connection connection = null;

@@ -12,10 +12,15 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import Bean.IndirizzoBean;
-
+/**
+ * Classe che gestisce la transazione degli indirizzi
+ *
+ */
 public class IndirizzoModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -29,6 +34,13 @@ public class IndirizzoModel {
 	}
 	
 	private static final String TABLE_NAME_IND = "indirizzo";
+	
+	/**
+	 * Metodo che salva l'indirizzo collegato al nickname nel database
+	 * @param indirizzo
+	 * @param nickname
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, String nickname) throws SQLException {
 
 		Connection connection = null;
@@ -65,7 +77,11 @@ public class IndirizzoModel {
 			}
 		}
 	}
-	
+	/**
+	 * Genera il codice dell'indirizzo
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -91,7 +107,13 @@ public class IndirizzoModel {
 		return rowCount;
 	}
 	
-	
+	/**
+	 * Metodo che legge gli indirizzi dal database
+	 * @param nickname
+	 * @return indirizzi
+	 * @return null
+	 * @throws SQLException
+	 */
 public synchronized ArrayList<IndirizzoBean> leggi(String nickname) throws SQLException {
 		
 		ArrayList<IndirizzoBean> indirizzi = new ArrayList<IndirizzoBean>();

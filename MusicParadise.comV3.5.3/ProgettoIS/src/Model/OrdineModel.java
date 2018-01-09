@@ -17,10 +17,15 @@ import javax.sql.DataSource;
 import Bean.CartaBean;
 import Bean.IndirizzoBean;
 import Bean.OrdineBean;
-
+/**
+ * Classe che gestisce la transazione degli ordini
+ * 
+ */
 public class OrdineModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -36,7 +41,13 @@ public class OrdineModel {
 	private static final String TABLE_NAME_ORD= "ordine";
 	private static final String TABLE_NAME_IND = "indirizzo";
 	private static final String TABLE_NAME_CARTA = "carta";
-
+/**
+ * metodo che restituisce l'ordine tramite la chiave
+ * @param code
+ * @return bean
+ * @return null
+ * @throws SQLException
+ */
 	public synchronized OrdineBean doRetrieveByKey(int code)  throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -115,7 +126,17 @@ public class OrdineModel {
 
 
 
-
+	/**
+	 * Metodo che salva un ordine all'interno del database
+	 * @param indirizzo
+	 * @param carta
+	 * @param stato
+	 * @param corriere
+	 * @param tracking
+	 * @param totale
+	 * @param cliente
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, CartaBean carta, String stato,String corriere, String tracking, double totale, String cliente) throws SQLException {
 
 		Connection connection = null;
@@ -154,6 +175,12 @@ public class OrdineModel {
 			}
 		}
 	}
+	
+	/**
+	 * Metodo che genera il codice di un ordine
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -179,6 +206,12 @@ public class OrdineModel {
 	}
 
 
+	/**
+	 * Metodo che restituisce tutti gli ordini effettuati da un cliente
+	 * @param nickname
+	 * @return ordiniUtente
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<OrdineBean> ordiniUtente(String nickname) throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -257,6 +290,11 @@ public class OrdineModel {
 
 	}
 
+	/**
+	 * Metodo che restituisce la lista di tutti gli ordini 
+	 * @return ordini
+	 * @throws SQLException
+	 */
 	public synchronized Collection<OrdineBean> listaOrdini() throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -333,7 +371,14 @@ public class OrdineModel {
 		return ordini;
 
 	}
-	
+	/**
+	 * Metodo che aggiorna lo stato di un ordine
+	 * @param cod
+	 * @param num_tracking
+	 * @param dataConsegna
+	 * @param corriere
+	 * @throws SQLException
+	 */
 	public synchronized void aggiorna(int cod, String num_tracking, Date dataConsegna, String corriere) throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

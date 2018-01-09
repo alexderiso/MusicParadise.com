@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,9 +16,15 @@ import javax.sql.DataSource;
 import Bean.CartaBean;
 import Bean.ClienteBean;
 
+/**
+ * Classe che gestisce la transazione delle carte di credito
+ *
+ */
 public class CartaModel {
 	private static DataSource ds;
-
+	/**
+	 * Connessione al Database
+	 */
 	static {
 		try {
 			Context initCtx = new InitialContext();
@@ -32,7 +39,12 @@ public class CartaModel {
 	
 	
 	private static final String TABLE_NAME_CARTA= "carta";
-	
+	/**
+	 * Metodo che salva la carta di credito nel database
+	 * @param carta
+	 * @param cliente
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(CartaBean carta, ClienteBean cliente) throws SQLException {
 
 		Connection connection = null;
@@ -64,7 +76,11 @@ public class CartaModel {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo che genera il codice della carta di credito nel database
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -90,6 +106,13 @@ public class CartaModel {
 		return rowCount;
 	}
 	
+	
+	/**
+	 * Metodo che legge le carte di credito presenti nel database collegate al nickname passato come parametro
+	 * @param nickname
+	 * @return carte
+	 * @throws SQLException
+	 */
 public synchronized ArrayList<CartaBean> leggi(String nickname) throws SQLException {
 		
 		ArrayList<CartaBean> carte = new ArrayList<CartaBean>();

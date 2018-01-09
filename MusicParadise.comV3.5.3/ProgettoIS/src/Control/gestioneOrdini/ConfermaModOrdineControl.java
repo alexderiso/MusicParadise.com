@@ -20,6 +20,10 @@ import Model.OrdineModel;
 /**
  * Servlet implementation class ConfermaModOrdineControl
  */
+/**
+ * Classe che modella la servlet per eseguire la modifica dello stato di un ordine da parte del gestore ordini
+ *
+ */
 @WebServlet("/ConfermaModOrdineControl")
 public class ConfermaModOrdineControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +31,10 @@ public class ConfermaModOrdineControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public ConfermaModOrdineControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -37,6 +45,10 @@ public class ConfermaModOrdineControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Effettua una richiesta HTTP GET per gestire la modifica dello stato del ordine
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -69,6 +81,10 @@ public class ConfermaModOrdineControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Vuoto
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
