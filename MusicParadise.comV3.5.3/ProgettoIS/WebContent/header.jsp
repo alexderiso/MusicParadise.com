@@ -24,9 +24,10 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/style2.css">
+
 <link rel="stylesheet" href="css/landing-page.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style2.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
@@ -112,11 +113,11 @@
 				<% } %>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Benvenuto: <%= bean.getNickName() %> <span
+					aria-expanded="false" id="benvenuto">Benvenuto: <%= bean.getNickName() %> <span
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="ViualizzaOrdiniCliente?nickname=<%= bean.getNickName()%>">I
+							href="ViualizzaOrdiniCliente?nickname=<%= bean.getNickName()%>" >I
 								miei ordini</a></li>
 						<li><a href="profiloCliente.jsp">Il mio account</a></li>
 						<li><a href="#">Servizio clienti</a></li>

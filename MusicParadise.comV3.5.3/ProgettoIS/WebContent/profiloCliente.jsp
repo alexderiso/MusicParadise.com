@@ -11,7 +11,7 @@
 <html>
 <head>
 
-<title>Insert title here</title>
+<title>Il mio profilo </title>
 </head>
 <body>
 	<%@ include file="header.jsp"%>

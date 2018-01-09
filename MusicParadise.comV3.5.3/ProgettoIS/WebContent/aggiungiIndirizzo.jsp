@@ -12,7 +12,7 @@ if(utente == null){
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style2.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>Aggiungi indirizzo</title>
 </head>
 <body>
 	<%@ include file="header.jsp"%>

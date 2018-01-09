@@ -11,7 +11,7 @@ if(utente == null){
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>IAggiungi carta</title>
 </head>
 <body>
 
