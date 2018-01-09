@@ -15,7 +15,11 @@ import javax.sql.DataSource;
 import Bean.ProdottoBean;
 import Bean.ProdottoCatalogoBean;
 import Bean.UtenteBean;
+/**
+ * Classe che gestisce la transazione del carrello
 
+ *
+ */
 public class CarrelloModel {
 	private static DataSource ds;
 
@@ -34,7 +38,12 @@ public class CarrelloModel {
 	private static final String TABLE_NAME_INCARRELLO= "incarrello";
 	private static final String TABLE_NAME_PROD = "prodottoincatalogo";
 	private static final String TABLE_NAME_FOTO = "foto";
-	
+	/**
+	 * Metodo che salva il carrello nel database
+	 * @param list
+	 * @param utente
+	 * @throws SQLException
+	 */
 	public synchronized void doSave(List<ProdottoCatalogoBean> list, UtenteBean utente) throws SQLException {
 
 		Connection connection = null;
@@ -67,7 +76,11 @@ public class CarrelloModel {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo che genera il codice univoco del carrello
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -92,7 +105,12 @@ public class CarrelloModel {
 
 		return rowCount;
 	}
-	
+	/**
+	 * Metodo che legge il carrello dal database in base al nickname
+	 * @param nickname
+	 * @return prodInCarrello
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<ProdottoCatalogoBean> leggi(String nickname) throws SQLException {
 		
 		ArrayList<ProdottoCatalogoBean> prodInCarrello = new ArrayList<ProdottoCatalogoBean>();
@@ -146,7 +164,11 @@ public class CarrelloModel {
 		}
 		return prodInCarrello;
 	}
-	
+	/**
+	 * Metodo che rimuove un carrello dal database
+	 * @param utente
+	 * @throws SQLException
+	 */
 public synchronized void remove(UtenteBean utente) throws SQLException {
 		
 

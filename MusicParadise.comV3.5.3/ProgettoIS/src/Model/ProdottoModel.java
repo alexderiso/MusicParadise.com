@@ -18,6 +18,12 @@ import javax.sql.DataSource;
 import Bean.ProdottoBean;
 import Bean.ProdottoCatalogoBean;
 
+
+/**
+ * Classe che gestisce la transazione inerente al prodotto
+
+ *
+ */
 public class ProdottoModel {
 	private static DataSource ds;
 
@@ -35,6 +41,21 @@ public class ProdottoModel {
 	
 	private static final String TABLE_NAME_PROD= "prodottoInCatalogo";
 	private static final String TABLE_NAME_FOTO = "foto";
+	/**
+	 * Metodo che salva un prodotto nel database
+	 * @param codice
+	 * @param numDisp
+	 * @param nome
+	 * @param colore
+	 * @param marca
+	 * @param descrizione
+	 * @param peso
+	 * @param prezzo
+	 * @param data
+	 * @param strumento
+	 * @throws SQLException
+	 */
+	
 	public synchronized void doSave(int codice,int numDisp, String nome, String colore,String marca, String descrizione, int peso, double prezzo, java.sql.Date data, String strumento) throws SQLException {
 
 		Connection connection = null;
@@ -99,7 +120,11 @@ public class ProdottoModel {
 
 		return rowCount;
 	}
-	
+	/**
+	 * Metodo che elimina un prodotto dal catalogo
+	 * @param codice
+	 * @throws SQLException
+	 */
 	public synchronized void doDelete(int codice) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -125,7 +150,12 @@ public class ProdottoModel {
 			}
 		}
 	}
-	
+	/**
+	 * Metodo che restituisce i prodotto in base al tipo di strumento
+	 * @param strumento
+	 * @return products
+	 * @throws SQLException
+	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByInstruments(String strumento) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -176,6 +206,12 @@ public class ProdottoModel {
 	}
 
 	
+	/**
+	 * Metodo che restituisce i prodotti in base al codice
+	 * @param code
+	 * @return bean
+	 * @throws SQLException
+	 */
 	public synchronized ProdottoCatalogoBean doRetrieveByKey(int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -225,6 +261,11 @@ public class ProdottoModel {
 		return bean;
 	}
 	
+	/**
+	 * metodo che aggiorna i prodotti
+	 * @param prodotti
+	 * @throws SQLException
+	 */
 	public synchronized void aggiorna(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -290,7 +331,12 @@ public class ProdottoModel {
 		return products;
 
 	}
-	
+	/**
+	 * Metodo che restituisce i prodotti in base alla marca
+	 * @param marca
+	 * @return products
+	 * @throws SQLException
+	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByMarca(String marca) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
