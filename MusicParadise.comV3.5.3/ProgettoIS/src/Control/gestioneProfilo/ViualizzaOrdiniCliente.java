@@ -19,6 +19,12 @@ import Model.ClienteModel;
 /**
  * Servlet implementation class ViualizzaOrdiniCliente
  */
+
+/**
+ * Classe che implementa la servlet per visualizzare gli ordini effettuati da parte dei clienti
+ * 
+ *
+ */
 @WebServlet("/ViualizzaOrdiniCliente")
 public class ViualizzaOrdiniCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,6 +32,10 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public ViualizzaOrdiniCliente() {
         super();
         // TODO Auto-generated constructor stub
@@ -35,6 +45,13 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
 	static ProdottoOrdineModel prodottoOrdineModel = new ProdottoOrdineModel();
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP GET per visualizzare gli ordini effettuati dal cliente
+	 * @param request
+     * @param respose
+     * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -55,6 +72,11 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	
+	/**
+	 * Vuoto
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

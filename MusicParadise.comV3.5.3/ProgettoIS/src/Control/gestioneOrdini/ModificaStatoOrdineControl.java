@@ -17,6 +17,12 @@ import Model.OrdineModel;
 /**
  * Servlet implementation class ModificaStatoOrdineControl
  */
+
+/**
+ * Classe che implementa la servlet per modificare lo stato di un ordine da parte del gestoreOrdini
+ * 
+ *
+ */
 @WebServlet("/ModificaStatoOrdineControl")
 public class ModificaStatoOrdineControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,6 +30,10 @@ public class ModificaStatoOrdineControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public ModificaStatoOrdineControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -33,6 +43,13 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Effettua una richiesta HTTP GET per modificare lo stato di un ordine
+     * @param request
+     * @param respose
+     * @throws ServletException, IOException
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -51,6 +68,9 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	/**
+	 * Vuoto
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

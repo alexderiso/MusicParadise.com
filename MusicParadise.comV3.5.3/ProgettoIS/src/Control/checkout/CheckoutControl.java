@@ -21,6 +21,10 @@ import Model.IndirizzoModel;
 /**
  * Servlet implementation class CheckoutControl
  */
+/**
+ * Classe che modella la servlet per eseguire il checkout 
+ * @author Alessandro
+ */
 @WebServlet("/CheckoutControl")
 public class CheckoutControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,6 +32,10 @@ public class CheckoutControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Costruttore della superclasse
+	 */
     public CheckoutControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -39,6 +47,13 @@ public class CheckoutControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Effettua una richiesta HTTP GET per gestire il checkout
+     * @param request
+     * @param respose
+     * @throws ServletException, IOException
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		UtenteBean utente = (UtenteBean) request.getSession().getAttribute("utente");

@@ -56,7 +56,7 @@ public class AccediControl extends HttpServlet {
 	 * 
 	 */
 	/**
-	 * Costruttore Vuoto
+	 * Costruttore della superclasse
 	 */
 	public AccediControl() {
 		super();

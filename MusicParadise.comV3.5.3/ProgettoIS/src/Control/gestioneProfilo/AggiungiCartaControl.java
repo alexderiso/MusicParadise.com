@@ -20,6 +20,11 @@ import Model.CartaModel;
 /**
  * Servlet implementation class AggiungiCartaControl
  */
+
+/**
+ * Classe che implementa la servlet per aggiungere un indirizzo ad un account
+ *
+ */
 @WebServlet("/AggiungiCartaControl")
 public class AggiungiCartaControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +32,10 @@ public class AggiungiCartaControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public AggiungiCartaControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -35,6 +44,10 @@ public class AggiungiCartaControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Vuoto
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
@@ -43,6 +56,13 @@ public class AggiungiCartaControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
+	 * @param request
+     * @param respose
+     * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

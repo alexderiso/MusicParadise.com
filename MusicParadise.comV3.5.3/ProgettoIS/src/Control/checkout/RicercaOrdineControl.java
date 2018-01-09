@@ -15,6 +15,12 @@ import Bean.OrdineBean;
 /**
  * Servlet implementation class RicercaOrdineControl
  */
+
+/**
+ * Servlet che ricerca un determinato ordine nel sistema
+ * @author Alex
+ *
+ */
 @WebServlet("/RicercaOrdineControl")
 public class RicercaOrdineControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,6 +28,10 @@ public class RicercaOrdineControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public RicercaOrdineControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -30,6 +40,10 @@ public class RicercaOrdineControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * vuoto
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
@@ -37,6 +51,13 @@ public class RicercaOrdineControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP POST per ricercare un ordine all'interno del sistema
+	 * @param request
+     * @param respose
+     * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

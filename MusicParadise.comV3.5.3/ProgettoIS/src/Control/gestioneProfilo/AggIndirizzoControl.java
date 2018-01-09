@@ -18,13 +18,23 @@ import Model.IndirizzoModel;
 /**
  * Servlet implementation class AggiungiIndririzzoControl
  */
+
+/**
+ * Classe che implementa la servlet per aggiungere un indirizzo ad un account
+ *
+ */
 @WebServlet("/AggIndirizzoControl")
 public class AggIndirizzoControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
+ 
      */
+	
+	/**
+	 * Chiama il costruttore della superclasse
+	 */
     public AggIndirizzoControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -34,6 +44,10 @@ public class AggIndirizzoControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Vuoto
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
@@ -42,6 +56,13 @@ public class AggIndirizzoControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
+	 * @param request
+     * @param respose
+     * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import Bean.CarrelloBean;
 import Bean.ProdottoBean;
 import Model.ProdottoModel;
-
+/**
+ * Classe che implementa la servlet per rimuove un prodotto dal carrello
+ */
 
 /**
  * Servlet implementation class RimuoviProdottoCarrelloControl
@@ -24,6 +26,10 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	/**
+	 * Chiama il costruttorer della superclasse
+	 */
     public RimuoviProdottoCarrelloControl() {
         super();
         // TODO Auto-generated constructor stub
@@ -34,6 +40,13 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    /**
+     * Effettua una richiesta HTTP GET per eliminare il prodotto dal carrello
+     * @param request
+     * @param respose
+     * @throws ServletException, IOException
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		CarrelloBean cart = (CarrelloBean)request.getSession().getAttribute("cart");
@@ -57,6 +70,10 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+	/**
+	 * Vuoto
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
