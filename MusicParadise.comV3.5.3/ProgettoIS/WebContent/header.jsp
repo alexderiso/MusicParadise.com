@@ -97,7 +97,7 @@
 					class="fa fa-shopping-cart fa-3x"><span id="iconCartNum">0</span></a></li>
 				<% } %>
 				<li><a href="" data-toggle="modal" data-target="#myModal"
-					class="glyphicon glyphicon-log-in"> Login</a></li>
+					class="glyphicon glyphicon-log-in" id="benvenuto"> Login</a></li>
 			</ul>
 			<%  }else{  %>
 			<ul class="nav navbar-nav navbar-right">
