@@ -1,3 +1,4 @@
+package Test_Bean;
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -22,13 +23,7 @@ public class ClienteBean_Test extends TestCase {
 	IndirizzoBean indirizzo=new IndirizzoBean("Via Roma", "NAPOLI", 80050, "aLE", "sOMMA", 001, "002258745");
 	ArrayList<IndirizzoBean> indirizzi=new ArrayList<>();
 	
-	@BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
+	
     
 
     @Before
