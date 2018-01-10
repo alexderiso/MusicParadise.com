@@ -15,13 +15,13 @@ import junit.framework.TestCase;
 public class ClienteBean_Test extends TestCase {
 
 	public ClienteBean_Test() {
-		indirizzi.add(indirizzo);
+
 	}
 	
 	ClienteBean utente;
-	ArrayList<CartaBean> carte2;
+	ArrayList<CartaBean> carte2 = new ArrayList<CartaBean>();
 	IndirizzoBean indirizzo=new IndirizzoBean("Via Roma", "NAPOLI", 80050, "aLE", "sOMMA", 001, "002258745");
-	ArrayList<IndirizzoBean> indirizzi=new ArrayList<>();
+	ArrayList<IndirizzoBean> indirizzi=new ArrayList<IndirizzoBean>();
 	
 	
     
@@ -90,20 +90,33 @@ public class ClienteBean_Test extends TestCase {
         utente.setCognome("D'avino");
          assertEquals(utente.getCognome(), "D'avino");
     }
+ 
     
     @Test
-    public void testGetIndirizzo() {
-    	IndirizzoBean indirizzo2=new IndirizzoBean("Via Roma", "NAPOLI", 80050, "aLE", "sOMMA", 001, "002258745");
-    	assertEquals(indirizzi.get(0),indirizzo2);
+    public void testAddCarta() {
+    	CartaBean c = new CartaBean("01/18","1234567890123456","Antonio Spera",1);
+    	assertEquals(carte2.size(), 0);
+        carte2.add(c);
+        assertEquals(carte2.size(), 1);
+        assertEquals(carte2.get(0), c);
     }
     
+    @Test
+    public void testAddIndirizzo() {
+    	assertEquals(indirizzi.size(), 0);
+        indirizzi.add(indirizzo);
+        assertEquals(indirizzi.size(), 1);
+        assertEquals(indirizzi.get(0), indirizzo);
+    }
     
-
-    
-    
-   
-
-
+    @Test
+    public void testTrovaCarta() {
+    	CartaBean c = new CartaBean("01/18","1234567890123456","Antonio Spera",1);
+        utente.addCarta(c);
+        assertEquals(c,utente.trovaCarta(1));
+        assertNull(utente.trovaCarta(2));
+    }
+  
 
    
     /**
