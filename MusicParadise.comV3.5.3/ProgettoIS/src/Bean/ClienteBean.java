@@ -39,6 +39,7 @@ public class ClienteBean extends UtenteBean{
 		carte = null;
 		indirizzi = null;
 		this.cart = cart;
+		
 	}
 	/**
 	 * Ritorna gli indirizzi di un cliente
