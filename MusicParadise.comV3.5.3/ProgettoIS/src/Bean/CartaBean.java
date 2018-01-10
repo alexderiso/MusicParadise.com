@@ -3,6 +3,21 @@ package Bean;
 
 	public class CartaBean{
 
+		
+		
+		public CartaBean() {
+			
+		}
+
+		public CartaBean(String scadenza, String numCarta, String nomeProprietario, int codice) {
+		
+			this.scadenza = scadenza;
+			this.numCarta = numCarta;
+			this.nomeProprietario = nomeProprietario;
+			this.codice = codice;
+		}
+
+
 		/**
 		 * Variabili d'instanza
 		 */
