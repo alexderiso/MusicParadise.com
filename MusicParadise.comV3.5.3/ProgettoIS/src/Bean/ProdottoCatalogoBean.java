@@ -24,18 +24,18 @@ public class ProdottoCatalogoBean extends ProdottoBean {
 	
 	/**
 	 * Costruttore che inizializza le variabili
-	 * @param codice
-	 * @param nome
-	 * @param colore
-	 * @param marca
-	 * @param descrizione
-	 * @param prezzo
-	 * @param peso
-	 * @param strumento
-	 * @param foto
-	 * @param quantAgg
-	 * @param data
-	 * @param numDisp
+	 * @param codice codice che identifica univocamente il prodotto
+	 * @param nome nome del prodotto
+	 * @param colore colore del prododoto
+	 * @param marca nome della marca del prodotto
+	 * @param descrizione piccola descrizione del prodotto
+	 * @param prezzo prezzo del prodotto
+	 * @param peso peso relativo al prodotto
+	 * @param strumento tipo di prodotto
+	 * @param foto foto associate al prodotto
+	 * @param quantAgg quantità del prodotto nel caarrello
+	 * @param data data di inserimento del prodotto nel sistema
+	 * @param numDisp quantità disponibile nel magazzino
 	 */
 	public ProdottoCatalogoBean(int codice, String nome, String colore, String marca, String descrizione, double prezzo,
 			int peso, String strumento, ArrayList<String> foto,int quantAgg, Date data, int numDisp) {
@@ -73,7 +73,7 @@ public class ProdottoCatalogoBean extends ProdottoBean {
 	
 	/**
 	 * Setta la quantità aggiornata in tempo reale di un prodotto
-	 * @param quantAgg
+	 * @param quantAgg quantità del prodotto nel caarrello
 	 */
 	public void setQuantAgg(int quantAgg) {
 		this.quantAgg = quantAgg;
@@ -91,7 +91,7 @@ public class ProdottoCatalogoBean extends ProdottoBean {
 
 	/**
 	 * Setta la quantità disponibile di un prodotto
-	 * @param numDisp
+	 * @param numDisp quantità disponibile nel magazzino
 	 */
 	public void setNumDisp(int numDisp) {
 		this.numDisp = numDisp;
@@ -108,7 +108,7 @@ public class ProdottoCatalogoBean extends ProdottoBean {
 
 	/**
 	 * Setta la data di inserimento di un prodotto nel catalogo
-	 * @param data
+	 * @param data data di inserimento del prodotto nel sistema
 	 */
 	public void setData(Date data) {
 		this.data = data;

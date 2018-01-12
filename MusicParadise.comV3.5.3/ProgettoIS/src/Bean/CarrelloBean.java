@@ -4,28 +4,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarrelloBean {
-
-	private ArrayList<ProdottoCatalogoBean> products;
-	private double totale;
 	
-	public double getTotale() {
-		return totale;
-	}
-
-	public void setTotale(double totale) {
-		this.totale = totale;
-	}
-
+	/**
+	 * Costruttore carrello
+	 */
 	public CarrelloBean() {
 		products = new ArrayList<ProdottoCatalogoBean>();
 	}
 	
+
+	/**
+	 * Variabili d'instanza
+	 */
+	private ArrayList<ProdottoCatalogoBean> products;
+	private double totale;
+	
+	/**
+	 * Ritorna il totale del carrello
+	 * @return totale
+	 */
+	public double getTotale() {
+		return totale;
+	}
 	
 	
+	/**
+	 * Setta il totale del carrello
+	 * @param totale
+	 */
+	public void setTotale(double totale) {
+		this.totale = totale;
+	}
+	
+
+	
+	/**
+	 * Setta i prodotti del carrello
+	 * @param totale
+	 */
 	public void setProducts(ArrayList<ProdottoCatalogoBean> products) {
 		this.products = products;
 	}
-
+	
+	/**
+	 * Aggiungi un prodotto al carrello
+	 * @param product
+	 */
 	public void addProduct(ProdottoCatalogoBean product) {
 		boolean flag = false;
 		int count = 0;
@@ -46,7 +70,11 @@ public class CarrelloBean {
 	}
 	
 	
-	
+	/**
+	 * Aggiorna la quantit‡ di un prodotto
+	 * @param cod codice del prodotto
+	 * @param quantit‡ quantit‡ da inserire 
+	 */
 	public void aggiornaQuantit‡(int cod, int quantit‡){
 		for(int i = 0; i < products.size(); i++){
 			if(products.get(i).getCodice() == cod){
@@ -61,6 +89,11 @@ public class CarrelloBean {
 		}
 	}
 	
+	
+	/**
+	 * Elimina il prodotto dal carrello
+	 * @param prodotto prodotto da eliminare
+	 */
 	public void deleteProduct(ProdottoBean product) {
 		int tot= 0;
 		for(ProdottoBean prod : products) {
@@ -75,10 +108,18 @@ public class CarrelloBean {
 		setTotale(tot);
  	}
 	
+	/**
+	 * Ritorna i prodotti del carrello
+	 * @return prodotti del carrello
+	 */
 	public ArrayList<ProdottoCatalogoBean> getProducts() {
 		return  products;
 	}
 	
+	/**
+	 * Ritorna il numero totale del carrello
+	 * @return c numero dei prodotti del carrello
+	 */
 	public int countingPrds() {
 		int i;
 		int c = 0;
@@ -88,7 +129,11 @@ public class CarrelloBean {
 		return c;
 	}
 	
-	
+	/**
+	 * Ritorna la quantit‡ di un prodotto
+	 * @param codice codice del prodotto
+	 * @return quantit‡ quantit‡ del prodotto passato come parametro
+	 */
 	public int getQuantit‡ByCodice(int codice){
 		for(int i = 0; i< products.size(); i++){
 			ProdottoCatalogoBean prodotto = products.get(i);

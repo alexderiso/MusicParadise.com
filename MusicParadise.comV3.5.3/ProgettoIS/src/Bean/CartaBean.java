@@ -8,6 +8,14 @@ package Bean;
 		public CartaBean() {
 			
 		}
+		
+		/**
+		 * Costruttore carta
+		 * @param scadenza scadenza della carta di credito
+		 * @param numCarta numero relativo alla carta
+		 * @param nomeProprietario nome dell'intestatario della carta
+		 * @param codice codice identificativo della carta
+		 */
 
 		public CartaBean(String scadenza, String numCarta, String nomeProprietario, int codice) {
 		
@@ -21,9 +29,9 @@ package Bean;
 		/**
 		 * Variabili d'instanza
 		 */
-		String scadenza;
-		String numCarta;
-		String nomeProprietario;
+		private String scadenza;
+		private String numCarta;
+		private String nomeProprietario;
 		int codice;
 
 		
@@ -37,7 +45,7 @@ package Bean;
 		
 		/**
 		 * setta la scadenza della carta di credito
-		 * @param scadenza
+		 * @param scadenza scadenza della carta di credito
 		 */
 		public void setScadenza(String scadenza) {
 			this.scadenza = scadenza;
@@ -53,7 +61,7 @@ package Bean;
 		
 		/**
 		 * Setta il numero della carta di credito
-		 * @param numCarta
+		 * @param numCarta numero della carta di credito
 		 */
 		public void setNumCarta(String numCarta) {
 			this.numCarta = numCarta;
@@ -68,7 +76,7 @@ package Bean;
 		
 		/**
 		 * Setta il nome del proprietario della carta di credito
-		 * @param nomeProprietario
+		 * @param nomeProprietario nome del proprietario della carta
 		 */
 		public void setNomeProprietario(String nomeProprietario) {
 			this.nomeProprietario = nomeProprietario;
@@ -84,7 +92,7 @@ package Bean;
 		
 		/**
 		 * Setta il codice della carta di credito
-		 * @param codice
+		 * @param codice codice che identifica la carta
 		 */
 		public void setCodice(int codice) {
 			this.codice = codice;

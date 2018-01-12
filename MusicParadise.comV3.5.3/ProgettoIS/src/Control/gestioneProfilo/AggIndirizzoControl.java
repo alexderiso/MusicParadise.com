@@ -93,8 +93,7 @@ public class AggIndirizzoControl extends HttpServlet {
 			rd.forward(request, response);
 		}else {
 			request.getSession().setAttribute("utente", utente);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/profiloCliente.jsp");
-			rd.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
 		}
 		
 	

@@ -97,6 +97,7 @@ public class ProdottoModel {
 			}
 		}
 	}
+
 	
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
@@ -122,6 +123,11 @@ public class ProdottoModel {
 
 		return rowCount;
 	}
+	
+	
+	
+	
+	
 	/**
 	 * Metodo che elimina un prodotto dal catalogo
 	 * @param codice
@@ -152,6 +158,63 @@ public class ProdottoModel {
 			}
 		}
 	}
+	
+	
+
+	/**
+	 * Metodo che restituisce tutti i prodotti presenti nel database
+	 * @return products
+	 * @throws SQLException
+	 */
+	public synchronized ArrayList<ProdottoCatalogoBean> doRetrieveAll() throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		ArrayList<ProdottoCatalogoBean> products = new ArrayList<ProdottoCatalogoBean>();
+
+		String selectSQL = "SELECT * FROM "+ ProdottoModel.TABLE_NAME_PROD;
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				ProdottoCatalogoBean bean = new ProdottoCatalogoBean();
+				bean.setCodice(rs.getInt("codice"));
+				bean.setNumDisp(rs.getInt("num_disponibilità"));
+				bean.setNome(rs.getString("nome"));
+				bean.setColore(rs.getString("colore"));
+				bean.setMarca(rs.getString("marca"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setPeso(rs.getInt("peso"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setData(rs.getDate("data_inserimento"));
+				bean.setStrumento(rs.getString("strumento"));
+				String selectSQL2 = "SELECT * FROM " + ProdottoModel.TABLE_NAME_FOTO+ " WHERE CODICE_PRODOTTO = ?";
+				preparedStatement = connection.prepareStatement(selectSQL2);
+				preparedStatement.setInt(1,bean.getCodice());
+				ResultSet rs2 = preparedStatement.executeQuery();
+				while(rs2.next()){
+					bean.aggiungiFoto(rs2.getString("immagine"));
+				}
+				products.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return products;
+	}
+	
+	
 	/**
 	 * Metodo che restituisce i prodotto in base al tipo di strumento
 	 * @param strumento

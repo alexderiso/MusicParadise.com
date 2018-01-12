@@ -17,14 +17,14 @@ public class IndirizzoBean {
 	
 	/**
 	 * Costruttore che inizializza le variabili d'instanza
-	 * @param indirizzo
-	 * @param città
-	 * @param cap
-	 * @param nome
-	 * @param cognome
-	 * @param codice
-	 * @param telefono
-	 */
+	 * @param indirizzo indirizzo dell'utente
+	 * @param città città relativa alla spedizione
+	 * @param cap cap relativo alla città
+	 * @param nome nome relativo alla spedizione
+	 * @param cognome cognome relativo alla spedizione
+	 * @param codice codice che identifica univocamente l'indirizzo
+	 * @param telefono numero di telefono relativo alla spedizione
+	 */ 
 	public IndirizzoBean(String indirizzo, String città, int cap, String nome, String cognome, int codice,
 			String telefono) {
 		super();
@@ -53,7 +53,7 @@ public class IndirizzoBean {
 	}
 	/**
 	 * Setta la via e il numero civico dell'indirizzo
-	 * @param indirizzo
+	 * @param indirizzo nome via e numero civico dell'indirizzo
 	 */
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
@@ -68,7 +68,7 @@ public class IndirizzoBean {
 	
 	/**
 	 * Setta la città dell'indirizzo
-	 * @param città
+	 * @param città città relativa alla spedizione
 	 */
 	public void setCittà(String città) {
 		this.città = città;
@@ -84,7 +84,7 @@ public class IndirizzoBean {
 
 	/**
 	 * Setta il cap dell'indirizzo
-	 * @param cap
+	 * @param cap codice avviamento postale
 	 */
 	public void setCap(int cap) {
 		this.cap = cap;
@@ -101,7 +101,7 @@ public class IndirizzoBean {
 	
 	/**
 	 * Setta il nome del proprietario dell'indirizzo
-	 * @param nome
+	 * @param nome nome relativo alla spedizione
 	 */
 
 	public void setNome(String nome) {
@@ -110,7 +110,7 @@ public class IndirizzoBean {
 
 	/**
 	 * Restiruisce il cognome del proprietario dell'indirizzo
-	 * @return cognome
+	 * @return
 	 */
 	public String getCognome() {
 		return cognome;
@@ -118,7 +118,7 @@ public class IndirizzoBean {
 
 	/**
 	 * Setta il cognome del proprietario dell'indirizzo
-	 * @param cognome
+	 * @param cognome cognome cognome relativo alla spedizione 
 	 */
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
@@ -135,7 +135,7 @@ public class IndirizzoBean {
 
 	/**
 	 * Setta il codice dell'indirizzo
-	 * @param codice
+	 * @param codice codice che identifica univocamente l'indirizzo
 	 */
 	public void setCodice(int codice) {
 		this.codice = codice;
@@ -151,7 +151,7 @@ public class IndirizzoBean {
 
 	/**
 	 * Setta il numero di telefono dell'indirizzo
-	 * @param telefono
+	 * @param telefono numero di telefono della relativo alla spedizione dell'ordine
 	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;

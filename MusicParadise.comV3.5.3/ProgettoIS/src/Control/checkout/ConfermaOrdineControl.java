@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -89,7 +90,6 @@ public class ConfermaOrdineControl extends HttpServlet {
 		try {
 			int codOrdine = ordineModel.generaCodice();
 			ordineModel.doSave(i,c,"in preparazione","","",totale,utente.getNickName());
-			System.out.println("ho chiamato ordine model");
 			prodottoOrdineModel.doSave(carrello.getProducts());
 			composizioneModel.doSave(codOrdine);
 			carrelloModel.remove(utente);
@@ -97,6 +97,9 @@ public class ConfermaOrdineControl extends HttpServlet {
 			
 			request.getSession().removeAttribute("checkout");
 			request.getSession().removeAttribute("cart");
+			
+			
+			response.sendRedirect(request.getContextPath() + "/ordineok.jsp");
 			
 			
 			

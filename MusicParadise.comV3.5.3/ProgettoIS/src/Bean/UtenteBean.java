@@ -23,11 +23,11 @@ public abstract class UtenteBean {
 
 	/**
 	 * Costruttore che inizializza le variabili d'instanza
-	 * @param email
-	 * @param password
-	 * @param nickName
-	 * @param nome
-	 * @param cognome
+	 * @param email email dell'utente
+	 * @param password password per accedere al sistema
+	 * @param nickName nome che identifica univocamente l'utente
+	 * @param nome nome dell'utente
+	 * @param cognome cognome dell'utente
 	 */
 	public UtenteBean(String email, String password, String nickName, String nome, String cognome) {
 		super();
@@ -56,7 +56,7 @@ public abstract class UtenteBean {
 
 	/**
 	 * Setta il nickName di un utente
-	 * @param nickName
+	 * @param nickName identificativo utente nel sistema
 	 */
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
@@ -72,7 +72,7 @@ public abstract class UtenteBean {
 
 	/**
 	 * Setta il nome di un utente
-	 * @param nome
+	 * @param nome nome dell'utente
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -88,7 +88,7 @@ public abstract class UtenteBean {
 
 	/**
 	 * Setta il cognome di un utente
-	 * @param cognome
+	 * @param cognome cognome dell'utente
 	 */
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
@@ -105,7 +105,7 @@ public abstract class UtenteBean {
 	
 	/**
 	 * Setta l'email di un utente
-	 * @param email
+	 * @param email email dell'utente
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -121,7 +121,7 @@ public abstract class UtenteBean {
 
 	/**
 	 * Setta la password di un utente
-	 * @param password
+	 * @param password password per accedere al sistema
 	 */
 	public void setPassword(String password) {
 		this.password = password;

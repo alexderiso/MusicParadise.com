@@ -73,6 +73,7 @@
 						<li><a href="RicercaProdottoControl?strumento=luci">Luci</a></li>
 						<li><a href="RicercaProdottoControl?strumento=accessori">Accessori</a></li>
 					</ul></li>
+					<li ><a href="VisualizzaCatalogoControl">CATALOGO</a></li>
 				<li <%if(uri.equals("/ProgettoIS/contatti.jsp")) { %> class="active"
 					<% } %>><a href="contatti.jsp">CONTATTI</a></li>
 			</ul>
@@ -120,7 +121,6 @@
 							href="ViualizzaOrdiniCliente?nickname=<%= bean.getNickName()%>" >I
 								miei ordini</a></li>
 						<li><a href="profiloCliente.jsp">Il mio account</a></li>
-						<li><a href="#">Servizio clienti</a></li>
 						<li><a href="LogoutControl?action=esci">Esci</a></li>
 					</ul></li>
 			</ul>
