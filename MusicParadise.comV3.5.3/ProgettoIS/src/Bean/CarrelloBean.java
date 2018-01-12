@@ -21,7 +21,7 @@ public class CarrelloBean {
 	
 	/**
 	 * Ritorna il totale del carrello
-	 * @return totale
+	 * @return totale : valore totale del carrello
 	 */
 	public double getTotale() {
 		return totale;
@@ -30,7 +30,7 @@ public class CarrelloBean {
 	
 	/**
 	 * Setta il totale del carrello
-	 * @param totale
+	 * @param totale valore totale del carrello
 	 */
 	public void setTotale(double totale) {
 		this.totale = totale;
@@ -40,7 +40,7 @@ public class CarrelloBean {
 	
 	/**
 	 * Setta i prodotti del carrello
-	 * @param totale
+	 * @param products : lista dei prodotti presenti nel carrello
 	 */
 	public void setProducts(ArrayList<ProdottoCatalogoBean> products) {
 		this.products = products;
@@ -48,7 +48,7 @@ public class CarrelloBean {
 	
 	/**
 	 * Aggiungi un prodotto al carrello
-	 * @param product
+	 * @param product : lista dei prodotti presenti nel carrello
 	 */
 	public void addProduct(ProdottoCatalogoBean product) {
 		boolean flag = false;

@@ -27,17 +27,17 @@ import java.util.Date;
 		
 		/**
 		 * Costruttore che inizializza le variabili d'instanza
-		 * @param data
-		 * @param indirizzo
-		 * @param carta
-		 * @param stato
-		 * @param corriere
-		 * @param tracking
-		 * @param totale
-		 * @param numOrdine
-		 * @param user
-		 * @param prodotti
-		 * @param dataConsegna
+		 * @param data : data in cui è stato effettuato l'ordine
+		 * @param indirizzo : indirizzo di spedizione dell'ordine
+		 * @param carta : carta di credito con cui il cliente ha effettuato il pagamento
+		 * @param stato : stato dell'ordine
+		 * @param corriere : nome del corriere che effettuerà la consegna dell'ordine
+		 * @param tracking : numero per tracciare l'ordine
+		 * @param totale : costo totale dell'ordine
+		 * @param numOrdine : numero dell'ordine che lo identifica univocamente
+		 * @param user : utente che ha effetttuato l'ordine 
+		 * @param prodotti : lista di prodotti presenti nell'ordine
+		 * @param dataConsegna : data di consegna prevista dell'ordine
 		 */
 		public OrdineBean(Date data, IndirizzoBean indirizzo, CartaBean carta, String stato, String corriere,
 				String tracking, double totale, int numOrdine, String user, ArrayList<ProdottoOrdineBean> prodotti, Date dataConsegna) {
@@ -64,7 +64,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce la data dell'ordine
-		 * @return data
+		 * @return data : data in cui è stato effettuato l'ordine
 		 */
 		public Date getData() {
 			return data;
@@ -72,7 +72,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta la data dell'ordine
-		 * @param data
+		 * @param data  : data in cui è stato effettuato l'ordine
 		 */
 		public void setData(Date data) {
 			this.data = data;
@@ -80,7 +80,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce l'indirizzo di spedizione dell'ordine
-		 * @return indirizzo
+		 * @return indirizzo : indirizzo di spedizione dell'ordine
 		 */
 		public IndirizzoBean getIndirizzo() {
 			return indirizzo;
@@ -88,7 +88,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta l'indirizzo di spedizioned dell'ordine
-		 * @param indirizzo
+		 * @param indirizzo : indirizzo di spedizione dell'ordine
 		 */
 		public void setIndirizzo(IndirizzoBean indirizzo) {
 			this.indirizzo = indirizzo;
@@ -96,7 +96,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce la carta di credito che ha effettuato l'ordine
-		 * @return carta
+		 * @return carta : carta di credito con cui il cliente ha effettuato il pagamento
 		 */
 		public CartaBean getCarta() {
 			return carta;
@@ -104,7 +104,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta la carta di credito per l'ordine
-		 * @param carta
+		 * @param carta : carta di credito con cui il cliente ha effettuato il pagamento
 		 */
 		public void setCarta(CartaBean carta) {
 			this.carta = carta;
@@ -112,7 +112,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce lo stato dell'ordine
-		 * @return stato
+		 * @return stato : stato dell'ordine
 		 */
 		public String getStato() {
 			return stato;
@@ -120,7 +120,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta lo stato dell'ordine
-		 * @param stato
+		 * @param stato : stato dell'ordine
 		 */
 		public void setStato(String stato) {
 			this.stato = stato;
@@ -128,7 +128,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce il corriere che effettuerà la spedizione dell'ordine
-		 * @return corriere
+		 * @return corriere : nome del corriere che effettuerà la consegna dell'ordine
 		 */
 		public String getCorriere() {
 			return corriere;
@@ -136,7 +136,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta il corriere che effettuerà la spedizione dell'ordine
-		 * @param corriere
+		 * @param corriere : nome del corriere che effettuerà la consegna dell'ordine
 		 */
 		public void setCorriere(String corriere) {
 			this.corriere = corriere;
@@ -144,7 +144,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce il codice di tracking dell'ordine
-		 * @return tracking
+		 * @return tracking : numero per tracciare l'ordine
 		 */
 		public String getTracking() {
 			return tracking;
@@ -152,7 +152,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta il codice di tracking dell'ordine
-		 * @param tracking
+		 * @param tracking : numero per tracciare l'ordine
 		 */
 		public void setTracking(String tracking) {
 			this.tracking = tracking;
@@ -160,7 +160,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce il costo totale dell'ordine
-		 * @return totale
+		 * @return totale : costo totale dell'ordine
 		 */
 		public double getTotale() {
 			return totale;
@@ -168,7 +168,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta il costo totale dell'ordine
-		 * @param totale
+		 * @param totale : costo totale dell'ordine
 		 */
 		public void setTotale(double totale) {
 			this.totale = totale;
@@ -176,7 +176,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce il numero dell'ordine
-		 * @return numOrdine
+		 * @return numOrdine : numero dell'ordine che lo identifica univocamente
 		 */
 		public int getNumOrdine() {
 			return numOrdine;
@@ -184,7 +184,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta il numero dell'ordine
-		 * @param numOrdine
+		 * @param numOrdine : numero dell'ordine che lo identifica univocamente
 		 */
 		public void setNumOrdine(int numOrdine) {
 			this.numOrdine = numOrdine;
@@ -192,7 +192,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituise l'user che ha effettuato l'ordine
-		 * @return user
+		 * @return user : utente che ha effetttuato l'ordine 
 		 */
 		public String getUser() {
 			return user;
@@ -200,7 +200,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta l'user che ha effettuato l'ordine
-		 * @param user
+		 * @param user : utente che ha effetttuato l'ordine 
 		 */
 		public void setUser(String user) {
 			this.user = user;
@@ -208,7 +208,7 @@ import java.util.Date;
 		
 		/**
 		 * Restituisce la lista di prodotto contenuti nell'ordine
-		 * @return prodotti
+		 * @return prodotti : lista di prodotti presenti nell'ordine
 		 */
 		public ArrayList<ProdottoOrdineBean> getProdotti() {
 			return prodotti;
@@ -216,7 +216,7 @@ import java.util.Date;
 		
 		/**
 		 * Setta la lista di prodotto contenuti nell'ordine
-		 * @param prodotti
+		 * @param prodotti : lista di prodotti presenti nell'ordine
 		 */
 		public void setProdotti(ArrayList<ProdottoOrdineBean> prodotti) {
 			this.prodotti = prodotti;
@@ -224,7 +224,7 @@ import java.util.Date;
 
 		/**
 		 * Restituisce la data di consegna dell'ordine
-		 * @return dataConsegna
+		 * @return dataConsegna : data di consegna prevista dell'ordine
 		 */
 		public Date getDataConsegna() {
 			return dataConsegna;
@@ -232,7 +232,7 @@ import java.util.Date;
 
 		/**
 		 * Setta la data di consegna dell'ordine
-		 * @param dataConsegna
+		 * @param dataConsegna : data di consegna prevista dell'ordine
 		 */
 		public void setDataConsegna(Date dataConsegna) {
 			this.dataConsegna = dataConsegna;

@@ -27,12 +27,12 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Costruttore che inizializza le variabili d'instanza
-	 * @param email
-	 * @param password
-	 * @param nickName
-	 * @param nome
-	 * @param cognome
-	 * @param cart
+	 * @param email : email del cliente
+	 * @param password : password scelta dal cliente per accedere al sistema
+	 * @param nickName : riconosce univocamente un cliente nel sistema
+	 * @param nome : nome del cliente
+	 * @param cognome : cognome del cliente 
+	 * @param cart : carrello del utente salvato nella sessione
 	 */
 	public ClienteBean(String email, String password, String nickName, String nome, String cognome, CarrelloBean cart) {
 		super(email, password, nickName, nome, cognome);
@@ -43,7 +43,7 @@ public class ClienteBean extends UtenteBean{
 	}
 	/**
 	 * Ritorna gli indirizzi di un cliente
-	 * @return indirizzi
+	 * @return indirizzi : indirizzi che il cliente ha salvato per il suo account
 	 * post: indirizzi!=null
 	 */
 	public ArrayList<IndirizzoBean> getIndirizzi() {
@@ -52,7 +52,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Setta gli indirizzi di un cliente
-	 * @param indirizzi
+	 * @param indirizzi : indirizzi che il cliente ha salvato per il suo account
 	 * pre: indirizzi !=null
 	 */
 	public void setIndirizzi(ArrayList<IndirizzoBean> indirizzi) {
@@ -61,7 +61,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Ritorna le carte di credito di un cliente
-	 * @return carte
+	 * @return carte : carte di credito che il cliente ha salvato per il suo account
 	 * post: carte!=null
 	 */
 
@@ -71,7 +71,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Setta le carte di credito di un clietne
-	 * @param carte2
+	 * @param carte2 : carte di credito che il cliente ha salvato per il suo account
 	 * pre: carte2!=null
 	 */
 
@@ -81,7 +81,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Aggiunge una carta al cliente
-	 * @param carta
+	 * @param carta : carte di credito che il cliente ha salvato per il suo account
 	 * pre: carta!=null
 	 */
 	
@@ -91,7 +91,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Aggiunge un indirizzo al cliente 
-	 * @param indirizzo
+	 * @param indirizzo : indirizzi che il cliente ha salvato per il suo account
 	 * pre: indirizzo!=null
 	 */
 	public void addIndirizzo(IndirizzoBean indirizzo) {
@@ -101,7 +101,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Cerca una carta di un cliente tramite il codice
-	 * @param cod
+	 * @param cod : codice della carta di credito
 	 * @return cod, se la carta è stata trovata
 	 * @return null, se la carta non è stata trovata
 	 * pre: cod maggiore di 0
@@ -116,7 +116,7 @@ public class ClienteBean extends UtenteBean{
 	
 	/**
 	 * Cerca un indirizzo di un cliente tramite il codice
-	 * @param cod
+	 * @param cod : codice dell'indirizzo
 	 * @return cod, se l'indirizzo è stato trovata
 	 * @return null, se l'indirizzo non è stato trovata
 	 * pre: cod maggiore di 0

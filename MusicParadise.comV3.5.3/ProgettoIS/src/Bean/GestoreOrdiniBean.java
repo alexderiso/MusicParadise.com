@@ -21,12 +21,12 @@ public class GestoreOrdiniBean extends UtenteBean {
 	
 	/**
 	 * Costruttorre che inizializza le variabili d'instanza
-	 * @param email
-	 * @param password
-	 * @param nickName
-	 * @param nome
-	 * @param cognome
-	 * @param matricola
+	 * @param email : email del gestore
+	 * @param password : password usata dal gestore per accedere al sistema
+	 * @param nickName : nickName che riconosce univocamente il gestore all'interno del sistema
+	 * @param nome : nome del gestore
+	 * @param cognome : cognome del gestore
+	 * @param matricola : matricola del gestore
 	 */
 	public GestoreOrdiniBean(String email, String password, String nickName, String nome, String cognome, String matricola) {
 		super(email, password, nickName, nome, cognome);
@@ -35,7 +35,7 @@ public class GestoreOrdiniBean extends UtenteBean {
 
 	/**
 	 * Restituisce la marticola del gestore
-	 * @return matricola
+	 * @return matricola : matricola del gestore
 	 */
 	public String getMatricola() {
 		return matricola;
@@ -43,7 +43,7 @@ public class GestoreOrdiniBean extends UtenteBean {
 
 	/**
 	 * Setta la matricola del gestore
-	 * @param matricola
+	 * @param matricola : matricola del gestore
 	 */
 	public void setMatricola(String matricola) {
 		this.matricola = matricola;
