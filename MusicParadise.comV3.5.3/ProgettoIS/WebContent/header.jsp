@@ -148,19 +148,14 @@
 				<div class="modal-body">
 
 					<form method="post" action="AccediControl" class="form-horizontal"
-						id="form1" onsubmit="return isOk();">
+						id="form1">
 						<center>
 							<div class="col-sm-12" id="txtErr"></div>
-						</center>
-						<center>
-							<div class="col-sm-12" id="txtErrNickname"></div>
 						</center>
 						<input type="hidden" name="action" value="accedi"> <input
 							type="hidden" name="id" value="<%=uri%>">
 						<div class="form-group">
 							<label for="inputEmail3" class="col-sm-2 control-label">Nickname</label>
-							<span
-									class="col-sm-2 labName" id="txtErrNickname"></span>
 							<div class="col-sm-10">
 								<input type="text" name="nick" class="form-control"
 									id="inputNick" placeholder="Nickname">
@@ -168,13 +163,10 @@
 						</div>
 						<div class="form-group">
 							<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-							<span
-									class="col-sm-2 labName" id="txtErrPassword"></span>
 							<div class="col-sm-10">
 								<input type="password" name="password" class="form-control"
 									id="inputPassword" placeholder="Password">
 							</div>
-						
 						</div>
 
 						<div class="form-group">
@@ -193,25 +185,12 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/validate.js"></script>
+
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
-<script>
-function isOk() {
-	if( ValidateNickname(document.getElementById("inputNick"),document.getElementById("txtErrNickname"))
-			) {
-		
-		return true;
-		
-	}
-	
-	return false;
-}
-</script>
 	<script>
 
 $( document ).ready(function() {
@@ -242,7 +221,6 @@ $( document ).ready(function() {
 	return false;
 	}); });
 </script>
-
 
 	<script>
  $(document).ready(function(){

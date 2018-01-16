@@ -97,18 +97,6 @@ function ValidateLetter(str,txt) {
 	return true;
 }
 
-function ValidateNickname(str,txt){
-	var letters = /^[a-z0-9_-]{3,16}$/;
-	if(!(str.value.match(letters))) {
-		$(txt).html("Campo non valido");
-		str.style.border = "2px solid red";
-		return false;
-	}
-	$(txt).html("");
-	str.style.border = "2px solid green";
-	return true;
-}
-
 function ValidateNumber(num,txt) {
 	var valid = isNaN(num.value);
 	
