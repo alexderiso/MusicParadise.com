@@ -21,7 +21,7 @@ public class CartaBean_Test extends TestCase {
 			fail();
 		}
 		
-		
+		 
 		
 	}
 	

@@ -21,7 +21,7 @@ import Bean.OrdineBean;
  * Classe che gestisce la transazione degli ordini
  * 
  */
-public class OrdineModel {
+public class OrdineModel{
 	private static DataSource ds;
 	/**
 	 * Connessione al Database

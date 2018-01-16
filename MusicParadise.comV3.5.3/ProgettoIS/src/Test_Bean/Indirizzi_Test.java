@@ -14,7 +14,7 @@ public class Indirizzi_Test extends TestCase {
 	@BeforeClass
     public static void setUpClass() {
     }
-    
+     
     @AfterClass
     public static void tearDownClass() {
     }

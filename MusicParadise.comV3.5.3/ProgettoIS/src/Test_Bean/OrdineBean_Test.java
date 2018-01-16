@@ -19,7 +19,7 @@ public class OrdineBean_Test extends TestCase {
 	public OrdineBean_Test() {
 		
 	}
-	
+	 
 	OrdineBean ordine;
 	 @Before
 	    public void setUp() 

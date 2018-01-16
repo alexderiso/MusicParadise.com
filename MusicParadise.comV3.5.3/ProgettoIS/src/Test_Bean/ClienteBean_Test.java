@@ -17,7 +17,7 @@ public class ClienteBean_Test extends TestCase {
 	public ClienteBean_Test() {
 
 	}
-	
+	 
 	ClienteBean utente;
 	ArrayList<CartaBean> carte2 = new ArrayList<CartaBean>();
 	IndirizzoBean indirizzo=new IndirizzoBean("Via Roma", "NAPOLI", 80050, "aLE", "sOMMA", 001, "002258745");

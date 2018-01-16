@@ -17,7 +17,7 @@ public class GestoreOrdiniBean_Test {
 	@BeforeClass
     public static void setUpClass() {
     }
-    
+     
     @AfterClass
     public static void tearDownClass() {
     }

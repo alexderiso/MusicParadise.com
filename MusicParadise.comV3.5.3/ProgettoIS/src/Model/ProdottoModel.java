@@ -24,7 +24,7 @@ import Bean.ProdottoCatalogoBean;
 
  *
  */
-public class ProdottoModel {
+public class ProdottoModel{
 	private static DataSource ds;
 	/**
 	 * Connessione al Database
