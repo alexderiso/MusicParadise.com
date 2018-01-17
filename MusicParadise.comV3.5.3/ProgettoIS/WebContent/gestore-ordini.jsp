@@ -65,9 +65,6 @@ String uri = request.getRequestURI();
 				<li <%if(uri.equals("/ProgettoIS/gestore-ordini.jsp")) { %>
 					class="active" <% } %>><a href="gestore-ordini.jsp"><i
 						class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
-				<li <%if(uri.equals("/ProgettoIS/listaOrdini.jsp")) { %>
-					class="active" <% }%>><a href="listaOrdini.jsp"><i
-						class="fa fa-fw fa-bar-chart-o"></i> Lista ordini</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
