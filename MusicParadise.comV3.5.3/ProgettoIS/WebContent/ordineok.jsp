@@ -13,6 +13,7 @@ if(utente == null){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style2.css">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,8 +30,8 @@ if(utente == null){
 	<br>
 	<br>
 	
-	<div class = "container">
-	<h2>Ordine effettuato con successo <a href="index.jsp">vai agli acquisti</a></h2>
+	<div class = "container" id="ordineOK">
+	<h2>Ordine effettuato con successo <a href="index.jsp">vai alla home</a></h2>
 	</div>
 	
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>GestoreOrdini</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Login</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=Login</option><option>css=#benvenuto</option><option>//a[contains(text(),'Login')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td>paolo10</td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td>123456@</td>
+</tr>
+<tr><td>click</td><td>css=input.btn.btn-default<datalist><option>css=input.btn.btn-default</option><option>//input[@value='Accedi']</option><option>//form[@id='form1']/div[3]/div/input</option><option>//div[3]/div/input</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Visualizza tutti gli ordini</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/gestore-ordini.jsp<datalist><option>http://localhost:8080/ProgettoIS/gestore-ordini.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=div.panel-footer<datalist><option>css=div.panel-footer</option><option>//div[@id='page-wrapper']/div/div[2]/div/div/a/div</option><option>//a/div</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Modifica stato ordine</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/gestore-ordini.jsp<datalist><option>http://localhost:8080/ProgettoIS/gestore-ordini.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=modifica<datalist><option>link=modifica</option><option>css=a.btn.btn-success</option><option>//a[contains(text(),'modifica')]</option><option>//div[@id='ordini']/div/div/div/div[2]/div/table/tbody[2]/tr/td[9]/a</option><option>//a[contains(@href, 'ModificaStatoOrdineControl?cod=1')]</option><option>//td[9]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=corriere<datalist><option>name=corriere</option><option>css=select[name="corriere"]</option><option>//select[@name='corriere']</option><option>//div[@id='wrapper']/form/div/select</option><option>//select</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>name=corriere<datalist><option>name=corriere</option><option>css=select[name="corriere"]</option><option>//select[@name='corriere']</option><option>//div[@id='wrapper']/form/div/select</option><option>//select</option></datalist></td><td>label=DHL</td>
+</tr>
+<tr><td>click</td><td>//div[@id='wrapper']/form/div/select/option[3]<datalist><option>//div[@id='wrapper']/form/div/select/option[3]</option><option>//option[3]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNumTracking<datalist><option>id=inputNumTracking</option><option>name=numTracking</option><option>css=#inputNumTracking</option><option>//input[@id='inputNumTracking']</option><option>//div[@id='wrapper']/form/div[2]/input</option><option>//input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNumTracking<datalist><option>id=inputNumTracking</option><option>name=numTracking</option><option>css=#inputNumTracking</option><option>//input[@id='inputNumTracking']</option><option>//div[@id='wrapper']/form/div[2]/input</option><option>//input</option></datalist></td><td>PK20157785</td>
+</tr>
+<tr><td>click</td><td>id=datepickerIniz<datalist><option>id=datepickerIniz</option><option>name=dataConsegna</option><option>css=#datepickerIniz</option><option>//input[@id='datepickerIniz']</option><option>//div[@id='wrapper']/form/div[3]/p/input</option><option>//p/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=26<datalist><option>link=26</option><option>css=a.ui-state-default.ui-state-hover</option><option>//a[contains(text(),'26')]</option><option>//div[@id='ui-datepicker-div']/table/tbody/tr[4]/td[6]/a</option><option>xpath=(//a[contains(@href, '#')])[13]</option><option>//tr[4]/td[6]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=button.btn.btn-default<datalist><option>css=button.btn.btn-default</option><option>//button[@type='submit']</option><option>//div[@id='wrapper']/form/button</option><option>//form/button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNumTracking<datalist><option>id=inputNumTracking</option><option>name=numTracking</option><option>css=#inputNumTracking</option><option>//input[@id='inputNumTracking']</option><option>//div[@id='wrapper']/form/div[2]/input</option><option>//input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNumTracking<datalist><option>id=inputNumTracking</option><option>name=numTracking</option><option>css=#inputNumTracking</option><option>//input[@id='inputNumTracking']</option><option>//div[@id='wrapper']/form/div[2]/input</option><option>//input</option></datalist></td><td>2548554587</td>
+</tr>
+<tr><td>click</td><td>css=button.btn.btn-default<datalist><option>css=button.btn.btn-default</option><option>//button[@type='submit']</option><option>//div[@id='wrapper']/form/button</option><option>//form/button</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=div.panel-footer<datalist><option>css=div.panel-footer</option><option>//div[@id='page-wrapper']/div/div[2]/div/div/a/div</option><option>//a/div</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//div[@id='ordini']/div/div/div/div[2]/div/table/tbody[2]/tr/td[6]<datalist><option>//div[@id='ordini']/div/div/div/div[2]/div/table/tbody[2]/tr/td[6]</option><option>//tbody[2]/tr/td[6]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Logout</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/ConfermaModOrdineControl<datalist><option>http://localhost:8080/ProgettoIS/ConfermaModOrdineControl</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Paolo10<datalist><option>link=Paolo10</option><option>css=a.dropdown-toggle</option><option>//a[contains(text(),'Paolo10')]</option><option>//div[@id='wrapper']/nav/ul/li/a</option><option>//a[contains(@href, '#')]</option><option>//li/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Log Out<datalist><option>link=Log Out</option><option>//a[contains(text(),'Log Out')]</option><option>//div[@id='wrapper']/nav/ul/li/ul/li[4]/a</option><option>//a[contains(@href, 'LogoutControl?action=esci')]</option><option>//li[4]/a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -74,7 +74,7 @@
 						<li><a href="RicercaProdottoControl?strumento=accessori">Accessori</a></li>
 					</ul></li>
 					<li ><a href="VisualizzaCatalogoControl">CATALOGO</a></li>
-				<li <%if(uri.equals("/ProgettoIS/contatti.jsp")) { %> class="active"
+				<li <%if(uri.equals("/ProgettoIS/contatti.jsp")) { %>class="active" 
 					<% } %>><a href="contatti.jsp">CONTATTI</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" method="GET"

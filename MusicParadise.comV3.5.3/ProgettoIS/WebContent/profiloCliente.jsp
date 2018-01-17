@@ -214,7 +214,7 @@
 
 									<div>
 										<a href="aggiungiCarta.jsp" type="button"
-											class="btn btn-primary">inserisci indirizzo</a>
+											class="btn btn-primary">inserisci carta</a>
 									</div>
 								</div>
 
