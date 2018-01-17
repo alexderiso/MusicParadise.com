@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Rappresenta un entità
- * @author Alessandro
+ * 
  *
  */
 public abstract class ProdottoBean{
