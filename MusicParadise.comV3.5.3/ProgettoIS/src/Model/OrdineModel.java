@@ -52,7 +52,7 @@ public class OrdineModel{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		OrdineBean bean = new OrdineBean();
+		OrdineBean bean = null;
 
 		String selectSQL = "SELECT * FROM " + OrdineModel.TABLE_NAME_ORD + " WHERE NUM_ORDINE = ?";
 
