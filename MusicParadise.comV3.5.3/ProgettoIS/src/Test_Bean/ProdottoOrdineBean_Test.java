@@ -1,14 +1,21 @@
 package Test_Bean;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import junit.framework.*;
+
 import org.junit.Before;
 import org.junit.Test;
+
 
 import Bean.ProdottoOrdineBean;
 import junit.framework.TestCase;
 
-public class ProdottoOrdineBean_Test extends TestCase {
+public class ProdottoOrdineBean_Test  {
 
 	ProdottoOrdineBean prodotto;
+	
+	
 	
 	@Before
 	public void setUp() {
@@ -95,15 +102,26 @@ public class ProdottoOrdineBean_Test extends TestCase {
 		  assertEquals(prodotto.getPeso(), 6);
 	  }
 	  
-	  @Test
+	  /**
+	   * Ci sono 3 parametri nel metodo assertEquals : 
+	   * 1: valore attuale
+	   * 2: valore atteso
+	   * 3: valore delta per i numeri double, dove ci sarà la perdita di precisione
+	   */
+	@Test
 	  public void TestGetPrezzo () {
-		  assertEquals(prodotto.getPrezzo(),300.0);
+		  assertEquals(prodotto.getPrezzo(),300.0,2);
 	  }
-	  
+	  /**
+	   * Ci sono 3 parametri nel metodo assertEquals : 
+	   * 1: valore attuale
+	   * 2: valore atteso
+	   * 3: valore delta per i numeri double, dove ci sarà la perdita di precisione
+	   */
 	  @Test
 	  public void TestSetPrezzo() {
 		  prodotto.setPrezzo(111);
-		  assertEquals(prodotto.getPrezzo(),111.0);
+		  assertEquals(prodotto.getPrezzo(),111.0,2);
 	  }
 	  
 	  @Test
