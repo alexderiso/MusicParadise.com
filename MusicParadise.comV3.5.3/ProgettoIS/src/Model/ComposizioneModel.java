@@ -41,7 +41,6 @@ public class ComposizioneModel {
 		try {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQLProd);
-			
 			for(ProdottoCatalogoBean temp : prodotti) {
 				preparedStatement.setInt(1, generaCodice());
 				preparedStatement.setInt(2, codOrdine);
