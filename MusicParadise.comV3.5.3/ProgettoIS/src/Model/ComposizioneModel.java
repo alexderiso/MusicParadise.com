@@ -11,6 +11,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import Bean.ProdottoCatalogoBean;
+
 public class ComposizioneModel {
 	private static DataSource ds;
 
@@ -28,7 +30,7 @@ public class ComposizioneModel {
 
 	private static final String TABLE_NAME_COMP= "composizione";
 	
-	public synchronized void doSave(int codOrdine) throws SQLException {
+	public synchronized void doSave(ArrayList<ProdottoCatalogoBean> prodotti,int codOrdine) throws SQLException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -40,11 +42,12 @@ public class ComposizioneModel {
 			connection = ds.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQLProd);
 			
-		
+			for(ProdottoCatalogoBean temp : prodotti) {
 				preparedStatement.setInt(1, generaCodice());
 				preparedStatement.setInt(2, codOrdine);
 
 				preparedStatement.executeUpdate();
+			}
 
 
 		} finally {

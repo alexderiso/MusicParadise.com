@@ -91,7 +91,7 @@ public class ConfermaOrdineControl extends HttpServlet {
 			int codOrdine = ordineModel.generaCodice();
 			ordineModel.doSave(i,c,"in preparazione","","",totale,utente.getNickName());
 			prodottoOrdineModel.doSave(carrello.getProducts());
-			composizioneModel.doSave(codOrdine);
+			composizioneModel.doSave(carrello.getProducts(),codOrdine);
 			carrelloModel.remove(utente);
 			prodottoModel.aggiorna(carrello.getProducts());
 			
