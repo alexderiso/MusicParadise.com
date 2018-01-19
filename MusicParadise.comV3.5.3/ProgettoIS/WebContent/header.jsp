@@ -77,6 +77,7 @@
 				<li <%if(uri.equals("/ProgettoIS/contatti.jsp")) { %>class="active" 
 					<% } %>><a href="contatti.jsp">CONTATTI</a></li>
 			</ul>
+			
 			<form class="navbar-form navbar-left" method="GET"
 				action="RicercaProdottoControl">
 				<div class="form-group">

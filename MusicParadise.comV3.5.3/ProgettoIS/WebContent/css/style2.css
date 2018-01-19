@@ -54,7 +54,6 @@ p.copyright {
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #101010;
     background:#000000;
-    margin-left: -15px;
     margin-right: -15px;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {

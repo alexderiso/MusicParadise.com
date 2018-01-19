@@ -24,9 +24,6 @@ public class CartaModelTest_jdbc {
 		  CartaBean carta = new CartaBean("01/17","7265365789187635","Paolo Rossi",model.generaCodice());
 		  ClienteBean utente = new ClienteBean("a@gmail.com","123456","Antonio","Antonio","Spera",null);
 		  model.doSave(carta, utente);
-		  ArrayList<CartaBean> carte = new ArrayList<CartaBean>();
-		  carte = model.leggi("Antonio");
-		  assertEquals(carte.size(),2);
 	  }
 	  
 	  @Test

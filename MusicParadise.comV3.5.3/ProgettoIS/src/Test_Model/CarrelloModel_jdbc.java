@@ -27,7 +27,7 @@ public class CarrelloModel_jdbc {
 	  private static Connection con;
 	 static {
 		    //Inizia una connessione
-		    String db = "db";
+		    String db = "dbtest";
 		    String user = "root";
 		    String pass = "antonio@"; 
 		    

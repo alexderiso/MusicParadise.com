@@ -21,7 +21,7 @@ public class OrdineModel_jdbc {
 	private static Connection con;
 	static {
 		//Inizia una connessione
-		String db = "db";
+		String db = "dbtest";
 		String user = "root";
 		String pass = "antonio@"; 
 
@@ -97,7 +97,7 @@ public class OrdineModel_jdbc {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		OrdineBean bean = new OrdineBean();
+		OrdineBean bean = null;
 
 		String selectSQL = "SELECT * FROM " + OrdineModel_jdbc.TABLE_NAME_ORD + " WHERE NUM_ORDINE = ?";
 
@@ -109,7 +109,7 @@ public class OrdineModel_jdbc {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-
+				bean = new OrdineBean();
 				bean.setNumOrdine(rs.getInt("num_ordine"));
 				bean.setUser(rs.getString("utente"));
 				bean.setData(rs.getDate("data_ordine"));
@@ -233,6 +233,45 @@ public class OrdineModel_jdbc {
 		}
 		return ordiniUtente;
 
+	}
+	
+	public synchronized void aggiorna(int cod, String num_tracking, Date dataConsegna, String corriere) throws SQLException{
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+
+
+			String selectSQL = "UPDATE " + TABLE_NAME_ORD + " SET  numero_traking = ? WHERE NUM_ORDINE= ?";
+			connection =  con;
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, num_tracking);
+			preparedStatement.setInt(2, cod);
+			preparedStatement.executeUpdate();
+			
+			String selectSQL2 = "UPDATE " + TABLE_NAME_ORD + " SET  corriere = ? WHERE NUM_ORDINE= ?";
+			connection = con;
+			preparedStatement = connection.prepareStatement(selectSQL2);
+			preparedStatement.setString(1, corriere);
+			preparedStatement.setInt(2, cod);
+			preparedStatement.executeUpdate();
+			
+			String selectSQL3 = "UPDATE " + TABLE_NAME_ORD + " SET  data_consegna = ? WHERE NUM_ORDINE= ?";
+			connection = con;
+			preparedStatement = connection.prepareStatement(selectSQL3);
+			preparedStatement.setDate(1, dataConsegna);
+			preparedStatement.setInt(2, cod);
+			preparedStatement.executeUpdate();
+			
+			String selectSQL4 = "UPDATE " + TABLE_NAME_ORD + " SET  stato = ? WHERE NUM_ORDINE= ?";
+			connection = con;
+			preparedStatement = connection.prepareStatement(selectSQL4);
+			preparedStatement.setString(1, "spedito");
+			preparedStatement.setInt(2, cod);
+			preparedStatement.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 
