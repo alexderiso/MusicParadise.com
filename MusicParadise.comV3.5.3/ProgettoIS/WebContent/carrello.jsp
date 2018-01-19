@@ -73,7 +73,9 @@ UtenteBean utente= (UtenteBean)session.getAttribute("utente");
       <input id="quantità" type="number" name="<%=lista.get(i).getCodice()%>" value="<%=lista.get(i).getQuantAgg()%>" min="1" max="<%=lista.get(i).getNumDisp()%>" onchange="aggQ()">
     </div>
     
-    
+    <script>$("[type='number']").keypress(function (evt) {
+        evt.preventDefault();
+    });</script>
     <% somma = somma + lista.get(i).getPrezzo()*lista.get(i).getQuantAgg();%>
     <div class="product-removal">
     
