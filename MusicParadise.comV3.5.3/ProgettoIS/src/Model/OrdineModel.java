@@ -64,7 +64,7 @@ public class OrdineModel{
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
-
+				bean = new OrdineBean();
 				bean.setNumOrdine(rs.getInt("num_ordine"));
 				bean.setUser(rs.getString("utente"));
 				bean.setData(rs.getDate("data_ordine"));
