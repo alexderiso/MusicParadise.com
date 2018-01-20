@@ -55,6 +55,7 @@ p.copyright {
     border-color: #101010;
     background:#000000;
     margin-right: -15px;
+    margin-left : -15px;
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     color: #000;
