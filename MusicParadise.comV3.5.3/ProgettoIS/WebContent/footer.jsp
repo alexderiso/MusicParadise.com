@@ -13,7 +13,7 @@
 <div class="container container-table">
     <div class="row vertical-center-row">
         <div class="col-md-6 col-md-offset-3">
-    <img src="immagini/pagamenti.jpg" class="img-responsive"></div>
+    <img src="immagini/cartedicredito.jpg"" class="img-responsive"></div>
    </div>
    </div>
 

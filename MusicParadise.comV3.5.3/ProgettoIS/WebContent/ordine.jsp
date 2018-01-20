@@ -12,7 +12,7 @@ if(utente == null || ordine == null){
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<%@page import="java.util.*, Model.*,Control.*,Bean.*"%>
+<%@page import="java.util.*, java.math.*, Model.*,Control.*,Bean.*"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="print"
@@ -123,7 +123,7 @@ if(utente == null || ordine == null){
 						</tr>
 						<tr>
 							<td class="totale" colspan="5">TOTALE ORDINE</td>
-							<td><%=prezzoTotale+iva+spedizione %> EUR</td>
+							<td><%=new BigDecimal(prezzoTotale+iva+spedizione).setScale(2 , BigDecimal.ROUND_UP).doubleValue() %>EUR</td>
 						</tr>
 
 					</tbody>

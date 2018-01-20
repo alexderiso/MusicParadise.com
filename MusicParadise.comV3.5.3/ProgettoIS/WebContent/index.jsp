@@ -203,10 +203,31 @@
 
 	</div>
 	<!-- /.container -->
+	
+	<div class="container">
+		<div class="wrapper">
+			<h2 class="jquery">I NOSTRI CORRIERI</h2>
+			<hr>
+			
+			<div class="gallery">
+				<ul>
+					<li><img
+							src="immagini/bartolini.jpg" class="jquery2"></li>
+					<li><img
+							src="immagini/gls.png" class="jquery2"></li>
+					<li><img
+							src="immagini/dhl.gif" class="jquery2"></li>
+					<li><img
+							src="immagini/sda.png" class="jquery2"></li>
+				
+				</ul>
+			</div>
+	
 
+		</div>
 
+	</div>
 
-	<a id="marchi" href="marchi.jsp">Visualizza tutti i marchi</a>
 
 	<br>
 
