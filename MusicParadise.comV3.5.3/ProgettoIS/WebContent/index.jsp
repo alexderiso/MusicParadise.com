@@ -163,7 +163,7 @@
 
 	<div class="container">
 		<div class="wrapper">
-			<h2 class="jquery">ALCUNE NOSTRE MARCHE</h2>
+			<center><h2 class="jquery">ALCUNE NOSTRE MARCHE</h2></center>
 			<hr>
 			<div class="gallery">
 				<ul>
@@ -206,8 +206,14 @@
 	
 	<div class="container">
 		<div class="wrapper">
-			<h2 class="jquery">I NOSTRI CORRIERI</h2>
+			<center><h2 class="jquery">I NOSTRI CORRIERI</h2></center>
 			<hr>
+			
+			<div class ="raw">
+			
+			<div class="col-sm-4"></div>
+			
+			<div class="col-sm-4">
 			
 			<div class="gallery">
 				<ul>
@@ -221,6 +227,9 @@
 							src="immagini/sda.png" class="jquery2"></li>
 				
 				</ul>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
 			</div>
 	
 
