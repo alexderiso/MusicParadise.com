@@ -70,35 +70,40 @@ public class AggIndirizzoControl extends HttpServlet {
 		// TODO Auto-generated method stub
 		String[] ind = request.getParameterValues("paramOrder");
 		ClienteBean utente = (ClienteBean) request.getSession().getAttribute("utente");
-		int cap = Integer.parseInt(request.getParameter("cap"));
-		IndirizzoBean indirizzo = new IndirizzoBean();
-		indirizzo.setNome(ind[0]);
-		indirizzo.setCognome(ind[1]);
-		indirizzo.setIndirizzo(ind[2]);
-		indirizzo.setCittà(ind[3]);
-		indirizzo.setCap(cap);
-		indirizzo.setTelefono(ind[4]);
-		utente.addIndirizzo(indirizzo);
-		
-		try {
-			indirizzo.setCodice(indModel.generaCodice());
-			indModel.doSave(indirizzo,utente.getNickName());
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Boolean checkout = (Boolean) request.getSession().getAttribute("checkout");
-		if(checkout != null) {
-			request.getSession().setAttribute("utente", utente);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/checkout.jsp");
-			rd.forward(request, response);
+		String c = request.getParameter("cap"); //cap
+		if(ind == null || c == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
-			request.getSession().setAttribute("utente", utente);
-			response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
+			int cap = Integer.parseInt(c);
+			IndirizzoBean indirizzo = new IndirizzoBean();
+			indirizzo.setNome(ind[0]);
+			indirizzo.setCognome(ind[1]);
+			indirizzo.setIndirizzo(ind[2]);
+			indirizzo.setCittà(ind[3]);
+			indirizzo.setCap(cap);
+			indirizzo.setTelefono(ind[4]);
+			utente.addIndirizzo(indirizzo);
+			
+			try {
+				indirizzo.setCodice(indModel.generaCodice());
+				indModel.doSave(indirizzo,utente.getNickName());
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Boolean checkout = (Boolean) request.getSession().getAttribute("checkout");
+			if(checkout != null) {
+				request.getSession().setAttribute("utente", utente);
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/checkout.jsp");
+				rd.forward(request, response);
+			}else {
+				request.getSession().setAttribute("utente", utente);
+				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
+			}
+			
 		}
-		
 	
 		
 	}

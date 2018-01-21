@@ -53,19 +53,24 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 		
 		CarrelloBean cart = (CarrelloBean)request.getSession().getAttribute("cart");
 		String azione = request.getParameter("azC");
-		try{
-			if(azione.equalsIgnoreCase("elimina")) {
-				int code = Integer.parseInt(request.getParameter("id"));
-				cart.deleteProduct(model.doRetrieveByKey(code));
-				request.getSession().setAttribute("cart", cart);
-				request.setAttribute("cart", cart);
-				if(cart.getProducts().size() == 0) {
-					response.getWriter().write("finitiPrd");
-				}
-				return;
-			}	
-		}catch (SQLException e) {
-			System.out.println("Error:" + e.getMessage());
+		
+		if(azione == null || cart == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
+			try{
+				if(azione.equalsIgnoreCase("elimina")) {
+					int code = Integer.parseInt(request.getParameter("id"));
+					cart.deleteProduct(model.doRetrieveByKey(code));
+					request.getSession().setAttribute("cart", cart);
+					request.setAttribute("cart", cart);
+					if(cart.getProducts().size() == 0) {
+						response.getWriter().write("finitiPrd");
+					}
+					return;
+				}	
+			}catch (SQLException e) {
+				System.out.println("Error:" + e.getMessage());
+			}
 		}
 	}
 

@@ -1,6 +1,7 @@
 
 <%
 	ClienteBean bean = (ClienteBean) session.getAttribute("utente");
+	GestoreOrdiniBean gestore =(GestoreOrdiniBean) session.getAttribute("utente-gestore");
     String uri = request.getRequestURI();
     Boolean admin = (Boolean)session.getAttribute("adminRoles");
     CarrelloBean cart = (CarrelloBean) session.getAttribute("cart");

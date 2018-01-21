@@ -56,28 +56,30 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
 		String inizStr = request.getParameter("dataConsegna");
-
-		LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
-		java.sql.Date dataSql = Date.valueOf(dataConsegna); 
-		
 		String corriere = request.getParameter("corriere");
 		String numeroTracking = request.getParameter("numTracking");
 		
 		OrdineBean ordine = (OrdineBean) request.getSession().getAttribute("ordMod");
 		
-		try {
-			ordineModel.aggiorna(ordine.getNumOrdine(), numeroTracking, dataSql, corriere);
-			Collection<OrdineBean> collezione = ordineModel.listaOrdini();
-			request.getSession().setAttribute("ordini",collezione);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/gestore-ordini.jsp");
-			rd.forward(request, response);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
+			LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
+			java.sql.Date dataSql = Date.valueOf(dataConsegna); 
+			
+			
+			try {
+				ordineModel.aggiorna(ordine.getNumOrdine(), numeroTracking, dataSql, corriere);
+				Collection<OrdineBean> collezione = ordineModel.listaOrdini();
+				request.getSession().setAttribute("ordini",collezione);
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/gestore-ordini.jsp");
+				rd.forward(request, response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
-		
-		
-
 		
 	}
 

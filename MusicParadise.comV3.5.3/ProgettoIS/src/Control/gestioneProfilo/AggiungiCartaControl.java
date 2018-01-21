@@ -73,28 +73,33 @@ public class AggiungiCartaControl extends HttpServlet {
 		String anno = request.getParameter("anno");
 		String scadenza = mese+"/"+anno;
 		String nomProprietario = request.getParameter("nomProprietario");
-		CartaBean carta= new CartaBean();
-		carta.setNumCarta(numCarta);
-		carta.setScadenza(scadenza);
-		carta.setNomeProprietario(nomProprietario);
-		ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
-		utente.addCarta(carta);
-		try {
-			carta.setCodice(cartaModel.generaCodice());
-			cartaModel.doSave(carta,utente);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Boolean checkout = (Boolean) request.getSession().getAttribute("checkout");
-		if(checkout != null) {
-			request.getSession().setAttribute("utente", utente);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/checkout.jsp");
-			rd.forward(request, response);
+		
+		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
-			request.getSession().setAttribute("utente", utente);
-			
-			response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
+			CartaBean carta= new CartaBean();
+			carta.setNumCarta(numCarta);
+			carta.setScadenza(scadenza);
+			carta.setNomeProprietario(nomProprietario);
+			ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
+			utente.addCarta(carta);
+			try {
+				carta.setCodice(cartaModel.generaCodice());
+				cartaModel.doSave(carta,utente);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Boolean checkout = (Boolean) request.getSession().getAttribute("checkout");
+			if(checkout != null) {
+				request.getSession().setAttribute("utente", utente);
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/checkout.jsp");
+				rd.forward(request, response);
+			}else {
+				request.getSession().setAttribute("utente", utente);
+				
+				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
+			}
 		}
 		
 	}

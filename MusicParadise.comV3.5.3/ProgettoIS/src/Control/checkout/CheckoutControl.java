@@ -58,12 +58,16 @@ public class CheckoutControl extends HttpServlet {
 		// TODO Auto-generated method stub
 		UtenteBean utente = (UtenteBean) request.getSession().getAttribute("utente");
 		CarrelloBean carrello = (CarrelloBean) request.getSession().getAttribute("cart");
-	
+		
+		if(utente == null || carrello == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
 			request.getSession().setAttribute("prodottiOrdine", carrello.getProducts());
 			request.getSession().setAttribute("checkout", true);
 			
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/checkout.jsp");
 			rd.forward(request, response);
+		}
 		
 	}
 

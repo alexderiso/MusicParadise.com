@@ -145,6 +145,7 @@ public class RicercaProdottoControl extends HttpServlet {
 				System.out.println("sTO QUASQL");
 			}
 		}
+		response.sendRedirect(request.getContextPath() + "/404.jsp");
 		
 	}
 

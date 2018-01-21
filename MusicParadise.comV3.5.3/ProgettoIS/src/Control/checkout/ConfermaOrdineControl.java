@@ -77,38 +77,46 @@ public class ConfermaOrdineControl extends HttpServlet {
 		
 		String indirizzo = request.getParameter("indirizzo");
 		String carta = request.getParameter("carta");
-		String[] ind = indirizzo.split(",");
-		String[] cart = carta.split(",");
-		int codInd = Integer.parseInt(ind[0]);
-		int codCar = Integer.parseInt(cart[0]);
 		
-		ClienteBean utente = (ClienteBean) request.getSession().getAttribute("utente");
-		CarrelloBean carrello = (CarrelloBean) request.getSession().getAttribute("cart");
-		double totale = (carrello.getTotale() + (carrello.getTotale()*0.22)	+ 15.00);
-		
-		CartaBean c = utente.trovaCarta(codCar);
-		IndirizzoBean i = utente.trovaIndirizzo(codInd);
-		
-		try {
-			int codOrdine = ordineModel.generaCodice();
-			ordineModel.doSave(i,c,"in preparazione","","",totale,utente.getNickName());
-			prodottoOrdineModel.doSave(carrello.getProducts());
-			composizioneModel.doSave(carrello.getProducts(),codOrdine);
-			carrelloModel.remove(utente);
-			prodottoModel.aggiorna(carrello.getProducts());
+		if(indirizzo == null || carta == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
+			String[] ind = indirizzo.split(",");
+			String[] cart = carta.split(",");
+			int codInd = Integer.parseInt(ind[0]);
+			int codCar = Integer.parseInt(cart[0]);
 			
-			request.getSession().removeAttribute("checkout");
-			request.getSession().removeAttribute("cart");
+			ClienteBean utente = (ClienteBean) request.getSession().getAttribute("utente");
+			CarrelloBean carrello = (CarrelloBean) request.getSession().getAttribute("cart");
 			
 			
-			response.sendRedirect(request.getContextPath() + "/ordineok.jsp");
+			double totale = (carrello.getTotale() + (carrello.getTotale()*0.22)	+ 15.00);
 			
+			CartaBean c = utente.trovaCarta(codCar);
+			IndirizzoBean i = utente.trovaIndirizzo(codInd);
 			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				int codOrdine = ordineModel.generaCodice();
+				ordineModel.doSave(i,c,"in preparazione","","",totale,utente.getNickName());
+				prodottoOrdineModel.doSave(carrello.getProducts());
+				composizioneModel.doSave(carrello.getProducts(),codOrdine);
+				carrelloModel.remove(utente);
+				prodottoModel.aggiorna(carrello.getProducts());
+				
+				request.getSession().removeAttribute("checkout");
+				request.getSession().removeAttribute("cart");
+				
+				
+				response.sendRedirect(request.getContextPath() + "/ordineok.jsp");
+				
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+
 		
 	}
 

@@ -55,15 +55,23 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		int codice = Integer.parseInt(request.getParameter("cod"));
-		try {
-			OrdineBean ordine = ordineModel.doRetrieveByKey(codice);
-			request.getSession().setAttribute("ordMod", ordine);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
-			rd.forward(request, response);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String c = request.getParameter("cod"); //cod
+		if(c == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
+			int codice = Integer.parseInt(c);
+			
+
+			
+			try {
+				OrdineBean ordine = ordineModel.doRetrieveByKey(codice);
+				request.getSession().setAttribute("ordMod", ordine);
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
+				rd.forward(request, response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}

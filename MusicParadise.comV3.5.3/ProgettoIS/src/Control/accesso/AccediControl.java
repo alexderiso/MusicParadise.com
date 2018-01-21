@@ -146,7 +146,7 @@ public class AccediControl extends HttpServlet {
 					}else if (gestoreOrdini != null) {
 						Collection<OrdineBean> collezione = ordineModel.listaOrdini();
 						request.getSession().setAttribute("ordini",collezione);
-						request.getSession().setAttribute("utente", gestoreOrdini);
+						request.getSession().setAttribute("utente-gestore", gestoreOrdini);
 						request.getSession().setAttribute("adminRoles",new Boolean(true));
 						HashMap<String,String> lista = new HashMap<String,String>();
 						lista.put("role","gestore-ordini");

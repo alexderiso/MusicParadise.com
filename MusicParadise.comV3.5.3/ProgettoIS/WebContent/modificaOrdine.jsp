@@ -6,7 +6,7 @@
 		return;
 	}
 	String uri = request.getRequestURI();
-	UtenteBean bean = (UtenteBean) session.getAttribute("utente");
+	UtenteBean bean = (UtenteBean) session.getAttribute("utente-gestore");
 	Collection<?> ordini = (Collection<?>) session.getAttribute("ordini");
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
