@@ -57,6 +57,8 @@ public class RicercaOrdineControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per ricercare un ordine all'interno del sistema
 	 * @param request
      * @param respose
+     * @pre cod != null
+     * @post ordiniUtente.size() == 0 || ordiniUtente.size() > 0
      * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

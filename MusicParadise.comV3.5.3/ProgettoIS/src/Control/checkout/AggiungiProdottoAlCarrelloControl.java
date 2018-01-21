@@ -48,6 +48,8 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per aggiungere un prodotto al carrello
 	 * @param request
 	 * @param respose
+	 * @pre azione != null prodotto != null quantità != null cart != null
+	 * @post la quantità del prodotto nel carrello è uguale al paramentro quantità passato
 	 * @throws IOExeption, ServletException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

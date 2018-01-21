@@ -48,6 +48,8 @@ public class ConfermaModOrdineControl extends HttpServlet {
     
     /**
      * Effettua una richiesta HTTP GET per gestire la modifica dello stato del ordine
+     * @pre dataConsegna != null && corriere != null && numeroTracking != null
+     * @post lo stato dell'ordine è stato modificato
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

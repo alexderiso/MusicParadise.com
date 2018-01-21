@@ -62,6 +62,8 @@ public class AggIndirizzoControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
 	 * @param request
      * @param respose
+     * @pre String[] ind != null && cap != null
+     * @post l'indirizzo è salvato nel database
      * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

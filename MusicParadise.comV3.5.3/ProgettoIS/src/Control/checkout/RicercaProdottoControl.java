@@ -57,6 +57,8 @@ public class RicercaProdottoControl extends HttpServlet {
      * @param response
      * @throws ServletException
      * @throws IOException
+     * @pre strumento != null || code != null || name != null || marca != null
+     * @post prodotti.size() == 0 || prodotti.size() > 0
      */
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

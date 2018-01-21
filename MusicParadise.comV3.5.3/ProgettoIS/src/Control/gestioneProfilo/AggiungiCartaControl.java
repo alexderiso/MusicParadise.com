@@ -62,6 +62,8 @@ public class AggiungiCartaControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
 	 * @param request
      * @param respose
+     * @pre numCarta != null && mese != null && anno != null && scadenza != null && nomeproprietario != null
+     * @post la carta viene memoirzzata nel database 
      * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

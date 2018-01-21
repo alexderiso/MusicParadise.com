@@ -48,6 +48,8 @@ public class ModificaStatoOrdineControl extends HttpServlet {
      * Effettua una richiesta HTTP GET per modificare lo stato di un ordine
      * @param request
      * @param respose
+     * @pre codice != null
+     * @post ordine != null
      * @throws ServletException, IOException
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

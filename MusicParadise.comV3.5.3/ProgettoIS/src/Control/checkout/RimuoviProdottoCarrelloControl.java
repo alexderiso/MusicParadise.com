@@ -45,6 +45,8 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
      * Effettua una richiesta HTTP GET per eliminare il prodotto dal carrello
      * @param request
      * @param respose
+     * @pre azione != null 
+     * @post il prodotto è stato rimosso dal carrello
      * @throws ServletException, IOException
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

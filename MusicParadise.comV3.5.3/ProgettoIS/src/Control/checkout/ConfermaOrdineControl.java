@@ -69,6 +69,8 @@ public class ConfermaOrdineControl extends HttpServlet {
 	
 	/**
 	 * Effettua una richiesta HTTP POST per gestire la conferma dell'ordine
+	 * @pre indirizzo != null carta != null codiceInd != null codCar != null
+	 * @post l'ordine è confermato e salvato nel database 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

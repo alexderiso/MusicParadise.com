@@ -51,6 +51,8 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per visualizzare gli ordini effettuati dal cliente
 	 * @param request
      * @param respose
+     * @pre nickname != null
+     * @post ordiniUtente.size() == 0 || ordiniUtente.size() > 0
      * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
