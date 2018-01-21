@@ -52,8 +52,8 @@ if(utente == null){
                                 <div class="form-group">
                                     <label>NOME PROPRIETARIO</label>
                                     <div class="input-group">
-                                        <input type="text" name="nomProprietario" class="form-control" class="form-control" />
-									
+                                        <input type="text" name="nomProprietario" class="form-control" class="form-control" id="inputNome"/>
+									<label class="col-sm-12 labNamePag" id="txtErrNome"></label>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@ if(utente == null){
 function isOk() {
 	if(ValidateCard(document.getElementById("inputCard"),document.getElementById("txtErrCard"))
 			&& ValidateCode(document.getElementById("inputCode"),document.getElementById("txtErrCode"))
-			) {
+			&& ValidateLetter(document.getElementById("inputNome"),document.getElementById("txtErrNome"))) {
 		
 		return true;
 		

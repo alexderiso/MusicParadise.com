@@ -12,6 +12,7 @@ function ValidateCode(code,txt) {
 }
 
 
+
 function ValidateCard(card,txt) {
 	
 	var cardFormat = /^\d{16}$/;
