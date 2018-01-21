@@ -152,6 +152,7 @@ function aggQ() {
 }
 
 
+
 $('.product-quantity input').change( function() {
 	updateQuantity(this);
 	

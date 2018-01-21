@@ -23,43 +23,43 @@ import Model.ProdottoModel;
  */
 
 /**
-* Servlet dedicata alla ricerca dei prodotti all'interno del database in base ad una certa chiave di ricerca
-* @author Alessandro
-*/
+ * Servlet dedicata alla ricerca dei prodotti all'interno del database in base ad una certa chiave di ricerca
+ * @author Alessandro
+ */
 @WebServlet("/RicercaProdottoControl")
 public class RicercaProdottoControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-		
-		//Variabili di instanza
-	  static ProdottoModel model;
-	
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	  /**
-	   * Costruttore vuoto
-	   */
-    public RicercaProdottoControl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	//Variabili di instanza
+	static ProdottoModel model;
+
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	/**
+	 * Costruttore vuoto
+	 */
+	public RicercaProdottoControl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
-	
-    /**
-     * utilizziamo una richiesta http get, per gestire la ricerca dei prodotti, esso richiama
-     * ProdottoModel
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     * @pre strumento != null || code != null || name != null || marca != null
-     * @post prodotti.size() == 0 || prodotti.size() > 0
-     */
+
+
+	/**
+	 * utilizziamo una richiesta http get, per gestire la ricerca dei prodotti, esso richiama
+	 * ProdottoModel
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 * @pre strumento != null || code != null || name != null || marca != null
+	 * @post prodotti.size() == 0 || prodotti.size() > 0
+	 */
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -68,98 +68,99 @@ public class RicercaProdottoControl extends HttpServlet {
 		String code = request.getParameter("prodotto");
 		String name = request.getParameter("name");
 		String marca = request.getParameter("marca");
-		System.out.println(strumento);
-		if(strumento != null){
-		try {
-				Collection<ProdottoCatalogoBean> collezione = model.doRetrieveByInstruments(strumento);
-		    	   request.getSession().removeAttribute("prodotti");
-				   request.getSession().setAttribute("prodotti", collezione);
-					
-					
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/catalogo.jsp");
-					rd.forward(request, response);
-			}catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}else{
-			//TODO Errore non è stato trovato nulla
-		}
-		if(code != null){
-			try {
-				int codeNum = Integer.parseInt(code);
-				ProdottoBean bean = model.doRetrieveByKey(codeNum);
-				if(bean == null){
-					//errore
-				}else{
-					request.getSession().removeAttribute("prodotto");
-					request.getSession().setAttribute("prodotto", bean);
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/prodotto.jsp");
-					rd.forward(request, response);
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		if(name != null) {
-			System.out.println("sTO QUA");
-			Collection<ProdottoCatalogoBean> collezione;
-			try {
-				collezione = model.doRetrieveByName(name);
-				if(collezione == null) {
-					System.out.println("ERRORE");
-				} else {
+		if(strumento == null && code == null && name == null && marca == null) {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
+		}else {
+			if(strumento != null){
+				try {
+					Collection<ProdottoCatalogoBean> collezione = model.doRetrieveByInstruments(strumento);
 					request.getSession().removeAttribute("prodotti");
 					request.getSession().setAttribute("prodotti", collezione);
-					
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/catalogo.jsp");
-					rd.forward(request, response);
+
+
+					response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
+				}catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				System.out.println("sTO QUASQL");
+			}else{
+				//TODO Errore non è stato trovato nulla
+			}
+			if(code != null){
+				try {
+					int codeNum = Integer.parseInt(code);
+					ProdottoBean bean = model.doRetrieveByKey(codeNum);
+					if(bean == null){
+						//errore
+					}else{
+						request.getSession().removeAttribute("prodotto");
+						request.getSession().setAttribute("prodotto", bean);
+						response.sendRedirect(request.getContextPath() + "/prodotto.jsp");
+
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+			if(name != null) {
+				System.out.println("sTO QUA");
+				Collection<ProdottoCatalogoBean> collezione;
+				try {
+					collezione = model.doRetrieveByName(name);
+					if(collezione == null) {
+						System.out.println("ERRORE");
+					} else {
+						request.getSession().removeAttribute("prodotti");
+						request.getSession().setAttribute("prodotti", collezione);
+
+						response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
+
+					}
+
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					System.out.println("sTO QUASQL");
+				}
+			}
+			if(marca != null) {
+				Collection<ProdottoCatalogoBean> collezione;
+				try {
+					collezione = model.doRetrieveByMarca(marca);
+
+					if(collezione == null) {
+						System.out.println("ERRORE");
+					} else {
+						request.getSession().removeAttribute("prodotti");
+						request.getSession().setAttribute("prodotti", collezione);
+
+						response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
+
+					}
+
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					System.out.println("sTO QUASQL");
+				}
 			}
 		}
-		if(marca != null) {
-			Collection<ProdottoCatalogoBean> collezione;
-			try {
-				collezione = model.doRetrieveByMarca(marca);
-				
-				if(collezione == null) {
-					System.out.println("ERRORE");
-				} else {
-					request.getSession().removeAttribute("prodotti");
-					request.getSession().setAttribute("prodotti", collezione);
-					
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("/catalogo.jsp");
-					rd.forward(request, response);
-				}
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				System.out.println("sTO QUASQL");
-			}
-		}
-		response.sendRedirect(request.getContextPath() + "/404.jsp");
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
+
 	/**
-     * Vuoto
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
+	 * Vuoto
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

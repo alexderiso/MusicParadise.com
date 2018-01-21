@@ -78,9 +78,7 @@ public class RicercaOrdineControl extends HttpServlet {
 					request.getSession().setAttribute("ordine",temp);
 				}
 			}
-			
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/ordine.jsp");
-			rd.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/ordine.jsp");
 		}
 		
 	}
