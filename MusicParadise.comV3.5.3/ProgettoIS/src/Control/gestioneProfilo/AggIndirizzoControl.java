@@ -79,6 +79,7 @@ public class AggIndirizzoControl extends HttpServlet {
 		indirizzo.setCap(cap);
 		indirizzo.setTelefono(ind[4]);
 		utente.addIndirizzo(indirizzo);
+		
 		try {
 			indirizzo.setCodice(indModel.generaCodice());
 			indModel.doSave(indirizzo,utente.getNickName());
