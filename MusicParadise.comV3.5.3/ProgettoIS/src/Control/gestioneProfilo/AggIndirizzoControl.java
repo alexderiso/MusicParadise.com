@@ -115,15 +115,6 @@ public class AggIndirizzoControl extends HttpServlet {
 				&& cap.matches("[0-9]{5}") && telefono.matches("[0-9]{10}"))) {
 			return true;
 		}
-		
-		System.out.println(nome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
-		System.out.println(cognome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
-		System.out.println(città.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
-		System.out.println(indirizzo.matches("[a-zA-Z0-9]{1,10}[ ]{0,1}[a-zA-Z0-9]{0,10}"));
-		System.out.println(cap.matches("[0-9]{5}"));
-		System.out.println(telefono.matches("[0-9]{10}"));
-		
-		
 		return false;
 	}
 
