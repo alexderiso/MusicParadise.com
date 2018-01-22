@@ -56,6 +56,7 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
 		String inizStr = request.getParameter("dataConsegna");
+		System.out.println(inizStr);
 		String corriere = request.getParameter("corriere");
 		String numeroTracking = request.getParameter("numTracking");
 		
@@ -63,7 +64,7 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		
 		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else {
+		}else if(verificaParametri(inizStr,corriere,numeroTracking)) {
 			LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
 			java.sql.Date dataSql = Date.valueOf(dataConsegna); 
 			
@@ -79,6 +80,8 @@ public class ConfermaModOrdineControl extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+		}else {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
 		
 	}
@@ -93,6 +96,14 @@ public class ConfermaModOrdineControl extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	private boolean verificaParametri(String data, String corriere, String tracking) {
+		if(data.matches("[0-9]{2}[/]{1}[0-9]{2}[/]{1}[0-9]{4}") && tracking.matches("[0-9]{10}")
+				&&(corriere.matches("[A-Za-z]{3,20}"))) {
+			return true;
+		}
+		return false;
 	}
 
 }

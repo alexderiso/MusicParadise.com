@@ -76,7 +76,7 @@ public class AggiungiCartaControl extends HttpServlet {
 		
 		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else {
+		}else if(verificaParametri(numCarta,scadenza,nomProprietario)){
 			CartaBean carta= new CartaBean();
 			carta.setNumCarta(numCarta);
 			carta.setScadenza(scadenza);
@@ -100,8 +100,17 @@ public class AggiungiCartaControl extends HttpServlet {
 				
 				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
 			}
+		}else {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
 		
+	}
+	
+	private boolean verificaParametri(String numeroCarta, String scadenza, String nomeProprietario) {
+		if((numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{1}[A-Za-z]{4,10}"))) {
+			return true;
+		}
+		return false;
 	}
 
 }

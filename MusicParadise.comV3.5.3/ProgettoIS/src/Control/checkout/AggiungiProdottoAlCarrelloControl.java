@@ -29,7 +29,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	
+
 	/**
 	 * Costruttore della superclasse
 	 */
@@ -44,7 +44,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
+
 	/**
 	 * Effettua una richiesta HTTP GET per aggiungere un prodotto al carrello
 	 * @param request
@@ -60,10 +60,9 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 			cart = new CarrelloBean();
 			request.getSession().setAttribute("cart", cart);
 		}
-		
+
 
 		String azione = request.getParameter("azC");
-		System.out.println(azione);
 		if(azione == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
@@ -73,29 +72,35 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 				if(q == null || bean == null) {
 					response.sendRedirect(request.getContextPath() + "/404.jsp");
 				}else {
-					int quantit‡ = Integer.parseInt(q);
-					
-					if(azione.equalsIgnoreCase("aggiungiFromPrd")){
-						cart.addProduct(bean);
-						if(cart.getQuantit‡ByCodice(bean.getCodice()) >= bean.getNumDisp()) {
-							response.getWriter().write("fineDisp");
-						} else {
-							int differenza = bean.getNumDisp() - cart.getQuantit‡ByCodice(bean.getCodice()); 
-							response.getWriter().write(differenza+"");
-						}
-					}
-					if(azione.equalsIgnoreCase("aggiungiFromCart")){
-						int code = Integer.parseInt(request.getParameter("id"));
-						System.out.println("aggiungiFromCart: "+ code);
-						cart.aggiornaQuantit‡(code,quantit‡);
-					}
 
-					request.getSession().setAttribute("cart", cart);
-					request.setAttribute("cart", cart);
-					return;
+					try {
+
+						int quantit‡ = Integer.parseInt(q);
+
+						if(azione.equalsIgnoreCase("aggiungiFromPrd")){
+							cart.addProduct(bean);
+							if(cart.getQuantit‡ByCodice(bean.getCodice()) >= bean.getNumDisp()) {
+								response.getWriter().write("fineDisp");
+							} else {
+								int differenza = bean.getNumDisp() - cart.getQuantit‡ByCodice(bean.getCodice()); 
+								response.getWriter().write(differenza+"");
+							}
+						}
+						if(azione.equalsIgnoreCase("aggiungiFromCart")){
+							int code = Integer.parseInt(request.getParameter("id"));
+							System.out.println("aggiungiFromCart: "+ code);
+							cart.aggiornaQuantit‡(code,quantit‡);
+						}
+
+						request.getSession().setAttribute("cart", cart);
+						request.setAttribute("cart", cart);
+						return;
+					}catch(NumberFormatException e) {
+						response.sendRedirect(request.getContextPath() + "/404.jsp");
+					}
 				}
 			}
-				}
+		}
 
 
 	}

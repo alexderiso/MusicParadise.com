@@ -160,6 +160,8 @@ public class AccediControl extends HttpServlet {
 						return;
 					}
 				}
+			}else {
+				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		} catch (SQLException e) {
 

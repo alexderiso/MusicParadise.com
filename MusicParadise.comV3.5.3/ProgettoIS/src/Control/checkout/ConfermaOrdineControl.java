@@ -92,6 +92,8 @@ public class ConfermaOrdineControl extends HttpServlet {
 			
 			double totale = (carrello.getTotale() + (carrello.getTotale()*0.22)	+ 15.00);
 			
+			System.out.println("totale: "+totale);
+			
 			CartaBean c = utente.trovaCarta(codCar);
 			IndirizzoBean i = utente.trovaIndirizzo(codInd);
 			

@@ -59,18 +59,22 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 		if(c == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
-			int codice = Integer.parseInt(c);
-			
-
-			
 			try {
+				int codice = Integer.parseInt(c);
 				OrdineBean ordine = ordineModel.doRetrieveByKey(codice);
-				request.getSession().setAttribute("ordMod", ordine);
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
-				rd.forward(request, response);
+				
+				if(ordine.getStato().equalsIgnoreCase("in preparazione")) {
+					request.getSession().setAttribute("ordMod", ordine);
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
+					rd.forward(request, response);
+				}else {
+					response.sendRedirect(request.getContextPath() + "/404.jsp");
+				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}catch (NumberFormatException e) {
+				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		}
 		

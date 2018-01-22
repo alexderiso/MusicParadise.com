@@ -70,6 +70,8 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 				}	
 			}catch (SQLException e) {
 				System.out.println("Error:" + e.getMessage());
+			}catch (NumberFormatException e) {
+				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		}
 	}

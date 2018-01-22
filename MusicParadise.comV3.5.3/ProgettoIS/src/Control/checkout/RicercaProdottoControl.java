@@ -101,6 +101,8 @@ public class RicercaProdottoControl extends HttpServlet {
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}catch(NumberFormatException e){
+					response.sendRedirect(request.getContextPath() + "/404.jsp");
 				}
 
 			}

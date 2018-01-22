@@ -73,7 +73,7 @@ public class AggIndirizzoControl extends HttpServlet {
 		String c = request.getParameter("cap"); //cap
 		if(ind == null || c == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else {
+		}else if(verificaParametri(ind[0],ind[1],ind[2],ind[3],c,ind[4])) {
 			int cap = Integer.parseInt(c);
 			IndirizzoBean indirizzo = new IndirizzoBean();
 			indirizzo.setNome(ind[0]);
@@ -103,9 +103,28 @@ public class AggIndirizzoControl extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
 			}
 			
+		}else {
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
-	
 		
+	}
+	
+	private boolean verificaParametri(String nome, String cognome, String indirizzo, String città, String cap, String telefono) {
+		if((nome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}") && cognome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}")
+				&&città.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}")&& indirizzo.matches("[a-zA-Z0-9]{1,10}[ ]{0,1}[a-zA-Z0-9]{0,10}")
+				&& cap.matches("[0-9]{5}") && telefono.matches("[0-9]{10}"))) {
+			return true;
+		}
+		
+		System.out.println(nome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
+		System.out.println(cognome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
+		System.out.println(città.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}"));
+		System.out.println(indirizzo.matches("[a-zA-Z0-9]{1,10}[ ]{0,1}[a-zA-Z0-9]{0,10}"));
+		System.out.println(cap.matches("[0-9]{5}"));
+		System.out.println(telefono.matches("[0-9]{10}"));
+		
+		
+		return false;
 	}
 
 }

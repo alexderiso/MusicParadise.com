@@ -67,18 +67,20 @@ public class RicercaOrdineControl extends HttpServlet {
 		if(c == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
-			int cod = Integer.parseInt(request.getParameter("codOrdine"));
 			
-
-			
-			ArrayList<OrdineBean> ordiniUtente = (ArrayList<OrdineBean>) request.getSession().getAttribute("ordiniUtente");
-			
-			for(OrdineBean temp : ordiniUtente) {
-				if(temp.getNumOrdine() == cod) {
-					request.getSession().setAttribute("ordine",temp);
+			try {
+				int cod = Integer.parseInt(request.getParameter("codOrdine"));
+				ArrayList<OrdineBean> ordiniUtente = (ArrayList<OrdineBean>) request.getSession().getAttribute("ordiniUtente");
+				
+				for(OrdineBean temp : ordiniUtente) {
+					if(temp.getNumOrdine() == cod) {
+						request.getSession().setAttribute("ordine",temp);
+					}
 				}
+				response.sendRedirect(request.getContextPath() + "/ordine.jsp");
+			}catch(NumberFormatException e) {
+				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
-			response.sendRedirect(request.getContextPath() + "/ordine.jsp");
 		}
 		
 	}
