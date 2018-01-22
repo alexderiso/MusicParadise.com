@@ -99,7 +99,7 @@ function ValidateLetter(str,txt) {
 }
 
 function ValidateNickname(str,txt){
-	var letters = /^[a-z0-9_-]{3,16}$/;
+	var letters = /^[a-z0-9_-]{5,15}$/;
 	if(!(str.value.match(letters))) {
 		$(txt).html("Campo non valido");
 		str.style.border = "2px solid red";

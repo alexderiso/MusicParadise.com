@@ -65,7 +65,7 @@ public class AccediControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
+
 	/**
 	 * Effettua una richiesta HTTP GET per effettuare il login
 	 * @param request
@@ -81,31 +81,29 @@ public class AccediControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
 
-    /**
-     * Effettua una richiesta HTTP POST per il login
-     * @param request
-     * @param response
-     * @pre nick != null && password != null && action != null
-     * @post l'utente effettua il login al sistema
-     * @throws IOException
-     * @author Alessandro.....................
-     * 
-     * ..
-     * 
-     */
+
+	/**
+	 * Effettua una richiesta HTTP POST per il login
+	 * @param request
+	 * @param response
+	 * @pre nick != null && password != null && action != null
+	 * @post l'utente effettua il login al sistema
+	 * @throws IOException
+	 * @author Alessandro.....................
+	 * 
+	 * ..
+	 * 
+	 */
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 
-		System.out.println("SONO ARRIVATO QUI");
 
 
 		String nick= request.getParameter("nick");
 		String password= request.getParameter("password");
 		String action = request.getParameter("action");
-		String uri = request.getParameter("id");
 
 
 		try {
@@ -115,51 +113,60 @@ public class AccediControl extends HttpServlet {
 				if(action.equals("accedi")) {
 					response.setContentType( "application/json" );
 					response.setCharacterEncoding( "UTF-8" );
-					ClienteBean cliente = model.leggi(nick, password);
-					GestoreOrdiniBean gestoreOrdini = gestOrdModel.leggi(nick, password);
-					if(cliente != null){
-						request.getSession().setAttribute("utente", cliente);
-						request.getSession().setAttribute("adminRoles", new Boolean(false));
-						ArrayList<ProdottoCatalogoBean> prodInCarrello = carrelloModel.leggi(cliente.getNickName());
-						CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
-						if(prodInCarrello.size() > 0) {
-							if(cart != null) {
-								for(ProdottoCatalogoBean p : prodInCarrello) {
-									cart.getProducts().add(p);
-									request.getSession().setAttribute("cart",cart);
-								}
-							}else {
-								CarrelloBean carrello = new CarrelloBean();
-								carrello.setProducts(prodInCarrello);
-								request.getSession().setAttribute("cart",carrello);
-							}
-						}
 
-						ArrayList<IndirizzoBean> indirizzi = indirizzoModel.leggi(cliente.getNickName());
-						cliente.setIndirizzi(indirizzi);
-						ArrayList<CartaBean> carte = cartaModel.leggi(cliente.getNickName());
-						cliente.setCarte(carte);
-						HashMap<String,String> lista = new HashMap<String,String>();
-						lista.put("role","cliente");
-						response.getWriter().write(new Gson().toJson(lista));
-						return;
-					}else if (gestoreOrdini != null) {
-						Collection<OrdineBean> collezione = ordineModel.listaOrdini();
-						request.getSession().setAttribute("ordini",collezione);
-						request.getSession().setAttribute("utente-gestore", gestoreOrdini);
-						request.getSession().setAttribute("adminRoles",new Boolean(true));
-						HashMap<String,String> lista = new HashMap<String,String>();
-						lista.put("role","gestore-ordini");
-						response.getWriter().write(new Gson().toJson(lista));
-						return;
-
-					}else {
+					if(nick.length() < 5 || nick.length() > 15 || password.length() < 8 || password.length() > 20) {
 						HashMap<String,String> lista = new HashMap<String,String>();
 						lista.put("role","falso");
 						response.getWriter().write(new Gson().toJson(lista));
 						return;
+					}else {
+						ClienteBean cliente = model.leggi(nick, password);
+						GestoreOrdiniBean gestoreOrdini = gestOrdModel.leggi(nick, password);
+						if(cliente != null){
+							request.getSession().setAttribute("utente", cliente);
+							request.getSession().setAttribute("adminRoles", new Boolean(false));
+							ArrayList<ProdottoCatalogoBean> prodInCarrello = carrelloModel.leggi(cliente.getNickName());
+							CarrelloBean cart = (CarrelloBean) request.getSession().getAttribute("cart");
+							if(prodInCarrello.size() > 0) {
+								if(cart != null) {
+									for(ProdottoCatalogoBean p : prodInCarrello) {
+										cart.getProducts().add(p);
+										request.getSession().setAttribute("cart",cart);
+									}
+								}else {
+									CarrelloBean carrello = new CarrelloBean();
+									carrello.setProducts(prodInCarrello);
+									request.getSession().setAttribute("cart",carrello);
+								}
+							}
+
+							ArrayList<IndirizzoBean> indirizzi = indirizzoModel.leggi(cliente.getNickName());
+							cliente.setIndirizzi(indirizzi);
+							ArrayList<CartaBean> carte = cartaModel.leggi(cliente.getNickName());
+							cliente.setCarte(carte);
+							HashMap<String,String> lista = new HashMap<String,String>();
+							lista.put("role","cliente");
+							response.getWriter().write(new Gson().toJson(lista));
+							return;
+						}else if (gestoreOrdini != null) {
+							Collection<OrdineBean> collezione = ordineModel.listaOrdini();
+							request.getSession().setAttribute("ordini",collezione);
+							request.getSession().setAttribute("utente-gestore", gestoreOrdini);
+							request.getSession().setAttribute("adminRoles",new Boolean(true));
+							HashMap<String,String> lista = new HashMap<String,String>();
+							lista.put("role","gestore-ordini");
+							response.getWriter().write(new Gson().toJson(lista));
+							return;
+
+						}else {
+							HashMap<String,String> lista = new HashMap<String,String>();
+							lista.put("role","falso");
+							response.getWriter().write(new Gson().toJson(lista));
+							return;
+						}
 					}
 				}
+
 			}else {
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
