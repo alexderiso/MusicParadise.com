@@ -49,6 +49,7 @@ public class ConfermaModOrdineControl extends HttpServlet {
     /**
      * Effettua una richiesta HTTP GET per gestire la modifica dello stato del ordine
      * @pre dataConsegna != null && corriere != null && numeroTracking != null
+     * data.matches("[0-9]{2}[/]{1}[0-9]{2}[/]{1}[0-9]{4}") && tracking.matches("[0-9]{10}")&&(corriere.matches("[A-Za-z]{3,20}"))
      * @post lo stato dell'ordine è stato modificato
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -63,6 +63,7 @@ public class AggiungiCartaControl extends HttpServlet {
 	 * @param request
      * @param respose
      * @pre numCarta != null && mese != null && anno != null && scadenza != null && nomeproprietario != null
+     * numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{1}[A-Za-z]{4,10}"))
      * @post la carta viene memoirzzata nel database 
      * @throws ServletException, IOException
 	 */

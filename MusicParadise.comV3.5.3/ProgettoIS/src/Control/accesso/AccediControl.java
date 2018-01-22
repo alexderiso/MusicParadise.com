@@ -87,7 +87,8 @@ public class AccediControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per il login
 	 * @param request
 	 * @param response
-	 * @pre nick != null && password != null && action != null
+	 * @pre nick != null && password != null && action != null 
+	 * nick.length() < 5 && nick.length() > 15 && password.length() < 8 && password.length() > 20
 	 * @post l'utente effettua il login al sistema
 	 * @throws IOException
 	 * @author Alessandro.....................

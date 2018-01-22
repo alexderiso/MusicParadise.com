@@ -62,7 +62,10 @@ public class AggIndirizzoControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
 	 * @param request
      * @param respose
-     * @pre String[] ind != null && cap != null
+     * @pre String[] ind != null && cap != null 
+     * nome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}") && cognome.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}")
+				&&città.matches("[a-zA-Z]{1,10}[ ]{0,1}[a-zA-Z]{0,10}")&& indirizzo.matches("[a-zA-Z0-9]{1,10}[ ]{0,1}[a-zA-Z0-9]{0,10}")
+				&& cap.matches("[0-9]{5}") && telefono.matches("[0-9]{10}"))
      * @post l'indirizzo è salvato nel database
      * @throws ServletException, IOException
 	 */
