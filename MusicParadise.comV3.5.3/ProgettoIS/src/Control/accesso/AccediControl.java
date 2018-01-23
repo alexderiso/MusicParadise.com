@@ -150,8 +150,12 @@ public class AccediControl extends HttpServlet {
 							response.getWriter().write(new Gson().toJson(lista));
 							return;
 						}else if (gestoreOrdini != null) {
-							Collection<OrdineBean> collezione = ordineModel.listaOrdini();
-							request.getSession().setAttribute("ordini",collezione);
+							ArrayList<OrdineBean> inPreparazione = ordineModel.doRetrieveByStato("in preparazione");
+							ArrayList<OrdineBean> spedito = ordineModel.doRetrieveByStato("spedito");
+							ArrayList<OrdineBean> consegnato = ordineModel.doRetrieveByStato("consegnato");
+							request.getSession().setAttribute("inPreparazione",inPreparazione);
+							request.getSession().setAttribute("spedito",spedito);
+							request.getSession().setAttribute("consegnato",consegnato);
 							request.getSession().setAttribute("utente-gestore", gestoreOrdini);
 							request.getSession().setAttribute("adminRoles",new Boolean(true));
 							HashMap<String,String> lista = new HashMap<String,String>();

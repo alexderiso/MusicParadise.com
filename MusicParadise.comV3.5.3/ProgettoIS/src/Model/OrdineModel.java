@@ -124,6 +124,83 @@ public class OrdineModel{
 		return bean;
 	}
 
+	public synchronized ArrayList<OrdineBean> doRetrieveByStato(String stato) throws SQLException{
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		ArrayList<OrdineBean> ordiniUtente = new ArrayList<OrdineBean>();
+
+		String selectSQL = "SELECT * FROM "+ OrdineModel.TABLE_NAME_ORD+" WHERE STATO = ?";
+
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1,stato);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				OrdineBean bean = new OrdineBean();
+
+				bean.setNumOrdine(rs.getInt("num_ordine"));
+				bean.setUser(rs.getString("utente"));
+				bean.setData(rs.getDate("data_ordine"));
+				bean.setCorriere(rs.getString("corriere"));
+				bean.setStato(rs.getString("stato"));
+				bean.setTotale(rs.getDouble("totale"));
+				bean.setTracking(rs.getString("numero_traking"));
+				bean.setDataConsegna(rs.getDate("data_consegna"));
+
+				String cod = rs.getString("indirizzo");
+
+				String selectSQL2 = "SELECT * FROM " + OrdineModel.TABLE_NAME_IND+ " WHERE CODICE = ?";
+				preparedStatement = connection.prepareStatement(selectSQL2);
+				preparedStatement.setString(1,cod);
+				ResultSet rs2 = preparedStatement.executeQuery();
+
+				IndirizzoBean indirizzo = new IndirizzoBean();
+				while(rs2.next()){
+					indirizzo.setCodice(rs2.getInt("codice"));
+					indirizzo.setIndirizzo(rs2.getString("indirizzo"));
+					indirizzo.setCittà(rs2.getString("citta"));
+					indirizzo.setCap(rs2.getInt("cap"));
+					indirizzo.setNome(rs2.getString("nome"));
+					indirizzo.setCognome(rs2.getString("cognome"));
+					indirizzo.setTelefono(rs2.getString("telefono"));
+					bean.setIndirizzo(indirizzo);
+				}
+
+				String codCarta = rs.getString("carta");
+
+				selectSQL2 = "SELECT * FROM " + OrdineModel.TABLE_NAME_CARTA+ " WHERE COD = ?";
+				preparedStatement = connection.prepareStatement(selectSQL2);
+				preparedStatement.setString(1,codCarta);
+				rs2 = preparedStatement.executeQuery();
+
+				CartaBean carta = new CartaBean();
+				while(rs2.next()){
+					carta.setCodice(rs2.getInt("cod"));
+					carta.setNumCarta(rs2.getString("numero"));
+					carta.setScadenza(rs2.getString("scadenza"));
+					carta.setNomeProprietario(rs2.getString("nomeProprietario"));
+					bean.setCarta(carta);
+				}
+
+				ordiniUtente.add(bean);
+			}
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		return ordiniUtente;
+
+	}
 
 
 	/**

@@ -48,10 +48,7 @@ public class GestoreOrdineModel {
 		while(res.next()){
 			String nick2 = res.getString("NICKNAME");
 			String pass = res.getString("PWD");
-			String email = res.getString("EMAIL");
-			System.out.println(nick2 + " "+pass);
-			System.out.println(nick + " "+password);
-			if(((nick2.equalsIgnoreCase(nick)||(nick.equalsIgnoreCase(email)))&&(pass.equalsIgnoreCase(password)))){
+			if(((nick2.equalsIgnoreCase(nick))&&(pass.equalsIgnoreCase(password)))){
 				GestoreOrdiniBean bean = new GestoreOrdiniBean();
 				bean.setNickName(res.getString("NICKNAME"));
 				bean.setEmail(res.getString("EMAIL"));

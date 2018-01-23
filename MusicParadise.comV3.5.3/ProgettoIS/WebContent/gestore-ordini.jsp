@@ -1,13 +1,15 @@
 
 <%
+UtenteBean bean = (UtenteBean) session.getAttribute("utente-gestore");
 Boolean adminRoles = (Boolean) session.getAttribute("adminRoles");
-if((adminRoles == null)||(!adminRoles.booleanValue())){
+if((bean == null)||(!adminRoles.booleanValue())){
 	response.sendRedirect("./index.jsp");
 	return;
 }
 String uri = request.getRequestURI();
-    UtenteBean bean = (UtenteBean) session.getAttribute("utente-gestore");
-	Collection<?> ordini = (Collection<?>) session.getAttribute("ordini");
+	ArrayList<OrdineBean> inPreparazione = (ArrayList<OrdineBean>) session.getAttribute("inPreparazione");
+	ArrayList<OrdineBean> spedito = (ArrayList<OrdineBean>) session.getAttribute("spedito");
+	ArrayList<OrdineBean> consegnato = (ArrayList<OrdineBean>) session.getAttribute("consegnato");
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -110,12 +112,12 @@ String uri = request.getRequestURI();
 										<i class="fa fa-shopping-cart fa-5x"></i>
 									</div>
 									<div class="col-xs-9 text-right">
-										<div class="huge"><%=ordini.size()%></div>
-										<div>Ordini</div>
+										<div class="huge"><%=inPreparazione.size()%></div>
+										<div>Ordini in preparazione</div>
 									</div>
 								</div>
 							</div>
-							<a data-toggle="tab" href="#ordini">
+							<a data-toggle="tab" href="#ordiniInPreparazione">
 								<div class="panel-footer">
 									<span class="pull-left">Visualizza dettagli</span> <span
 										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -124,12 +126,60 @@ String uri = request.getRequestURI();
 							</a>
 						</div>
 					</div>
+					
+					<div class="col-lg-3 col-md-6">
+						<div class="panel panel-red">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-3">
+										<i class="fa fa-shopping-cart fa-5x"></i>
+									</div>
+									<div class="col-xs-9 text-right">
+										<div class="huge"><%=spedito.size()%></div>
+										<div>Ordini spediti</div>
+									</div>
+								</div>
+							</div>
+							<a data-toggle="tab" href="#ordiniSpediti">
+								<div class="panel-footer">
+									<span class="pull-left">Visualizza dettagli</span> <span
+										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					
+					<div class="col-lg-3 col-md-6">
+						<div class="panel panel-red">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-3">
+										<i class="fa fa-shopping-cart fa-5x"></i>
+									</div>
+									<div class="col-xs-9 text-right">
+										<div class="huge"><%=consegnato.size()%></div>
+										<div>Ordini consegnati</div>
+									</div>
+								</div>
+							</div>
+							<a data-toggle="tab" href="#ordiniConsegnati">
+								<div class="panel-footer">
+									<span class="pull-left">Visualizza dettagli</span> <span
+										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+					</div>
+					
 				</div>
 
 				<div class="tab-content">
 
-					<!-- Tebella ordini -->
-					<div id="ordini" class="tab-pane fade">
+					<!-- Tebella ordini in preparazione -->
+					<div id="ordiniInPreparazione" class="tab-pane fade">
 						<div class="row">
 
 
@@ -157,10 +207,8 @@ String uri = request.getRequestURI();
 													</tr>
 												</thead>
 												<%
-													if (ordini != null && ordini.size() != 0) {
-														Iterator<?> it = ordini.iterator();
-														while (it.hasNext()) {
-															OrdineBean ord = (OrdineBean) it.next();
+													if (inPreparazione != null && inPreparazione.size() != 0) {
+														for(OrdineBean ord : inPreparazione){
 												%>
 												<tbody>
 													<tr>
@@ -202,6 +250,144 @@ String uri = request.getRequestURI();
 							</div>
 						</div>
 					</div>
+					
+					
+					
+					
+					<!-- Tebella ordini spediti-->
+					<div id="ordiniSpediti" class="tab-pane fade">
+						<div class="row">
+
+
+							<div class="col-lg-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">
+											<i class="fa fa-shopping-cart fa-fw"></i>Ordini
+										</h3>
+									</div>
+									<div class="panel-body">
+										<div class="table-responsive">
+											<table class="table table-bordered table-hover table-striped">
+												<thead>
+													<tr>
+														<th>N°</th>
+														<th>Utente</th>
+														<th>Data ordine</th>
+														<th>Totale (EUR)</th>
+														<th>Stato</th>
+														<th>Corriere</th>
+														<th>N°Tracking</th>
+														<th>Data consegna</th>
+													
+
+													</tr>
+												</thead>
+												<%
+													if (spedito != null && spedito.size() != 0) {
+														for(OrdineBean ord : spedito){
+												%>
+												<tbody>
+													<tr>
+														<td><%=ord.getNumOrdine()%></td>
+														<td><%=ord.getUser()%></td>
+														<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+														String data = sdf.format(ord.getData());
+														%>
+														<td><%=data%></td>
+														<td><%=ord.getTotale()%></td>
+														<td><%=ord.getStato()%></td>
+														<td><%=ord.getCorriere() %></td>
+														<td><%=ord.getTracking()%></td>
+														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
+														data = sdf.format(ord.getDataConsegna());%>
+														<td><%=data%></td>
+															
+													</tr>
+												</tbody>
+
+												<%
+													}
+													}
+												%>
+											</table>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- Tebella ordini consengati-->
+					<div id="ordiniConsegnati" class="tab-pane fade">
+						<div class="row">
+
+
+							<div class="col-lg-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">
+											<i class="fa fa-shopping-cart fa-fw"></i>Ordini
+										</h3>
+									</div>
+									<div class="panel-body">
+										<div class="table-responsive">
+											<table class="table table-bordered table-hover table-striped">
+												<thead>
+													<tr>
+														<th>N°</th>
+														<th>Utente</th>
+														<th>Data ordine</th>
+														<th>Totale (EUR)</th>
+														<th>Stato</th>
+														<th>Corriere</th>
+														<th>N°Tracking</th>
+														<th>Data consegna</th>
+													</tr>
+												</thead>
+												<%
+												if (consegnato != null && consegnato.size() != 0) {
+													for(OrdineBean ord : consegnato){
+												%>
+												<tbody>
+													<tr>
+														<td><%=ord.getNumOrdine()%></td>
+														<td><%=ord.getUser()%></td>
+														<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+														String data = sdf.format(ord.getData());
+														%>
+														<td><%=data%></td>
+														<td><%=ord.getTotale()%></td>
+														<td><%=ord.getStato()%></td>
+														<td><%=ord.getCorriere() %></td>
+														<td><%=ord.getTracking()%></td>
+														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
+														data = sdf.format(ord.getDataConsegna());%>
+														<td><%=data%></td>
+															
+													</tr>
+												</tbody>
+
+												<%
+													}
+													}
+												%>
+											</table>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					
+					
+					
 				</div>
 
 			</div>
