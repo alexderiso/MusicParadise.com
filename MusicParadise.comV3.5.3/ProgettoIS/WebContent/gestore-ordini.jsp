@@ -219,7 +219,6 @@ String uri = request.getRequestURI();
 														%>
 														<td><%=data%></td>
 														<td><%=ord.getTotale()%></td>
-														<%if(ord.getStato().equals("in preparazione")){ %>
 														<td><%=ord.getStato()%></td>
 														<td>in corso</td>
 														<td>in corso</td>
@@ -227,14 +226,6 @@ String uri = request.getRequestURI();
 														<td><a
 															href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
 															class="btn btn-success">modifica</a></td>
-														<%}else{ %>
-														<td><%=ord.getStato()%></td>
-														<td><%=ord.getCorriere() %></td>
-														<td><%=ord.getTracking()%></td>
-														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
-														data = sdf.format(ord.getDataConsegna());%>
-														<td><%=data%></td>
-																<%} %>
 													</tr>
 												</tbody>
 
@@ -279,6 +270,7 @@ String uri = request.getRequestURI();
 														<th>Corriere</th>
 														<th>N°Tracking</th>
 														<th>Data consegna</th>
+														<th>Consegnato</th>
 													
 
 													</tr>
@@ -302,6 +294,9 @@ String uri = request.getRequestURI();
 														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
 														data = sdf.format(ord.getDataConsegna());%>
 														<td><%=data%></td>
+														<td><a
+															href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
+															class="btn btn-success">conseganto</a></td>
 															
 													</tr>
 												</tbody>

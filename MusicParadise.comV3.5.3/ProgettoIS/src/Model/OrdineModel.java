@@ -501,6 +501,31 @@ public class OrdineModel{
 		}
 	}
 	
+	
+	public synchronized void aggiornaConsegnato(int cod) throws SQLException{
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			
+			String selectSQL4 = "UPDATE " + TABLE_NAME_ORD + " SET  stato = ? WHERE NUM_ORDINE= ?";
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL4);
+			preparedStatement.setString(1, "consegnato");
+			preparedStatement.setInt(2, cod);
+			preparedStatement.executeUpdate();
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+	
+	
 
 
 

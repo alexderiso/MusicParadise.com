@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
@@ -72,8 +73,13 @@ public class ConfermaModOrdineControl extends HttpServlet {
 			
 			try {
 				ordineModel.aggiorna(ordine.getNumOrdine(), numeroTracking, dataSql, corriere);
-				Collection<OrdineBean> collezione = ordineModel.listaOrdini();
-				request.getSession().setAttribute("ordini",collezione);
+				request.getSession().removeAttribute("ordMod");
+				ArrayList<OrdineBean> inPreparazione = ordineModel.doRetrieveByStato("in preparazione");
+				ArrayList<OrdineBean> spedito = ordineModel.doRetrieveByStato("spedito");
+				ArrayList<OrdineBean> consegnato = ordineModel.doRetrieveByStato("consegnato");
+				request.getSession().setAttribute("inPreparazione",inPreparazione);
+				request.getSession().setAttribute("spedito",spedito);
+				request.getSession().setAttribute("consegnato",consegnato);
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/gestore-ordini.jsp");
 				rd.forward(request, response);
 			} catch (SQLException e) {
