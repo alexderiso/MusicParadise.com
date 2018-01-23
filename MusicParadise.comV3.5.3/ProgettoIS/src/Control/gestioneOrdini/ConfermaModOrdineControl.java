@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Bean.GestoreOrdiniBean;
 import Bean.OrdineBean;
 import Model.OrdineModel;
 
@@ -59,16 +58,15 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
 		String inizStr = request.getParameter("dataConsegna");
+		System.out.println(inizStr);
 		String corriere = request.getParameter("corriere");
 		String numeroTracking = request.getParameter("numTracking");
 		
 		OrdineBean ordine = (OrdineBean) request.getSession().getAttribute("ordMod");
 		
-		GestoreOrdiniBean gestore = (GestoreOrdiniBean) request.getSession().getAttribute("utente-gestore");
-		
 		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(inizStr,corriere,numeroTracking) && gestore != null) {
+		}else if(verificaParametri(inizStr,corriere,numeroTracking)) {
 			LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
 			java.sql.Date dataSql = Date.valueOf(dataConsegna); 
 			
