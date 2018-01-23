@@ -123,7 +123,15 @@ public class OrdineModel{
 		}
 		return bean;
 	}
-
+	
+	
+	/**
+	 * metodo che restituisce gli ordini che sono nello stato passato come parametro
+	 * @param stato
+	 * @return lista di ordini
+	 * @return null
+	 * @throws SQLException
+	 */
 	public synchronized ArrayList<OrdineBean> doRetrieveByStato(String stato) throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -502,6 +510,12 @@ public class OrdineModel{
 	}
 	
 	
+	
+	/**
+	 * Metodo che aggiorna lo stato di un ordine da spedito a consegnato
+	 * @param cod
+	 * @throws SQLException
+	 */
 	public synchronized void aggiornaConsegnato(int cod) throws SQLException{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
