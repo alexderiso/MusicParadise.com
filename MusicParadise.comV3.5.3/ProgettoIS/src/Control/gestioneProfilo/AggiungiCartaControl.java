@@ -74,11 +74,11 @@ public class AggiungiCartaControl extends HttpServlet {
 		String anno = request.getParameter("anno");
 		String scadenza = mese+"/"+anno;
 		String nomProprietario = request.getParameter("nomProprietario");
+		ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
 		
 		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(numCarta,scadenza,nomProprietario)){
-			ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
+		}else if(verificaParametri(numCarta,scadenza,nomProprietario)&& utente != null){
 			CartaBean carta= new CartaBean();
 			carta.setNumCarta(numCarta);
 			carta.setScadenza(scadenza);

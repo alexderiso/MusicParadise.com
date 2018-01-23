@@ -76,7 +76,7 @@ public class AggIndirizzoControl extends HttpServlet {
 		String c = request.getParameter("cap"); //cap
 		if(ind == null || c == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(ind[0],ind[1],ind[2],ind[3],c,ind[4])) {
+		}else if(verificaParametri(ind[0],ind[1],ind[2],ind[3],c,ind[4]) && utente != null) {
 			int cap = Integer.parseInt(c);
 			IndirizzoBean indirizzo = new IndirizzoBean();
 			indirizzo.setNome(ind[0]);
