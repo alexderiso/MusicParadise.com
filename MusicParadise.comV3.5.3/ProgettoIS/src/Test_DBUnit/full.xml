@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+
+ <cliente			email="a@gmail.com"
+  					nickname="Antonio"
+  					nome="Antonio"
+  					cognome="Spera"
+  					pwd="12345678"/>
+  				
+  <carta			cod="0"
+  					scadenza="1/18"
+  					numero="1234567890123456"
+  					nomeProprietario="Antonio Spera"
+  					cliente="Antonio"/>
+  					
+  <carta            cod="1"
+  					scadenza="1/17"
+  					numero="7265365789187635"
+  					nomeProprietario="Paolo Rossi"
+  					cliente="Antonio"/>
+  
+  					
+  					
+  <prodottoincatalogo codice="0"
+  					  num_disponibilità="0"
+  					  nome="Batteria Yamaha"
+  					  colore="Bianco"
+  					  marca="Yamaha"
+  					  descrizione="Bella"
+  					  peso="1.00"
+  					  prezzo="3500.00"
+  					  data_inserimento="2017-06-29"
+  					  strumento="batteria"/>
+  					  
+  <prodottoincatalogo codice="1"
+  					  num_disponibilità="2"
+  					  nome="Batteria Tamburo T5"
+  					  colore="Nero"
+  					  marca="Tamburo"
+  					  descrizione="Batteria Tamburo T5"
+  					  peso="1.00"
+  					  prezzo="2500.00"
+  					  data_inserimento="2017-06-11"
+  					  strumento="batteria"/>
+  					  
+  <prodottoincatalogo codice="2"
+  					  num_disponibilità="3"
+  					  nome="YAMAHA C40M SATINATA"
+  					  colore="Marrone chiaro"
+  					  marca="YAMAHA"
+  					  descrizione="Spendere poco ormai non vuol dire più accontentarsi di uno strumento di seconda scelta, come la C40 abilmente dimostra."
+  					  peso="1.00"
+  					  prezzo="115.00"
+  					  data_inserimento="2017-05-30"
+  					  strumento="Chitarra"/>
+  					  
+  <prodottoordine	  codice="0"
+  					  quantita="1"
+  					  nome="YAMAHA C40M SATINATA"
+  					  colore="Marrone chiaro"
+  					  marca="YAMAHA"
+  					  descrizione="Spendere poco ormai non vuol dire più accontentarsi di uno strumento di seconda scelta, come la C40 abilmente dimostra."
+  					  peso="1.00"
+  					  prezzo="115.00"
+  					  strumento="Chitarra"/>
+  					  
+  <prodottoordine	  codice="1"
+  					  quantita="1"
+  					  nome="CASIO CDP130 Black"
+  					  colore="Nero"
+  					  marca="CASIO"
+  					  descrizione="Effetti digitali eccellenti, 10 suoni e metronomo integrato: il CDP-130 è lo strumento ideale per accedere al fantastico mondo delle tastiere. Il sistema di altoparlanti migliorato produce un suono di pianoforte impressionante, reso ancora più spettacolare dal pulsante effetto auditorium integrato: basta premere il pulsante per donare al suono del pianoforte il reverbero di una sala da concerto, e l'esibizione diventa quasi un'esperienza reale. Grazie ai suoni di strumenti a corda migliorati, ogni brano è un'esperienza unica, indimenticabile."
+  					  peso="1.00"
+  					  prezzo="420.00"
+  					  strumento="Tastiere"/>
+  					  
+  <prodottoordine	  codice="2"
+  					  quantita="1"
+  					  nome="YAMAHA C40M SATINATA"
+  					  colore="Marrone chiaro"
+  					  marca="YAMAHA"
+  					  descrizione="Spendere poco ormai non vuol dire più accontentarsi di uno strumento di seconda scelta, come la C40 abilmente dimostra."
+  					  peso="1.00"
+  					  prezzo="115.00"
+  					  strumento="Chitarra"/>
+  					  
+  
+  					
+  <composizione		prodotto="0"
+  					ordine="0"/>
+  					
+  <composizione 	prodotto="1"
+  					ordine="1"/>
+  					
+  <composizione		prodotto="2"
+  					ordine="2"/>
+  					
+  <foto				codice="0"
+  					codice_prodotto="0"
+  					immagine="immaginiProdotti/yamaha_batteria.jpg"/>
+  					
+  <foto				codice="1"
+  					codice_prodotto="0"
+  					immagine="immaginiProdotti/yamaha_batteria2.jpg"/>
+  					
+  <foto				codice="2"
+  					codice_prodotto="0"
+  					immagine="immaginiProdotti/yamaha_batteria3.jpg"/>
+  					
+  <foto				codice="3"
+  					codice_prodotto="1"
+  					immagine="immaginiProdotti/tamburo_batteria.jpg"/>
+  					
+  <foto				codice="4"
+  					codice_prodotto="1"
+  					immagine="immaginiProdotti/tamburo_batteria1.jpg"/>		
+			
+  <foto				codice="5"
+  					codice_prodotto="1"
+  					immagine="immaginiProdotti/tamburo_batteria2.jpg"/>
+  					
+  <foto				codice="6"
+  					codice_prodotto="2"
+  					immagine="immaginiProdotti/chitarra_Yamaha.jpg"/>
+  					
+  <foto				codice="7"
+  					codice_prodotto="2"
+  					immagine="immaginiProdotti/chitarra_Yamaha2.jpg"/>
+  
+  <foto				codice="8"
+  					codice_prodotto="2"
+  					immagine="immaginiProdotti/chitarra_Yamaha3.jpg"/>
+  
+  <gestoreordini    email="b@gmail.com"
+  					nickname="paolo10"
+  					nome="Paolo"
+  					cognome="Rossi"
+  					pwd="1234567@"
+  					matricola="123456789"/>
+  					
+  <incarrello       prodotto="0"
+  					utente="Antonio"
+  					quantita="1"/>
+  
+  <indirizzo		codice="0"
+  					indirizzo="Via Po"
+  					citta="Marigliano"
+  					cap="80034"
+  					nome="Antonio"
+  					cognome="Spera"
+  					Telefono="0818412205"
+  					cliente="Antonio"/>
+  					
+  <ordine			utente="Antonio"
+  					num_ordine="0"
+  					data_ordine="2018-01-22"
+  					totale="155.30"
+  					indirizzo="0"
+  					carta = "0"
+  					stato ="consegnato"
+  					numero_traking="1214235435"
+  					corriere="Bartolini"
+  					data_consegna="2018-01-22"/>
+  					
+  <ordine			utente="Antonio"
+  					num_ordine="1"
+  					data_ordine="2018-01-22"
+  					totale="527.40"
+  					indirizzo="0"
+  					carta = "0"
+  					stato ="consegnato"
+  					numero_traking="2423423423"
+  					corriere="Bartolini"
+  					data_consegna="2018-01-23"/>
+  					
+   <ordine			utente="Antonio"
+  					num_ordine="2"
+  					data_ordine="2018-01-22"
+  					totale="155.30"
+  					indirizzo="0"
+  					carta = "0"
+  					stato ="spedito"
+  					numero_traking="2787615673"
+  					corriere="GLS"
+  					data_consegna="2018-01-24"/>
+  
+  
+  
+  					
+  
+  					
+  
+  		
+  
+</dataset>
