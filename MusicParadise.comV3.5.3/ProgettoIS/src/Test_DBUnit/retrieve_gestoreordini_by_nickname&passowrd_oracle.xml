@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+<gestoreordini    email="b@gmail.com"
+  					nickname="paolo10"
+  					nome="Paolo"
+  					cognome="Rossi"
+  					pwd="1234567@"
+  					matricola="123456789"/>
+</dataset>

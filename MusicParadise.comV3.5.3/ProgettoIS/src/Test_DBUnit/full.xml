@@ -6,6 +6,12 @@
   					nome="Antonio"
   					cognome="Spera"
   					pwd="12345678"/>
+  					
+  <cliente			email="i@gmail.com"
+  					nickname="Ivan"
+  					nome="Ivan"
+  					cognome="Esposito"
+  					pwd="12345678"/>
   				
   <carta			cod="0"
   					scadenza="1/18"

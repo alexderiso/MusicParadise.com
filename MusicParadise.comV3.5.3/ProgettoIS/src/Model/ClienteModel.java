@@ -77,17 +77,18 @@ public class ClienteModel {
 	 * @throws SQLException
 	 */
 	public synchronized ClienteBean leggi(String nick, String password) throws SQLException{
-		Connection connection = ds.getConnection();
-		java.sql.Statement statement = connection.createStatement();
-		ResultSet res = statement.executeQuery("SELECT * FROM CLIENTE");
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		connection = ds.getConnection();
+		String selectSQL = "SELECT * FROM CLIENTE WHERE NICKNAME = ? AND PWD = ?";
+		preparedStatement = connection.prepareStatement(selectSQL);
+		preparedStatement.setString(1, nick);
+		preparedStatement.setString(2, password);
+		
+		ResultSet res = preparedStatement.executeQuery();
+		
 		try{
 		while(res.next()){
-			String nick2 = res.getString("NICKNAME");
-			String pass = res.getString("PWD");
-			String email = res.getString("EMAIL");
-			System.out.println(nick2 + " "+pass);
-			System.out.println(nick + " "+password);
-			if(((nick2.equalsIgnoreCase(nick)||(nick.equalsIgnoreCase(email)))&&(pass.equalsIgnoreCase(password)))){
 				ClienteBean bean = new ClienteBean();
 				bean.setNickName(res.getString("NICKNAME"));
 				bean.setEmail(res.getString("EMAIL"));
@@ -96,11 +97,10 @@ public class ClienteModel {
 				bean.setCognome(res.getString("COGNOME"));
 				return bean;
 			}
-		}
 		}finally {
 			try {
-				if (statement != null)
-					statement.close();
+				if (preparedStatement != null)
+					preparedStatement.close();
 			} finally {
 				if (connection != null)
 					connection.close();

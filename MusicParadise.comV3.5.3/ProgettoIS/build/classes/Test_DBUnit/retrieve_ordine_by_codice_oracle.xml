@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<dataset>
 
 <ordine				utente="Antonio"
   					num_ordine="1"
@@ -10,3 +11,5 @@
   					numero_traking="2423423423"
   					corriere="Bartolini"
   					data_consegna="2018-01-23"/>
+  					</dataset>
+  					

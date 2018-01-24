@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+
+<carta			cod="0"
+  					scadenza="1/18"
+  					numero="1234567890123456"
+  					nomeProprietario="Antonio Spera"
+  					cliente="Antonio"/>
+  					
+  <carta            cod="1"
+  					scadenza="1/17"
+  					numero="7265365789187635"
+  					nomeProprietario="Paolo Rossi"
+  					cliente="Antonio"/>
+  					
+ <carta            cod="3"
+  					scadenza="1/18"
+  					numero="1278367165782986"
+  					nomeProprietario="Ivan Esposito"
+  					cliente="Ivan"/>
+
+</dataset>

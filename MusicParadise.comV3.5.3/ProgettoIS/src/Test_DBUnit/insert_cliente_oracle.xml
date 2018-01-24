@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<cliente			email="a@gmail.com"
+  					nickname="Antonio"
+  					nome="Antonio"
+  					cognome="Spera"
+  					pwd="12345678"/>
+  					
+  <cliente			email="i@gmail.com"
+  					nickname="Ivan"
+  					nome="Ivan"
+  					cognome="Esposito"
+  					pwd="12345678"/>
+  					
+   <cliente			email="v@gmail.com"
+  					nickname="vale46"
+  					nome="Valentino"
+  					cognome="Rossi"
+  					pwd="12345678"/>
+
+</dataset>

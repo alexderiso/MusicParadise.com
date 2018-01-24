@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -30,7 +31,7 @@ public class GestoreOrdineModel {
 			System.out.println("Error:" + e.getMessage());
 		}
 	}
-	
+
 	private static final String TABLE_NAME = "gestoreordini";
 	/**
 	 * Metodo che legge dal database i dati del gestore ordini
@@ -41,14 +42,17 @@ public class GestoreOrdineModel {
 	 * @throws SQLException
 	 */
 	public synchronized GestoreOrdiniBean leggi(String nick, String password) throws SQLException{
-		Connection connection = ds.getConnection();
-		java.sql.Statement statement = connection.createStatement();
-		ResultSet res = statement.executeQuery("SELECT * FROM gestoreordini");
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		connection = ds.getConnection();
+		String selectSQL = "SELECT * FROM CLIENTE WHERE NICKNAME = ? AND PWD = ?";
+		preparedStatement = connection.prepareStatement(selectSQL);
+		preparedStatement.setString(1, nick);
+		preparedStatement.setString(2, password);
+
+		ResultSet res = preparedStatement.executeQuery();
 		try{
-		while(res.next()){
-			String nick2 = res.getString("NICKNAME");
-			String pass = res.getString("PWD");
-			if(((nick2.equalsIgnoreCase(nick))&&(pass.equalsIgnoreCase(password)))){
+			while(res.next()){
 				GestoreOrdiniBean bean = new GestoreOrdiniBean();
 				bean.setNickName(res.getString("NICKNAME"));
 				bean.setEmail(res.getString("EMAIL"));
@@ -58,11 +62,11 @@ public class GestoreOrdineModel {
 				bean.setMatricola(res.getString("MATRICOLA"));
 				return bean;
 			}
-		}
+
 		}finally {
 			try {
-				if (statement != null)
-					statement.close();
+				if (preparedStatement != null)
+					preparedStatement.close();
 			} finally {
 				if (connection != null)
 					connection.close();
@@ -70,6 +74,6 @@ public class GestoreOrdineModel {
 		}
 		return null;
 	}
-	
+
 
 }

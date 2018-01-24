@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+<incarrello       prodotto="0"
+  					utente="Antonio"
+  					quantita="1"/>
+ 
+ <incarrello       prodotto="1"
+  					utente="Ivan"
+  					quantita="2"/>
+</dataset>
