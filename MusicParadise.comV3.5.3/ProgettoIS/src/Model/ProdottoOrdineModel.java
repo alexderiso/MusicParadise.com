@@ -42,6 +42,8 @@ public class ProdottoOrdineModel {
 	/**
 	 * Metodo che salva i prodotti nel database
 	 * @param prodotti
+	 * @pre prodotti != null
+	 * @post memorizza i prodotti di un ordine nel database
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException {
@@ -82,6 +84,7 @@ public class ProdottoOrdineModel {
 	}
 	/**
 	 * Metodo che genera un codice per i prodotti
+	 * @post ritorna un intero che rappresenta l'id
 	 * @return rowCount
 	 * @throws SQLException
 	 */
@@ -110,8 +113,12 @@ public class ProdottoOrdineModel {
 		return rowCount;
 	}
 	/**
-	 * Metodo che gestisce i prodotti presenti in un ordine
+	 * Metodo che restiuisce i prodotti presenti in un ordine
 	 * @param codiceOrdine
+	 * @pre codiceOrdine != null
+	 * @post prodottiOrdine.size() > 0 se ci sono prodotti correlati all'ordine identidicato dal codice passato come parametro
+	 * presenti nel database || prodottiOrdine.size() == 0 se non ci sono prodotti correlati all'ordine 
+	 * identidicato dal codice passato come parametro
 	 * @return prodottiOrdine
 	 * @throws SQLException
 	 */

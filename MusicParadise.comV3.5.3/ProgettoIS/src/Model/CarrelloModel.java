@@ -43,6 +43,8 @@ public class CarrelloModel {
 	 * Metodo che salva il carrello nel database
 	 * @param list
 	 * @param utente
+	 * @pre list != null && utente != null
+	 * @post memorizza il carrello nel database
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(List<ProdottoCatalogoBean> list, UtenteBean utente) throws SQLException {
@@ -79,6 +81,7 @@ public class CarrelloModel {
 	}
 	/**
 	 * Metodo che genera il codice univoco del carrello
+	 * @post ritorna l'id che identifica l'informazione relativa al carrello nel database
 	 * @return rowCount
 	 * @throws SQLException
 	 */
@@ -109,6 +112,8 @@ public class CarrelloModel {
 	/**
 	 * Metodo che legge il carrello dal database in base al nickname
 	 * @param nickname
+	 * @pre nickname != null
+	 * @post pordInCarrello.size() > 0 il carrello ha dei prodotti || prodInCarrello.size() == 0 il carrello è vuoto
 	 * @return prodInCarrello
 	 * @throws SQLException
 	 */
@@ -168,6 +173,9 @@ public class CarrelloModel {
 	/**
 	 * Metodo che rimuove un carrello dal database
 	 * @param utente
+	 * @pre utente != null
+	 * @post Rimuove il carrello associato all'utente passato
+	 * come parametro dal database
 	 * @throws SQLException
 	 */
 public synchronized void remove(UtenteBean utente) throws SQLException {

@@ -44,6 +44,9 @@ public class OrdineModel{
 /**
  * metodo che restituisce l'ordine tramite la chiave
  * @param code
+ * @pre code != null
+ * @post bean == null se non ha trovato un ordine con il codice passsato come parametro 
+ * bean != null se ha trovato l'ordine associato al codice passato come parametro
  * @return bean
  * @return null
  * @throws SQLException
@@ -127,6 +130,9 @@ public class OrdineModel{
 	/**
 	 * metodo che restituisce gli ordini che sono nello stato passato come parametro
 	 * @param stato
+	 * @pre stato != null
+	 * @post ordini.size() > 0 se sono stati trovati ordini con uno stato uguale a quello passato come parametro
+	 * ordini.size() == 0 se non sono stati trovati degli ordini
 	 * @return lista di ordini
 	 * @return null
 	 * @throws SQLException
@@ -135,7 +141,7 @@ public class OrdineModel{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		ArrayList<OrdineBean> ordiniUtente = new ArrayList<OrdineBean>();
+		ArrayList<OrdineBean> ordini = new ArrayList<OrdineBean>();
 
 		String selectSQL = "SELECT * FROM "+ OrdineModel.TABLE_NAME_ORD+" WHERE STATO = ?";
 
@@ -193,7 +199,7 @@ public class OrdineModel{
 					bean.setCarta(carta);
 				}
 
-				ordiniUtente.add(bean);
+				ordini.add(bean);
 			}
 
 		} finally {
@@ -205,7 +211,7 @@ public class OrdineModel{
 					connection.close();
 			}
 		}
-		return ordiniUtente;
+		return ordini;
 
 	}
 
@@ -219,6 +225,9 @@ public class OrdineModel{
 	 * @param tracking
 	 * @param totale
 	 * @param cliente
+	 * @pre indirizzo != null && carta != null && stato != null && corriere != null && tracking != null
+	 * && totale != null && cliente != null
+	 * @post l'ordine viene salvato nel database
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, CartaBean carta, String stato,String corriere, String tracking, double totale, String cliente) throws SQLException {
@@ -262,6 +271,7 @@ public class OrdineModel{
 	
 	/**
 	 * Metodo che genera il codice di un ordine
+	 * @post rowCount != null 
 	 * @return rowCount
 	 * @throws SQLException
 	 */
@@ -293,6 +303,10 @@ public class OrdineModel{
 	/**
 	 * Metodo che restituisce tutti gli ordini effettuati da un cliente
 	 * @param nickname
+	 * @pre nickname != null
+	 * @post ordiniUtenti.size() > 0 se sono stati trovati degli ordini del cliente passato come 
+	 * parametro
+	 * ordini.size() == 0 se non sono stati trovati degli ordini
 	 * @return ordiniUtente
 	 * @throws SQLException
 	 */
@@ -376,6 +390,8 @@ public class OrdineModel{
 
 	/**
 	 * Metodo che restituisce la lista di tutti gli ordini 
+	 * @post ordini.size() > 0 se nel database ci sono memorizzati 1 o più ordini
+	 * ordini.size() == 0 se nel database non sono memorizzati degli ordini
 	 * @return ordini
 	 * @throws SQLException
 	 */
@@ -461,6 +477,8 @@ public class OrdineModel{
 	 * @param num_tracking
 	 * @param dataConsegna
 	 * @param corriere
+	 * @pre cod != null && num_tracking != null && dataConsegna != null && corriere != null
+	 * @post l'ordine con codice passato come parametro viene aggiornato
 	 * @throws SQLException
 	 */
 	public synchronized void aggiorna(int cod, String num_tracking, Date dataConsegna, String corriere) throws SQLException{
@@ -511,6 +529,8 @@ public class OrdineModel{
 	/**
 	 * Metodo che aggiorna lo stato di un ordine da spedito a consegnato
 	 * @param cod
+	 * @pre cod != null
+	 * @post l'ordine con codice passato come parametro viene aggiornato
 	 * @throws SQLException
 	 */
 	public synchronized void aggiornaConsegnato(int cod) throws SQLException{
