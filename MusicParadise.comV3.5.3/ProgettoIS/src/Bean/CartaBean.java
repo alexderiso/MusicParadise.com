@@ -4,7 +4,13 @@ package Bean;
 	public class CartaBean{
 
 		
-		
+		/**
+		 * Variabili d'instanza
+		 */
+		private String scadenza;
+		private String numCarta;
+		private String nomeProprietario;
+		private int codice;
 		public CartaBean() {
 			
 		}
@@ -26,13 +32,6 @@ package Bean;
 		}
 
 
-		/**
-		 * Variabili d'instanza
-		 */
-		private String scadenza;
-		private String numCarta;
-		private String nomeProprietario;
-		int codice;
 
 		
 		/**
