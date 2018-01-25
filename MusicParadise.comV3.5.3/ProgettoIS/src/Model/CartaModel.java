@@ -42,6 +42,8 @@ public class CartaModel {
 	/**
 	 * Metodo che salva la carta di credito nel database
 	 * @param carta
+	 * @pre carta!=null && cliente!=null
+	 * @psot Memorizza la carta di credito nel database 
 	 * @param cliente
 	 * @throws SQLException
 	 */
@@ -110,6 +112,9 @@ public class CartaModel {
 	/**
 	 * Metodo che legge le carte di credito presenti nel database collegate al nickname passato come parametro
 	 * @param nickname
+	 * @pre nickname != null
+	 * @post carte.size() > 0 se il cliente ha associato delle carte
+		|| carte.size() == 0 se non ci sono associate delle carte al cliente
 	 * @return carte
 	 * @throws SQLException
 	 */

@@ -39,6 +39,8 @@ public class IndirizzoModel {
 	 * Metodo che salva l'indirizzo collegato al nickname nel database
 	 * @param indirizzo
 	 * @param nickname
+	 * @pre indirizzo != null && nickname != null
+	 * @post memorizza l'indirizzo nel database
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, String nickname) throws SQLException {
@@ -110,6 +112,9 @@ public class IndirizzoModel {
 	/**
 	 * Metodo che legge gli indirizzi dal database
 	 * @param nickname
+	 * @pre Nickname != null
+	 * @post Ritorna indirizzi.size() > 0 se il cliente ha degli indirizzi memorizzati 
+	 * || Ritorna indirizzi.size() == 0 se non ci sono indirizzi memorizzati per il cliente
 	 * @return indirizzi
 	 * @return null
 	 * @throws SQLException

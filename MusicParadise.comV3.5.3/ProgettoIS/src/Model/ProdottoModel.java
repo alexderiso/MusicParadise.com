@@ -55,7 +55,9 @@ public class ProdottoModel{
 	 * @param prezzo
 	 * @param data
 	 * @param strumento
-	 * @throws SQLException
+	 * @pre codice!=null && numDisp>0 && nome!=null && colore!=null && marca!=null && descrizione!=null && peso>0, prezzo>0, data!=null && strumento!=null 
+	 * @post memorizza i prodotti nel database
+	 * @throws  SQLException
 	 */
 	
 	public synchronized void doSave(int codice,int numDisp, String nome, String colore,String marca, String descrizione, int peso, double prezzo, java.sql.Date data, String strumento) throws SQLException {
@@ -131,6 +133,8 @@ public class ProdottoModel{
 	/**
 	 * Metodo che elimina un prodotto dal catalogo
 	 * @param codice
+	 * @pre codice != null
+	 * @post il prodotto viene rimosso dal databse
 	 * @throws SQLException
 	 */
 	public synchronized void doDelete(int codice) throws SQLException {
@@ -163,6 +167,8 @@ public class ProdottoModel{
 
 	/**
 	 * Metodo che restituisce tutti i prodotti presenti nel database
+	 * @post Prodotti.size() > 0 se ci sono presenti dei prodotti memorizzati nel database
+	 * || Prodotti.size() == 0 se non ci sono dei prodotti memorizzati nel database
 	 * @return products
 	 * @throws SQLException
 	 */
@@ -218,6 +224,9 @@ public class ProdottoModel{
 	/**
 	 * Metodo che restituisce i prodotto in base al tipo di strumento
 	 * @param strumento
+	 * @pre strumento != null
+	 * @post Prodotti.size() > 0 se ci sono presenti dei prodotti memorizzati nel database del tipo passato come parametro
+	 * || Prodotti.size() == 0 se non ci sono dei prodotti memorizzati nel database del tipo passato come parametro 
 	 * @return products
 	 * @throws SQLException
 	 */
@@ -274,6 +283,9 @@ public class ProdottoModel{
 	/**
 	 * Metodo che restituisce i prodotti in base al codice
 	 * @param code
+	 * @pre code != null
+	 * @post Prodotto != null se è prodotto.getCodice() == codice
+	 * || Prodotto == null se nel database non ci sono prodotti con quel codice
 	 * @return bean
 	 * @throws SQLException
 	 */
@@ -329,6 +341,8 @@ public class ProdottoModel{
 	/**
 	 * metodo che aggiorna i prodotti
 	 * @param prodotti
+	 * @pre prodotti.size() > 0
+	 * @post i prodotti sono aggiornati
 	 * @throws SQLException
 	 */
 	public synchronized void aggiorna(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException{
@@ -347,6 +361,15 @@ public class ProdottoModel{
 
 	}
 	
+	/**
+	 * Metodo che restituisce i prodotti in base al nome
+	 * @param nome
+	 * @pre nome != null
+	 * @post Prodotti.size() > 0 se ci sono presenti dei prodotti memorizzati nel database con il nome passato come parametro
+	 * || Prodotti.size() == 0 se non ci sono dei prodotti memorizzati nel database con il nome passato come parametro
+	 * @return bean
+	 * @throws SQLException
+	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByName(String nome) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -399,6 +422,9 @@ public class ProdottoModel{
 	/**
 	 * Metodo che restituisce i prodotti in base alla marca
 	 * @param marca
+	 * @pre marca != null
+	 * @post Prodotti.size() > 0 se ci sono presenti dei prodotti memorizzati nel database della marca passato come parametro
+	 *	|| Prodotti.size() == 0 se non ci sono dei prodotti memorizzati nel database della marca passato come parametro
 	 * @return products
 	 * @throws SQLException
 	 */

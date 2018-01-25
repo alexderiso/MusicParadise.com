@@ -37,6 +37,8 @@ public class FotoModel {
 	 * Metodo che salva le foto dei prodotti all'interno del database
 	 * @param url
 	 * @param cod
+	 * @pre url != null && cod != null
+	 * @post si memorizza il path dell'immagine del database
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(String url, int cod) throws SQLException {

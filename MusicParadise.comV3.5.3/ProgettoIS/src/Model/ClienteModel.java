@@ -69,7 +69,7 @@ public class ClienteModel {
 		}
 	}
 	/**
-	 * Metodo che legge i clienti presenti nel database 
+	 * Metodo che restiuisce il cliente presente nel database se presente
 	 * @param nick
 	 * @param password
 	 * @return bean
@@ -108,66 +108,5 @@ public class ClienteModel {
 		}
 		return null;
 	}
-	/**
-	 * Metodo che verifica se un nickname è presente nel database
-	 * @param nickname
-	 * @return nickB
-	 * @throws SQLException
-	 */
-	public synchronized boolean verificaNick(String nickname) throws SQLException{
-		boolean nickB = true;
-		Connection connection = ds.getConnection();
-		java.sql.Statement statement = connection.createStatement();
-		ResultSet res = statement.executeQuery("SELECT * FROM CLIENTE");
-		try{
-		while(res.next()){
-			String nick2 = res.getString("NICKNAME");
-			
-			if((nick2.equalsIgnoreCase(nickname))){
-				nickB = false;
-			}
-		}
-		}finally {
-			try {
-				if (statement != null)
-					statement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-		return nickB;
-	}
-	/**
-	 * Metodo che verifica se un e-mail è presente nel database
-	 * @param email
-	 * @return emailB
-	 * @throws SQLException
-	 */
-	public synchronized boolean verificaEmail(String email) throws SQLException{
-		boolean emailB = true;
-		Connection connection = ds.getConnection();
-		java.sql.Statement statement = connection.createStatement();
-		ResultSet res = statement.executeQuery("SELECT * FROM CLIENTE");
-		try{
-		while(res.next()){
-			String email2 = res.getString("EMAIL");
-			
-			if((email2.equalsIgnoreCase(email))){
-				emailB = false;
-			}
-		}
-		}finally {
-			try {
-				if (statement != null)
-					statement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-		return emailB;
-	}
-
 
 }

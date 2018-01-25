@@ -37,6 +37,8 @@ public class GestoreOrdineModel {
 	 * Metodo che legge dal database i dati del gestore ordini
 	 * @param nick
 	 * @param password
+	 * @pre nick != null && password != null
+	 * @post Restituisce l'oggetto gestore != null se è presente nel database. Restituisce gestore == null se non è presente nel database
 	 * @return bean
 	 * @return null
 	 * @throws SQLException

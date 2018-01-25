@@ -12,7 +12,10 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import Bean.ProdottoCatalogoBean;
-
+/**
+ * Classe che gestisce la composizione dell'ordine
+ *
+ */
 public class ComposizioneModel {
 	private static DataSource ds;
 
@@ -29,6 +32,15 @@ public class ComposizioneModel {
 	}
 
 	private static final String TABLE_NAME_COMP= "composizione";
+	
+	/**
+	 * Metodo che salva la coppia ordine-prodotto
+	 * @param ArrayList<ProdottoCatalogoBean> prodotti
+	 * @param int codOrdine
+	 * @pre prodotti != null && codOrdine != null
+	 * @post Il sistema memorizza la coppia ordine e prodottoOrdine nel database.
+	 * @throws SQLException
+	 */
 	
 	public synchronized void doSave(ArrayList<ProdottoCatalogoBean> prodotti,int codOrdine) throws SQLException {
 
@@ -59,6 +71,12 @@ public class ComposizioneModel {
 			}
 		}
 	}
+	
+	/**
+	 * Metodo che genera il codice identificativo
+	 * @return rowCount
+	 * @throws SQLException
+	 */
 	
 	public synchronized int generaCodice() throws SQLException{
 		Connection connection = null;
