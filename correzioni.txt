@@ -1,16 +1,15 @@
 RAD
-PAG 17 il package è diviso in "catalogo" e "carrello" nel codice c'è solo un unico package chiamato "checkout"
+PAG 17 il package è diviso in "catalogo" e "carrello" nel codice c'è solo un unico package chiamato "acquisto"
 PAG 21 Package con nome sbagliato deve essere "Gestione offerta"
 PAG 24 Package con nome sbagliato deve essere "Amministrazione"
 
 MANCANO CLASS DIAGRAM SINGOLI DI : CONFERMAORDINE,RICERCAORDINE,RICERCAPRODOTTO,VISUALIZZACATALOGO,VISUALIZZAPROFILO, VISUALIZZAORDINI
 
 SDD
-PAG 9 il package acquisto dovrebbe chiamarsi checkout
+
 PAG 10 ERRORE GRAVISSIMO "WEB BROSEWERE"
-PAG 11 cambiare il package acquisto in checkout e profilo in gestione profilo
-PAG 14 cmbiare il nome del package acquisto in checkout
-PAG 16 cmbiare il nome del package acquisto in checkout
+PAG 11 cambiare il package profilo in gestione profilo
+
 
 ODD(FATTO)
 PAG 9 mancano i package : CLIENTEBEAN, GESTIONEORDINIBEAN, PRODOTTOCATALOGOBEAN, PRODOTTOORDINEBEAN.(Fatto)
@@ -21,14 +20,15 @@ aggiustare anche la tabella sotto(Fatto)
        manca nel package la classe VISUALIZZACATALOGOCONTROL,(Fatto) 
 aggiustare anche la tabella sotto(Fatto)
 
+CAMBIARE IL NOME DEI PACKAGE CHECKOUT IN ACQUISTO
 MANCA IL PACKAGE GESTORE ORDINI (Fatto)
 
 PAG 12 manca la classe : CLIENTEMODEL, GESTOREORDINIMODEL, PRODOTTOORDINEMODEL, eliminare invece (Fatto)
 PAG 13 inserire nel package : CONTATTI, MODIFICAORDINE, ORDINEOK (Fatto)
 
 TEST PLAN
-PAG 4 cambiare acquisto in checkout (fatto)
-PAG 5 cambiare acquisto in checkout (fatto)
+PAG 4 cambiare acquisto in checkout (fatto) FARE IL REVERT
+PAG 5 cambiare acquisto in checkout (fatto) FARE IL REVERT
 
 Cose d'aggiungere : 
 
