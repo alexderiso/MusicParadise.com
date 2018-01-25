@@ -1,4 +1,4 @@
-package Control.checkout;
+package Control.acquisto;
 
 import java.io.IOException;
 import java.sql.SQLException;
