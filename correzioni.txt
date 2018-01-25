@@ -12,7 +12,7 @@ PAG 11 cambiare il package acquisto in checkout e profilo in gestione profilo
 PAG 14 cmbiare il nome del package acquisto in checkout
 PAG 16 cmbiare il nome del package acquisto in checkout
 
-ODD
+ODD(FATTO)
 PAG 9 mancano i package : CLIENTEBEAN, GESTIONEORDINIBEAN, PRODOTTOCATALOGOBEAN, PRODOTTOORDINEBEAN.(Fatto)
 completare anche le tabelle sotto (Fatto)
 PAG 10 manca il package GESTOREORDINI(Fatto)
@@ -23,8 +23,8 @@ aggiustare anche la tabella sotto(Fatto)
 
 MANCA IL PACKAGE GESTORE ORDINI (Fatto)
 
-PAG 12 manca la classe : CLIENTEMODEL, GESTOREORDINIMODEL, PRODOTTOORDINEMODEL, eliminare invece UTENTEMODEL.
-PAG 13 inserire nel package : CONTATTI, MODIFICAORDINE, ORDINEOK
+PAG 12 manca la classe : CLIENTEMODEL, GESTOREORDINIMODEL, PRODOTTOORDINEMODEL, eliminare invece (Fatto)
+PAG 13 inserire nel package : CONTATTI, MODIFICAORDINE, ORDINEOK (Fatto)
 
 TEST PLAN
 PAG 4 cambiare acquisto in checkout (fatto)
