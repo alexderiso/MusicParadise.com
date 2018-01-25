@@ -157,4 +157,38 @@ public synchronized ArrayList<CartaBean> leggi(String nickname) throws SQLExcept
 		}
 		return carte;
 	}
+/**
+ * Metodo che rimuove una carta dal database
+ * @param codice
+ * @pre codice != null
+ * @post la carta associata al codice passato come parametro viene rimossa dal database
+ * @throws SQLException
+ */
+public synchronized void rimuoviCarta(int codice) throws SQLException {
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	String insertSQL = "DELETE FROM " + CartaModel.TABLE_NAME_CARTA + " WHERE COD = ?";
+	try{
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setInt(1, codice);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}finally {
+		try {
+			if (preparedStatement != null)
+				preparedStatement.close();
+		} finally {
+			if (connection != null)
+				connection.close();
+		}
+	}
+}
+
+
 }

@@ -76,7 +76,20 @@ public class CartaTestCase extends DBTestCase{
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	
+	public void testRimuoviIndirizzo() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM carta WHERE COD = ?");
+		stm.setInt(1, 0);
+		
+		stm.executeUpdate();
+		
+		ITable actualTable = connection.createDataSet().getTable("carta");
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carta/remove_carta_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("carta");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
 	@Override
 	protected IDataSet getDataSet() throws Exception {
 		

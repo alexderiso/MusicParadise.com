@@ -28,6 +28,7 @@ import Model.CarrelloModel;
 import Model.CartaModel;
 import Model.IndirizzoModel;
 import Model.OrdineModel;
+import Model.ProdottoOrdineModel;
 import Model.ClienteModel;
 import Model.GestoreOrdineModel;
 
@@ -48,6 +49,7 @@ public class AccediControl extends HttpServlet {
 	CartaModel cartaModel = new CartaModel();
 	IndirizzoModel indirizzoModel = new IndirizzoModel();
 	GestoreOrdineModel gestOrdModel = new GestoreOrdineModel();
+	ProdottoOrdineModel prdModel = new ProdottoOrdineModel();
 
 
 
@@ -105,8 +107,6 @@ public class AccediControl extends HttpServlet {
 		String nick= request.getParameter("nick");
 		String password= request.getParameter("password");
 		String action = request.getParameter("action");
-
-
 		try {
 			if(action != null) {	
 
@@ -151,8 +151,11 @@ public class AccediControl extends HttpServlet {
 							return;
 						}else if (gestoreOrdini != null) {
 							ArrayList<OrdineBean> inPreparazione = ordineModel.doRetrieveByStato("in preparazione");
+							
 							ArrayList<OrdineBean> spedito = ordineModel.doRetrieveByStato("spedito");
+						
 							ArrayList<OrdineBean> consegnato = ordineModel.doRetrieveByStato("consegnato");
+						
 							request.getSession().setAttribute("inPreparazione",inPreparazione);
 							request.getSession().setAttribute("spedito",spedito);
 							request.getSession().setAttribute("consegnato",consegnato);

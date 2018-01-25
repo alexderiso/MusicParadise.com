@@ -93,10 +93,10 @@
 			<ul class="nav navbar-nav navbar-right">
 
 				<%  if(cart != null) { %>
-				<li class="jquery3"><a href="carrello.jsp"
+				<li class="jquery3"><a href="VisualizzaCarrelloControl"
 					class="fa fa-shopping-cart fa-3x"> <span id="iconCartNum"><%=cart.countingPrds()%></span></a></li>
 				<% } else { %>
-				<li class="jquery3"><a href="carrello.jsp"
+				<li class="jquery3"><a href="VisualizzaCarrelloControl"
 					class="fa fa-shopping-cart fa-3x"><span id="iconCartNum">0</span></a></li>
 				<% } %>
 				<li><a href="" data-toggle="modal" data-target="#myModal"
@@ -188,9 +188,7 @@
 						</div>
 					</form>
 
-					<p class="registrazione">
-						Se non sei registrato <a href="registrazione.jsp">Clicca qui!.</a>
-					</p>
+					
 				</div>
 			</div>
 		</div>

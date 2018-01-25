@@ -160,6 +160,40 @@ public synchronized ArrayList<IndirizzoBean> leggi(String nickname) throws SQLEx
 		}
 		return indirizzi;
 	}
+
+/**
+ * Metodo che rimuove un indirizzo dal database
+ * @param codice
+ * @pre codice != null
+ * @post l'indirizzo associato al codice passato come parametro viene rimosso dal database
+ * @throws SQLException
+ */
+public synchronized void rimuoviIndirizzo(int codice) throws SQLException {
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	String insertSQL = "DELETE FROM " + IndirizzoModel.TABLE_NAME_IND + " WHERE CODICE = ?";
+	try{
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setInt(1, codice);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}finally {
+		try {
+			if (preparedStatement != null)
+				preparedStatement.close();
+		} finally {
+			if (connection != null)
+				connection.close();
+		}
+	}
+}
+
 	
 
 }

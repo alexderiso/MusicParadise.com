@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+  <carta            cod="1"
+  					scadenza="1/17"
+  					numero="7265365789187635"
+  					nomeProprietario="Paolo Rossi"
+  					cliente="Antonio"/>
+</dataset>

@@ -77,10 +77,10 @@ public class ProdottoTestCase extends DBTestCase{
 	public void testDoDelete() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM prodottoInCatalogo WHERE CODICE = ?");
-		stm.setInt(1, 3);
+		stm.setInt(1, 2);
 		
 
-		
+		stm.executeUpdate();
 		ITable actualTable = connection.createDataSet().getTable("prodottoInCatalogo");
 		
 		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/prodotto/remove_prodottoInCatalogo_oracle.xml"));

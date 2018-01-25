@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import Bean.GestoreOrdiniBean;
 import Bean.OrdineBean;
 import Model.OrdineModel;
+import Model.ProdottoOrdineModel;
 
 /**
  * Servlet implementation class ModificaStatoOrdineControl
@@ -41,7 +42,7 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 	OrdineModel ordineModel = new OrdineModel();
-
+	ProdottoOrdineModel prdModel = new ProdottoOrdineModel();
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -66,6 +67,7 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 				try {
 					int codice = Integer.parseInt(c);
 					OrdineBean ordine = ordineModel.doRetrieveByKey(codice);
+					
 
 					if(ordine.getStato().equalsIgnoreCase("in preparazione")) {
 						request.getSession().setAttribute("ordMod", ordine);

@@ -47,7 +47,7 @@ public class GestoreOrdineModel {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		connection = ds.getConnection();
-		String selectSQL = "SELECT * FROM CLIENTE WHERE NICKNAME = ? AND PWD = ?";
+		String selectSQL = "SELECT * FROM GESTOREORDINI WHERE NICKNAME = ? AND PWD = ?";
 		preparedStatement = connection.prepareStatement(selectSQL);
 		preparedStatement.setString(1, nick);
 		preparedStatement.setString(2, password);

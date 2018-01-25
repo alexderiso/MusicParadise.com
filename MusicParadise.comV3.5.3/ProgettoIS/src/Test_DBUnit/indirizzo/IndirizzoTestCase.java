@@ -80,6 +80,21 @@ public class IndirizzoTestCase extends DBTestCase {
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
+	public void testRimuoviIndirizzo() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM indirizzo WHERE CODICE = ?");
+		stm.setInt(1, 0);
+		
+		stm.executeUpdate();
+		
+		ITable actualTable = connection.createDataSet().getTable("indirizzo");
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/indirizzo/remove_indirizzo_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("indirizzo");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
+	
 	@Override
 	protected IDataSet getDataSet() throws Exception {
 		

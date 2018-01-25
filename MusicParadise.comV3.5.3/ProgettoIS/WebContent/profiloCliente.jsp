@@ -11,7 +11,7 @@
 <html>
 <head>
 
-<title>Il mio profilo </title>
+<title>Il mio profilo</title>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -62,9 +62,7 @@
 
 							</div>
 						</div>
-						<div>
-							<a href="" type="button" class="btn btn-primary">Modifica</a>
-						</div>
+
 					</div>
 
 
@@ -103,6 +101,7 @@
 												<td>Città</td>
 												<td>Cap</td>
 												<td>Telefono</td>
+												<td>Rimuovi</td>
 											</tr>
 										</thead>
 										<%
@@ -122,9 +121,34 @@
 												<td><%=temp.getCittà()%></td>
 												<td><%=temp.getCap()%></td>
 												<td><%=temp.getTelefono()%></td>
-
+												<td><a href="" data-toggle="modal" data-target="#modal">Remove</a>
 											</tr>
 										</tbody>
+										<!-- Modal -->
+										<div class="modal fade" id="modal" tabindex="-1" role="dialog"
+											aria-labelledby="myModalLabel">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+														<h4 class="modal-title" id="myModalLabel">ATTENZIONE</h4>
+													</div>
+													<div class="modal-body">Eliminando quest'indirizzo
+														verranno annullati eventuali ordini "in preparazione"
+														associati a questo indirizzo.</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default"
+															data-dismiss="modal">annulla</button>
+														<a
+															href="RimuoviIndirizzoControl?cod=<%=temp.getCodice()%>"
+															class="btn btn-primary">procedi</a>
+													</div>
+												</div>
+											</div>
+										</div>
 										<%
 											}
 											}
@@ -180,6 +204,7 @@
 												<th>N° Carta</th>
 												<th>Scadenza</th>
 												<th>Proprietario</th>
+												<th>Rimuovi</th>
 
 											</tr>
 
@@ -200,11 +225,38 @@
 												<td><%=carta.getNumCarta()%></td>
 												<td><%=carta.getScadenza()%></td>
 												<td><%=carta.getNomeProprietario()%></td>
-
+												<td><a href="" data-toggle="modal"
+													data-target="#modal2">Remove</a>
 											</tr>
 										</tbody>
+										<!-- Modal -->
+										<div class="modal fade" id="modal2" tabindex="-1"
+											role="dialog" aria-labelledby="myModalLabel">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+														<h4 class="modal-title" id="myModalLabel">ATTENZIONE</h4>
+													</div>
+													<div class="modal-body">Eliminando questa carta
+														verranno annullati eventuali ordini "in preparazione"
+														associati a questa carta.</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default"
+															data-dismiss="modal">annulla</button>
+														<a href="RimuoviCartaControl?cod=<%=carta.getCodice()%>"
+															class="btn btn-primary">procedi</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
 										<%
 											}
+										
 											}
 										%>
 
@@ -226,5 +278,10 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
 </body>
 </html>
