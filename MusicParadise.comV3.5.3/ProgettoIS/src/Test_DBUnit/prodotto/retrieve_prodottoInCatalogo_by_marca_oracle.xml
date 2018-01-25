@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+ <prodottoincatalogo codice="1"
+  					  num_disponibilità="2"
+  					  nome="Batteria Tamburo T5"
+  					  colore="Nero"
+  					  marca="Tamburo"
+  					  descrizione="Batteria Tamburo T5"
+  					  peso="1.00"
+  					  prezzo="2500.00"
+  					  data_inserimento="2017-06-11"
+  					  strumento="batteria"/>
+</dataset>

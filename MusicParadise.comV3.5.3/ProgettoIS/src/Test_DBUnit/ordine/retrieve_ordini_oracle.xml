@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
 
- <ordine			utente="Antonio"
+<ordine			utente="Antonio"
   					num_ordine="0"
   					data_ordine="2018-01-22"
   					totale="155.30"
   					indirizzo="0"
   					carta = "0"
-  					stato ="consegnato"
+  					stato ="spedito"
   					numero_traking="1214235435"
   					corriere="Bartolini"
   					data_consegna="2018-01-22"/>
@@ -29,19 +29,8 @@
   					totale="155.30"
   					indirizzo="0"
   					carta = "0"
-  					stato ="spedito"
-  					numero_traking="2787615673"
-  					corriere="GLS"
-  					data_consegna="2018-01-24"/>
-  					
-  <ordine			utente="Ivan"
-  					num_ordine="3"
-  					data_ordine="2018-01-24"
-  					totale="155.30"
-  					indirizzo="0"
-  					carta = "0"
-  					stato ="in preparazione"/>
+  					stato ="in preparazione"
+  					numero_traking=""
+  					corriere=""/>
   
-  
-
 </dataset>

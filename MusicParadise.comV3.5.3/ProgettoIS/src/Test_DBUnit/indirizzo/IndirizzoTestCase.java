@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.indirizzo;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -10,6 +10,8 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+
+import Test_DBUnit.DatabaseProperty;
 
 public class IndirizzoTestCase extends DBTestCase {
 	
@@ -46,7 +48,7 @@ public class IndirizzoTestCase extends DBTestCase {
 		
 		ITable actualTable = connection.createDataSet().getTable("indirizzo");
 		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/insert_indirizzo_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/indirizzo/insert_indirizzo_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("indirizzo");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -60,13 +62,23 @@ public class IndirizzoTestCase extends DBTestCase {
 
 		ITable actualTable = connection.createTable("retrieve_indirizzo_by_nickname", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_indirizzo_by_nickname_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/indirizzo/retrieve_indirizzo_by_nickname_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("indirizzo");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	
+	public void testGeneraCodice() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM indirizzo ");
+		
+		ITable actualTable = connection.createTable("cod_indirizzo", stm);
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/indirizzo/cod_indirizzo_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("cod_indirizzo");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
 	
 	@Override
 	protected IDataSet getDataSet() throws Exception {

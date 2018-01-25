@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+<prodottoincatalogo codice="0"
+  					  num_disponibilità="0"
+  					  nome="Batteria Yamaha"
+  					  colore="Bianco"
+  					  marca="Yamaha"
+  					  descrizione="Bella"
+  					  peso="1.00"
+  					  prezzo="3500.00"
+  					  data_inserimento="2017-06-29"
+  					  strumento="batteria"/>
+  					  
+  <prodottoincatalogo codice="1"
+  					  num_disponibilità="2"
+  					  nome="Batteria Tamburo T5"
+  					  colore="Nero"
+  					  marca="Tamburo"
+  					  descrizione="Batteria Tamburo T5"
+  					  peso="1.00"
+  					  prezzo="2500.00"
+  					  data_inserimento="2017-06-11"
+  					  strumento="batteria"/>
+  					  
+  <prodottoincatalogo codice="2"
+  					  num_disponibilità="3"
+  					  nome="YAMAHA C40M SATINATA"
+  					  colore="Marrone chiaro"
+  					  marca="YAMAHA"
+  					  descrizione="Spendere poco ormai non vuol dire più accontentarsi di uno strumento di seconda scelta, come la C40 abilmente dimostra."
+  					  peso="1.00"
+  					  prezzo="115.00"
+  					  data_inserimento="2017-05-30"
+  					  strumento="Chitarra"/>
+
+</dataset>

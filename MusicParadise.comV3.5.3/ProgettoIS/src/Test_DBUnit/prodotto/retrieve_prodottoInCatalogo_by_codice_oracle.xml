@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+ <prodottoincatalogo codice="2"
+  					  num_disponibilità="3"
+  					  nome="YAMAHA C40M SATINATA"
+  					  colore="Marrone chiaro"
+  					  marca="YAMAHA"
+  					  descrizione="Spendere poco ormai non vuol dire più accontentarsi di uno strumento di seconda scelta, come la C40 abilmente dimostra."
+  					  peso="1.00"
+  					  prezzo="115.00"
+  					  data_inserimento="2017-05-30"
+  					  strumento="Chitarra"/>
+</dataset>

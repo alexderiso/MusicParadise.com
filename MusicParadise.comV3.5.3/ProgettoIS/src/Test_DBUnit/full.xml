@@ -163,7 +163,7 @@
   					totale="155.30"
   					indirizzo="0"
   					carta = "0"
-  					stato ="consegnato"
+  					stato ="spedito"
   					numero_traking="1214235435"
   					corriere="Bartolini"
   					data_consegna="2018-01-22"/>
@@ -185,10 +185,9 @@
   					totale="155.30"
   					indirizzo="0"
   					carta = "0"
-  					stato ="spedito"
-  					numero_traking="2787615673"
-  					corriere="GLS"
-  					data_consegna="2018-01-24"/>
+  					stato ="in preparazione"
+  					numero_traking=""
+  					corriere=""/>
   
   
   

@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.gestoreOrdini;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -10,6 +10,8 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+
+import Test_DBUnit.DatabaseProperty;
 
 public class GestoreOrdiniTestCase extends DBTestCase {
 
@@ -40,7 +42,7 @@ public class GestoreOrdiniTestCase extends DBTestCase {
 
 		ITable actualTable = connection.createTable("retrieve_gestoreordini_by_nickname&passowrd", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_gestoreordini_by_nickname&passowrd_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/gestoreOrdini/retrieve_gestoreordini_by_nickname&passowrd_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("gestoreordini");
 
 		Assertion.assertEquals(expectedTable, actualTable);

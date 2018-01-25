@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.composizione;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -11,9 +11,11 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 
-public class ClienteTestCase extends DBTestCase{
+import Test_DBUnit.DatabaseProperty;
 
-	public ClienteTestCase(String name) {
+public class ComposizioneTestCase extends DBTestCase {
+
+	public ComposizioneTestCase(String name) {
 		super(name);
 		System.setProperty(
 				PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS,
@@ -30,39 +32,36 @@ public class ClienteTestCase extends DBTestCase{
 	}
 	
 	
+	
 	public void testDoSave() throws Exception{
 		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO cliente (email, nickname, nome, cognome, pwd) VALUES (?, ?, ?, ?, ?)");
-		stm.setString(1,"v@gmail.com");
-		stm.setString(2, "vale46");
-		stm.setString(3, "Valentino");
-		stm.setString(4,"Rossi");
-		stm.setString(5, "12345678");
+		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO composizione (prodotto, ordine) VALUES (?, ?)");
+		stm.setInt(1, 2);
+		stm.setInt(2, 3);
 		
 		stm.executeUpdate();
 		
-		ITable actualTable = connection.createDataSet().getTable("cliente");
+		ITable actualTable = connection.createDataSet().getTable("composizione");
 		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/insert_cliente_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cliente");
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/composizione/insert_composizione_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("composizione");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	public void testLeggi() throws Exception{
+	public void testGeneraCodice() throws Exception{
 		IDatabaseConnection connection = getConnection();
-
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT * FROM cliente WHERE NICKNAME = ? AND PWD = ?");
-		stm.setString(1,"Antonio");
-		stm.setString(2, "12345678");
-
-		ITable actualTable = connection.createTable("retrieve_cliente_by_nickname&passowrd", stm);
-
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_cliente_by_nickname&passowrd_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cliente");
+		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM composizione ");
+		
+		ITable actualTable = connection.createTable("cod_composizione", stm);
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/composizione/cod_composizione_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("cod_composizione");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
+	
+	
 	
 	
 	
@@ -70,6 +69,7 @@ public class ClienteTestCase extends DBTestCase{
 	protected IDataSet getDataSet() throws Exception {
 		return new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/full.xml"));
 	}
+	
 	
 
 }

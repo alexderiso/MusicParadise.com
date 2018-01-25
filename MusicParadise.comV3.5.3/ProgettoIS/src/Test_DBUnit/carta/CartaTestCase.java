@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.carta;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -10,6 +10,8 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+
+import Test_DBUnit.DatabaseProperty;
 
 public class CartaTestCase extends DBTestCase{
 
@@ -42,7 +44,7 @@ public class CartaTestCase extends DBTestCase{
 		
 		ITable actualTable = connection.createDataSet().getTable("carta");
 		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/insert_carta_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carta/insert_carta_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("carta");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -56,12 +58,23 @@ public class CartaTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createTable("retrieve_carta_by_nickname", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_carta_by_nickname_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carta/retrieve_carta_by_nickname_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("carta");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
+	public void testGeneraCodice() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM carta ");
+		
+		ITable actualTable = connection.createTable("cod_carta", stm);
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carta/cod_carta_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("cod_carta");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
 	
 	
 	@Override

@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.ordine;
 
 import java.io.File;
 import java.sql.Date;
@@ -12,8 +12,10 @@ import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.junit.Before;
 
 import Model.OrdineModel;
+import Test_DBUnit.DatabaseProperty;
 
 public class OrdineTestCase extends DBTestCase{
 
@@ -39,8 +41,7 @@ public class OrdineTestCase extends DBTestCase{
 		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO ordine (utente, num_ordine, data_ordine, totale, indirizzo, carta, stato, numero_traking, corriere, data_consegna) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		stm.setString(1,"Ivan");
 		stm.setInt(2, 3);
-		java.util.Date utilDate = new java.util.Date();
-		stm.setDate(3, new Date(utilDate.getTime()));
+		stm.setDate(3, new Date(118,0,24));
 		stm.setDouble(4, 155.30);
 		stm.setInt(5, 0);
 		stm.setInt(6, 0);
@@ -53,7 +54,7 @@ public class OrdineTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createDataSet().getTable("ordine");
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/insert_ordine_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/insert_ordine_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("ordine");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -67,7 +68,7 @@ public class OrdineTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createTable("retrieve_ordine_by_codice", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_ordine_by_codice_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/retrieve_ordine_by_codice_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("ordine");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -81,7 +82,7 @@ public class OrdineTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createTable("retrieve_ordine_by_stato", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_ordine_by_stato_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/retrieve_ordine_by_stato_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("ordine");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -95,7 +96,7 @@ public class OrdineTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createTable("retrieve_ordine_by_utente", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_ordine_by_utente_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/retrieve_ordine_by_utente_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("ordine");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -109,12 +110,60 @@ public class OrdineTestCase extends DBTestCase{
 
 		ITable actualTable = connection.createTable("retrieve_ordini", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_ordini_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/retrieve_ordini_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("ordine");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
+	public void testAggiorna() throws Exception{
+		 IDatabaseConnection connection = getConnection();
+		  
+			PreparedStatement stm = connection.getConnection().prepareStatement("UPDATE ordine SET  numero_traking = ? ,  corriere = ? ,  data_consegna = ? ,  stato = ? WHERE NUM_ORDINE= ?");
+			stm.setString(1, "2787615673");
+			stm.setString(2, "GLS");
+			stm.setDate(3, new Date(118,0,24));
+			stm.setString(4, "spedito");
+			stm.setInt(5, 2);
+			stm.executeUpdate();
+			
+			ITable actualTable = connection.createDataSet().getTable("ordine");
+	        
+	       
+	        IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/update_ordine_oracle.xml"));
+	        ITable expectedTable = expectedDataSet.getTable("ordine");
+
+	        Assertion.assertEquals(expectedTable, actualTable);
+	}
+    
+	public void testAggiornaConsegnato() throws Exception{
+		 IDatabaseConnection connection = getConnection();
+		  
+			PreparedStatement stm = connection.getConnection().prepareStatement("UPDATE ordine SET stato = ? WHERE NUM_ORDINE= ?");
+			stm.setString(1, "consegnato");
+			stm.setInt(2, 0);
+			stm.executeUpdate();
+			
+			ITable actualTable = connection.createDataSet().getTable("ordine");
+	        
+	       
+	        IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/update_ordine_consegnato_oracle.xml"));
+	        ITable expectedTable = expectedDataSet.getTable("ordine");
+
+	        Assertion.assertEquals(expectedTable, actualTable);
+	}
+	
+	public void testGeneraCodice() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM ordine ");
+		
+		ITable actualTable = connection.createTable("cod_ordine", stm);
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/cod_ordine_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("cod_ordine");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
 	
 	@Override
 	protected IDataSet getDataSet() throws Exception {

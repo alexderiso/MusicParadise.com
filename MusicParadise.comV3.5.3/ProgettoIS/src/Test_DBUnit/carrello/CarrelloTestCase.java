@@ -1,4 +1,4 @@
-package Test_DBUnit;
+package Test_DBUnit.carrello;
 
 import java.io.File;
 import java.sql.PreparedStatement;
@@ -12,6 +12,7 @@ import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 
 import Model.CarrelloModel;
+import Test_DBUnit.DatabaseProperty;
 
 public class CarrelloTestCase extends DBTestCase {
 	
@@ -43,7 +44,7 @@ public class CarrelloTestCase extends DBTestCase {
 		
 		ITable actualTable = connection.createDataSet().getTable("incarrello");
 		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/insert_carrello_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carrello/insert_carrello_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("incarrello");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -58,7 +59,7 @@ public class CarrelloTestCase extends DBTestCase {
 
 		ITable actualTable = connection.createTable("retrieve_carrello_by_nickname", stm);
 
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/retrieve_carrello_by_nickname_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carrello/retrieve_carrello_by_nickname_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("incarrello");
 
 		Assertion.assertEquals(expectedTable, actualTable);
@@ -73,11 +74,24 @@ public class CarrelloTestCase extends DBTestCase {
 		
 		ITable actualTable = connection.createDataSet().getTable("incarrello");
 		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/remove_carrello_oracle.xml"));
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carrello/remove_carrello_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("incarrello");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
+	
+	public void testGeneraCodice() throws Exception{
+		IDatabaseConnection connection = getConnection();
+		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM incarrello ");
+		
+		ITable actualTable = connection.createTable("cod_carrello", stm);
+		
+		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carrello/cod_carrello_oracle.xml"));
+		ITable expectedTable = expectedDataSet.getTable("cod_carrello");
+
+		Assertion.assertEquals(expectedTable, actualTable);
+	}
+	
 	
 	@Override
 	protected IDataSet getDataSet() throws Exception {

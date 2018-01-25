@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
 
-<ordine				utente="Antonio"
+
+<ordine			utente="Antonio"
   					num_ordine="0"
   					data_ordine="2018-01-22"
   					totale="155.30"
@@ -22,4 +23,14 @@
   					numero_traking="2423423423"
   					corriere="Bartolini"
   					data_consegna="2018-01-23"/>
- </dataset>
+  					
+   <ordine			utente="Antonio"
+  					num_ordine="2"
+  					data_ordine="2018-01-22"
+  					totale="155.30"
+  					indirizzo="0"
+  					carta = "0"
+  					stato ="in preparazione"
+  					numero_traking=""
+  					corriere=""/>
+</dataset>
