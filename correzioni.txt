@@ -1,7 +1,7 @@
 RAD
-PAG 17 il package è diviso in "catalogo" e "carrello" nel codice c'è solo un unico package chiamato "acquisto"
+PAG 17 il package è diviso in "catalogo" e "carrello" nel codice c'è solo un unico package chiamato "acquisto" (FATTO)
 PAG 21 Package con nome sbagliato deve essere "Gestione offerta"
-PAG 24 Package con nome sbagliato deve essere "Amministrazione"
+PAG 24 Package con nome sbagliato deve essere "Amministrazione" (FATTO)
 
 MANCANO CLASS DIAGRAM SINGOLI DI : CONFERMAORDINE,RICERCAORDINE,RICERCAPRODOTTO,VISUALIZZACATALOGO,VISUALIZZAPROFILO, VISUALIZZAORDINI
 
