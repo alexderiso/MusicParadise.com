@@ -148,7 +148,7 @@ function removeItem(removeButton){
 function aggQ() {
 	var quant = event.target.value;
 	var cod = $(event.target).attr('name');
-	$.get("AggiungiProdottoAlCarrelloControl", { azC: "aggiungiFromCart", quantità: quant, id: cod });
+	$.get("AggiornaQuantitàProdottoCarrello", { quantità: quant, id: cod });
 }
 
 

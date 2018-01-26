@@ -125,9 +125,9 @@ if(utente == null){
 function isOk() {
 	if( ValidateLetter(document.getElementById("inputNome"),document.getElementById("txtErrNome"))
 			&& ValidateLetter(document.getElementById("inputCognome"),document.getElementById("txtErrCognome")) 
+			&& ValidateAlfa(document.getElementById("inputIndirizzo"),document.getElementById("txtErrIndirizzo"))
 			&& ValidateLetter(document.getElementById("inputCittà"),document.getElementById("txtErrCittà"))
 			&& ValidateCap(document.getElementById("inputCap"),document.getElementById("txtErrCap"))
-			&& ValidateAlfa(document.getElementById("inputIndirizzo"),document.getElementById("txtErrIndirizzo"))
 			&& ValidatePhone(document.getElementById("inputTelefono"),document.getElementById("txtErrTelefono"))
 			) {
 		

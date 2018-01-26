@@ -83,7 +83,7 @@
 				action="RicercaProdottoControl">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search"
-						name="name" maxlength="50">
+						name="name" maxlength="20">
 				</div>
 				<button type="submit"
 					class="btn btn-default glyphicon glyphicon-search" id="cerca"></button>
@@ -114,10 +114,9 @@
 				<li class="jquery3"><a href="carrello.jsp"
 					class="fa fa-shopping-cart fa-3x"><span id="iconCartNum">0</span></a></li>
 				<% } %>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+				<li class="dropdown"><a href="" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false" id="benvenuto">Benvenuto: <%= bean.getNickName() %> <span
-						class="caret"></span></a>
+					aria-expanded="false" id="benvenuto">Benvenuto: <%= bean.getNickName() %> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a
 							href="ViualizzaOrdiniCliente?nickname=<%= bean.getNickName()%>" >I

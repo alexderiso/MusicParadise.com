@@ -76,7 +76,7 @@ function ValidateEmail(mail,txt)   {
 	return false;
 }
 function ValidateAlfa(str,txt) {
-	var letters =  /^[-\w\s,;.()]+$/; 
+	var letters =  /^[-\w\s,;.()]{4,20}$/; 
 	if(!(str.value.match(letters))) {
 		str.style.border = "2px solid red";
 		$(txt).html("Campo non valido");
@@ -87,7 +87,7 @@ function ValidateAlfa(str,txt) {
 	return true;
 }
 function ValidateLetter(str,txt) {
-	var letters =  /^([a-zA-Z\xE0\xE8\xE9\xF9\xF2\xEC\x27]\s?)+$/;
+	var letters =  /^([a-zA-Z\xE0\xE8\xE9\xF9\xF2\xEC\x27]{4,20}\s?)+$/;
 	if(!(str.value.match(letters))) {
 		$(txt).html("Campo non valido");
 		str.style.border = "2px solid red";

@@ -1,3 +1,4 @@
+<%String errore = (String) request.getAttribute("errore"); %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,7 +21,11 @@ body {
 <body class ="sfondo">
 <div class="cover">
         <h1>Risorsa non trovata <small>Error 404</small></h1>
+        <% if(errore != null){%>
+        <p class="lead"><%=errore %></p>
+        <%}else{%>
         <p class="lead">La risorsa non è stata trovata ma potrebbe essere disponibile in futuro.</p>
+        <%} %>
         <p><a href="index.jsp">vai alla pagina iniziale</a></p>
     </div>
 </body>

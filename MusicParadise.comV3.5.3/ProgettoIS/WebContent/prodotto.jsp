@@ -127,7 +127,7 @@ if(prd == null){
 						});
 						function aggProdotto() {
 							var quantità = $(".product-quantity").val();
-								$.get("AggiungiProdottoAlCarrelloControl", { azC: "aggiungiFromPrd", quantità: "1"},
+								$.get("AggiungiProdottoAlCarrelloControl", {quantità: "1"},
 										function (resp) { 
 											$("#disp").html("Ancora disponibili: "); 
 											

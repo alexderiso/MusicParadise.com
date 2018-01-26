@@ -91,7 +91,8 @@ public class RicercaProdottoControl extends HttpServlet {
 					int codeNum = Integer.parseInt(code);
 					ProdottoBean bean = model.doRetrieveByKey(codeNum);
 					if(bean == null){
-						//errore
+						request.setAttribute("errore", "Il prodotto selezionato non esiste");
+						response.sendRedirect(request.getContextPath() + "/404.jsp");
 					}else{
 						request.getSession().removeAttribute("prodotto");
 						request.getSession().setAttribute("prodotto", bean);

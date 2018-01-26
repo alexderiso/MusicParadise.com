@@ -111,8 +111,8 @@ if(utente == null){
 	<script>
 function isOk() {
 	if(ValidateCard(document.getElementById("inputCard"),document.getElementById("txtErrCard"))
-			&& ValidateCode(document.getElementById("inputCode"),document.getElementById("txtErrCode"))
-			&& ValidateLetter(document.getElementById("inputNome"),document.getElementById("txtErrNome"))) {
+			&& ValidateLetter(document.getElementById("inputNome"),document.getElementById("txtErrNome"))
+			&& ValidateCode(document.getElementById("inputCode"),document.getElementById("txtErrCode"))) {
 		
 		return true;
 		

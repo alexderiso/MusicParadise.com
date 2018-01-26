@@ -49,7 +49,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per aggiungere un prodotto al carrello
 	 * @param request
 	 * @param respose
-	 * @pre azione != null prodotto != null quantit‡ != null cart != null
+	 * @pre prodotto != null
 	 * @post se il prodotto aggiunto non esiste nel carrello allora viene aggiunto al carrello
 	 * se nel carrello gi‡ esiste il prodotto allora la quantit‡ del prodotto viene aumentata di 1
 	 * @throws IOExeption, ServletException
@@ -63,48 +63,26 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 		}
 
 
-		String azione = request.getParameter("azC");
-		if(azione == null) {
+		ProdottoCatalogoBean bean = (ProdottoCatalogoBean) (request.getSession().getAttribute("prodotto"));
+		if(bean == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
-			if(azione.indexOf("aggiungi") != -1) {
-				String q = request.getParameter("quantit‡");
-				ProdottoCatalogoBean bean = (ProdottoCatalogoBean) (request.getSession().getAttribute("prodotto"));
-				if(q == null || bean == null) {
-					response.sendRedirect(request.getContextPath() + "/404.jsp");
-				}else {
 
-					try {
 
-						int quantit‡ = Integer.parseInt(q);
 
-						if(azione.equalsIgnoreCase("aggiungiFromPrd")){
-							cart.addProduct(bean);
-							if(cart.getQuantit‡ByCodice(bean.getCodice()) >= bean.getNumDisp()) {
-								response.getWriter().write("fineDisp");
-							} else {
-								int differenza = bean.getNumDisp() - cart.getQuantit‡ByCodice(bean.getCodice()); 
-								response.getWriter().write(differenza+"");
-							}
-						}
-						if(azione.equalsIgnoreCase("aggiungiFromCart")){
-							int code = Integer.parseInt(request.getParameter("id"));
-							System.out.println("aggiungiFromCart: "+ code);
-							cart.aggiornaQuantit‡(code,quantit‡);
-						}
-
-						request.getSession().setAttribute("cart", cart);
-						request.setAttribute("cart", cart);
-						return;
-					}catch(NumberFormatException e) {
-						response.sendRedirect(request.getContextPath() + "/404.jsp");
-					}
-				}
+			cart.addProduct(bean);
+			if(cart.getQuantit‡ByCodice(bean.getCodice()) >= bean.getNumDisp()) {
+				response.getWriter().write("fineDisp");
+			} else {
+				int differenza = bean.getNumDisp() - cart.getQuantit‡ByCodice(bean.getCodice()); 
+				response.getWriter().write(differenza+"");
 			}
+			request.setAttribute("cart", cart);
+			return;
+
 		}
-
-
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
