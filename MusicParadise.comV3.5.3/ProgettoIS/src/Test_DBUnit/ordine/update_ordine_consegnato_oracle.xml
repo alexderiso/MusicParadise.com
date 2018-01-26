@@ -3,33 +3,33 @@
 
 
 <ordine			utente="Antonio"
-  					num_ordine="0"
+  					num_ordine="1"
   					data_ordine="2018-01-22"
   					totale="155.30"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="consegnato"
   					numero_traking="1214235435"
   					corriere="Bartolini"
   					data_consegna="2018-01-22"/>
   					
   <ordine			utente="Antonio"
-  					num_ordine="1"
+  					num_ordine="2"
   					data_ordine="2018-01-22"
   					totale="527.40"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="consegnato"
   					numero_traking="2423423423"
   					corriere="Bartolini"
   					data_consegna="2018-01-23"/>
   					
    <ordine			utente="Antonio"
-  					num_ordine="2"
+  					num_ordine="3"
   					data_ordine="2018-01-22"
   					totale="155.30"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="in preparazione"
   					numero_traking=""
   					corriere=""/>

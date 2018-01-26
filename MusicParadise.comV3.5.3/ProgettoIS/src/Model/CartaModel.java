@@ -47,12 +47,16 @@ public class CartaModel {
 	 * @param cliente
 	 * @throws SQLException
 	 */
-	public synchronized void doSave(CartaBean carta, ClienteBean cliente) throws SQLException {
-
+	public synchronized void doSave(String numCarta,String scadenza,String nomProprietario, ClienteBean cliente) throws SQLException {
+		
+		
+		
+		
+		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLProd = "INSERT INTO " + CartaModel.TABLE_NAME_CARTA
-				+ " (cod, scadenza, numero, nomeProprietario, cliente) VALUES (?, ?, ?, ?, ?)";
+				+ " (scadenza, numero, nomeProprietario, cliente) VALUES (?, ?, ?, ?)";
 
 
 		try {
@@ -60,11 +64,10 @@ public class CartaModel {
 			preparedStatement = connection.prepareStatement(insertSQLProd);
 
 			
-			preparedStatement.setInt(1, carta.getCodice());
-			preparedStatement.setString(2, carta.getScadenza());
-			preparedStatement.setString(3, carta.getNumCarta());
-			preparedStatement.setString(4, carta.getNomeProprietario());
-			preparedStatement.setString(5, cliente.getNickName());
+			preparedStatement.setString(1, scadenza);
+			preparedStatement.setString(2, numCarta);
+			preparedStatement.setString(3, nomProprietario);
+			preparedStatement.setString(4, cliente.getNickName());
 			preparedStatement.executeUpdate();
 
 
@@ -78,36 +81,6 @@ public class CartaModel {
 			}
 		}
 	}
-	/**
-	 * Metodo che genera il codice della carta di credito nel database
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ CartaModel.TABLE_NAME_CARTA;
-		connection = ds.getConnection();
-		preparedStatement = connection.prepareStatement(sql);
-		ResultSet rs = preparedStatement.executeQuery();
-		int rowCount = 0;
-		try{
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-
-		return rowCount;
-	}
-	
 	
 	/**
 	 * Metodo che legge le carte di credito presenti nel database collegate al nickname passato come parametro
@@ -119,6 +92,10 @@ public class CartaModel {
 	 * @throws SQLException
 	 */
 public synchronized ArrayList<CartaBean> leggi(String nickname) throws SQLException {
+	
+		if(nickname == null) {
+			return null;
+		}
 		
 		ArrayList<CartaBean> carte = new ArrayList<CartaBean>();
 	
@@ -160,11 +137,14 @@ public synchronized ArrayList<CartaBean> leggi(String nickname) throws SQLExcept
 /**
  * Metodo che rimuove una carta dal database
  * @param codice
- * @pre codice != null
+ * @pre codice >= 0
  * @post la carta associata al codice passato come parametro viene rimossa dal database
  * @throws SQLException
  */
 public synchronized void rimuoviCarta(int codice) throws SQLException {
+	if(codice < 0) {
+		return;
+	}
 	Connection connection = null;
 	PreparedStatement preparedStatement = null;
 	String insertSQL = "DELETE FROM " + CartaModel.TABLE_NAME_CARTA + " WHERE COD = ?";

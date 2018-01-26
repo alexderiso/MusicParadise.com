@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
- <prodottoordine	  codice="0"
+ <prodottoordine	  codice="1"
   					  quantita="1"
   					  nome="YAMAHA C40M SATINATA"
   					  colore="Marrone chiaro"
@@ -10,7 +10,7 @@
   					  prezzo="115.00"
   					  strumento="Chitarra"/>
   					  
-  <prodottoordine	  codice="1"
+  <prodottoordine	  codice="2"
   					  quantita="1"
   					  nome="CASIO CDP130 Black"
   					  colore="Nero"
@@ -20,7 +20,7 @@
   					  prezzo="420.00"
   					  strumento="Tastiere"/>
   					  
-  <prodottoordine	  codice="2"
+  <prodottoordine	  codice="3"
   					  quantita="1"
   					  nome="YAMAHA C40M SATINATA"
   					  colore="Marrone chiaro"
@@ -30,7 +30,7 @@
   					  prezzo="115.00"
   					  strumento="Chitarra"/>
   					  
-  <prodottoordine     codice="3"
+  <prodottoordine     codice="4"
   					  quantita="2"
   					  nome="Tastiera Casio"
   					  colore="Nero"

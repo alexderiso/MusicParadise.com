@@ -48,6 +48,10 @@ public class CarrelloModel {
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(List<ProdottoCatalogoBean> list, UtenteBean utente) throws SQLException {
+		
+		if(list == null || utente == null) {
+			return;
+		}
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -80,36 +84,6 @@ public class CarrelloModel {
 		}
 	}
 	/**
-	 * Metodo che genera il codice univoco del carrello
-	 * @post ritorna l'id che identifica l'informazione relativa al carrello nel database
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ CarrelloModel.TABLE_NAME_INCARRELLO;
-		connection =ds.getConnection();
-		preparedStatement = connection.prepareStatement(sql);
-		ResultSet rs = preparedStatement.executeQuery();
-		int rowCount = 0;
-		try{
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-
-		return rowCount;
-	}
-	/**
 	 * Metodo che legge il carrello dal database in base al nickname
 	 * @param nickname
 	 * @pre nickname != null
@@ -118,6 +92,10 @@ public class CarrelloModel {
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<ProdottoCatalogoBean> leggi(String nickname) throws SQLException {
+		
+		if(nickname == null) {
+			return null;
+		}
 		
 		ArrayList<ProdottoCatalogoBean> prodInCarrello = new ArrayList<ProdottoCatalogoBean>();
 	
@@ -179,6 +157,10 @@ public class CarrelloModel {
 	 * @throws SQLException
 	 */
 public synchronized void remove(UtenteBean utente) throws SQLException {
+	
+	if(utente == null) {
+		return;
+	}
 		
 
 	Connection connection = null;

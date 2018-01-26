@@ -25,14 +25,19 @@ public class ProdottoOrdineModelTest_jdbc {
 	public void TestProdottiOrdine() throws SQLException {
 		Collection<ProdottoOrdineBean> prodotti= model.prodottiOrdine(1);
 		assertNotNull(prodotti);
-		assertEquals(prodotti.size(), 1);
+		assertEquals(prodotti.size(), 2);
 	}
 	
 	@Test
 	public void TestDoSave() throws SQLException {
-		ProdottoCatalogoBean prodotto = new ProdottoCatalogoBean();
+		ArrayList<String> foto = new ArrayList<String>();
+		  foto.add("immaginiProdotti/yamaha_batteria.jpg");
+		  foto.add("immaginiProdotti/yamaha_batteria2.jpg");
+		  foto.add("immaginiProdotti/yamaha_batteria3.jpg");
+		  
+		  ProdottoCatalogoBean prd = new ProdottoCatalogoBean(1,"Batteria","Bianco","Yamaha","Bella",7500.00,1,"batteria",foto,1,new Date(118, 0, 26),2);
 		ArrayList<ProdottoCatalogoBean> prodotti = new ArrayList<>();
-		prodotti.add(prodotto);
+		prodotti.add(prd);
 		model.doSave(prodotti);
 		
 		

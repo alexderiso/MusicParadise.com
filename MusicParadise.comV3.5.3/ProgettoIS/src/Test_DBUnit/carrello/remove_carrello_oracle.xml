@@ -2,7 +2,5 @@
 <dataset>
 
 
-<incarrello       prodotto="0"
-  					utente="Antonio"
-  					quantita="1"/>
+<incarrello/>
 </dataset>

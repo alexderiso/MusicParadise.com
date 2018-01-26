@@ -49,21 +49,20 @@ public class IndirizzoModel_jdbc {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			String insertSQL = "INSERT INTO " + IndirizzoModel_jdbc.TABLE_NAME_IND
-					+ " (codice, indirizzo, citta, cap, nome, cognome, Telefono, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+					+ " (indirizzo, citta, cap, nome, cognome, Telefono, cliente) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
 			try {
 				connection = con;
 				preparedStatement = connection.prepareStatement(insertSQL);
 
-				preparedStatement.setInt(1, indirizzo.getCodice());
-				preparedStatement.setString(2, indirizzo.getIndirizzo());
-				preparedStatement.setString(3, indirizzo.getCittà());
-				preparedStatement.setInt(4, indirizzo.getCap());
-				preparedStatement.setString(5, indirizzo.getNome());
-				preparedStatement.setString(6, indirizzo.getCognome());
-				preparedStatement.setString(7,indirizzo.getTelefono());
-				preparedStatement.setString(8,nickname);
+				preparedStatement.setString(1, indirizzo.getIndirizzo());
+				preparedStatement.setString(2, indirizzo.getCittà());
+				preparedStatement.setInt(3, indirizzo.getCap());
+				preparedStatement.setString(4, indirizzo.getNome());
+				preparedStatement.setString(5, indirizzo.getCognome());
+				preparedStatement.setString(6,indirizzo.getTelefono());
+				preparedStatement.setString(7,nickname);
 
 
 				preparedStatement.executeUpdate();
@@ -74,30 +73,7 @@ public class IndirizzoModel_jdbc {
 				e.printStackTrace();
 			}
 		}
-		/**
-		 * Genera il codice dell'indirizzo
-		 * @return rowCount
-		 * @throws SQLException
-		 */
-		public synchronized int generaCodice() throws SQLException{
-			Connection connection = null;
-			PreparedStatement preparedStatement = null;
-			String sql = "SELECT COUNT(*) AS TOTAL FROM "+ IndirizzoModel_jdbc.TABLE_NAME_IND;
-			connection =con;
-			preparedStatement = connection.prepareStatement(sql);
-			ResultSet rs = preparedStatement.executeQuery();
-			int rowCount = 0;
-			try{
-				while(rs.next()){
-					rowCount = rs.getInt("total");
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-
-			return rowCount;
-		}
-		
+	
 		/**
 		 * Metodo che legge gli indirizzi dal database
 		 * @param nickname

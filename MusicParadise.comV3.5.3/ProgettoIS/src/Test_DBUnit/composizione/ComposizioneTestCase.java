@@ -36,7 +36,7 @@ public class ComposizioneTestCase extends DBTestCase {
 	public void testDoSave() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO composizione (prodotto, ordine) VALUES (?, ?)");
-		stm.setInt(1, 2);
+		stm.setInt(1, 3);
 		stm.setInt(2, 3);
 		
 		stm.executeUpdate();
@@ -45,18 +45,6 @@ public class ComposizioneTestCase extends DBTestCase {
 		
 		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/composizione/insert_composizione_oracle.xml"));
 		ITable expectedTable = expectedDataSet.getTable("composizione");
-
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
-	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM composizione ");
-		
-		ITable actualTable = connection.createTable("cod_composizione", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/composizione/cod_composizione_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_composizione");
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}

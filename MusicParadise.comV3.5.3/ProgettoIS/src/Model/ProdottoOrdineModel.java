@@ -51,7 +51,7 @@ public class ProdottoOrdineModel {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLProd = "INSERT INTO " + ProdottoOrdineModel.TABLE_NAME_PROD
-				+ " (codice, quantita, nome, colore, marca, descrizione, peso, prezzo, strumento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (quantita, nome, colore, marca, descrizione, peso, prezzo, strumento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 
 		try {
@@ -59,18 +59,22 @@ public class ProdottoOrdineModel {
 			preparedStatement = connection.prepareStatement(insertSQLProd);
 			
 			for(ProdottoCatalogoBean temp : prodotti) {
-				preparedStatement.setInt(1, generaCodice());
-				preparedStatement.setInt(2, temp.getQuantAgg());
-				preparedStatement.setString(3, temp.getNome());
-				preparedStatement.setString(4, temp.getColore());
-				preparedStatement.setString(5, temp.getMarca());
-				preparedStatement.setString(6, temp.getDescrizione());
-				preparedStatement.setInt(7, temp.getPeso());
-				preparedStatement.setDouble(8, temp.getPrezzo());
-				preparedStatement.setString(9, temp.getStrumento());
+
+				preparedStatement.setInt(1, temp.getQuantAgg());
+				preparedStatement.setString(2, temp.getNome());
+				preparedStatement.setString(3, temp.getColore());
+				preparedStatement.setString(4, temp.getMarca());
+				preparedStatement.setString(5, temp.getDescrizione());
+				preparedStatement.setInt(6, temp.getPeso());
+				preparedStatement.setDouble(7, temp.getPrezzo());
+				preparedStatement.setString(8, temp.getStrumento());
 
 				preparedStatement.executeUpdate();
 			}
+			
+			
+			
+			
 
 		} finally {
 			try {
@@ -82,36 +86,7 @@ public class ProdottoOrdineModel {
 			}
 		}
 	}
-	/**
-	 * Metodo che genera un codice per i prodotti
-	 * @post ritorna un intero che rappresenta l'id
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ ProdottoOrdineModel.TABLE_NAME_PROD;
-		connection = ds.getConnection();
-		preparedStatement = connection.prepareStatement(sql);
-		ResultSet rs = preparedStatement.executeQuery();
-		int rowCount = 0;
-		try{
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
 
-		return rowCount;
-	}
 	/**
 	 * Metodo che restiuisce i prodotti presenti in un ordine
 	 * @param codiceOrdine

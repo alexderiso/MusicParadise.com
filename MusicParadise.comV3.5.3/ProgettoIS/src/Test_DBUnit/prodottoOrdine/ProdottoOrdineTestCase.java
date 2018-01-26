@@ -35,7 +35,7 @@ public class ProdottoOrdineTestCase extends DBTestCase {
 	public void testDoSave() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO prodottoordine (codice, quantita, nome, colore, marca, descrizione, peso, prezzo, strumento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		stm.setInt(1, 3);
+		stm.setInt(1, 4);
 		stm.setInt(2, 2);
 		stm.setString(3, "Tastiera Casio");
 		stm.setString(4, "Nero");
@@ -60,7 +60,7 @@ public class ProdottoOrdineTestCase extends DBTestCase {
 	public void testProdottiOrdine() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT * FROM prodottoordine JOIN composizione WHERE prodottoordine.CODICE = composizione.PRODOTTO AND composizione.ORDINE = ?");
-		stm.setInt(1,0);
+		stm.setInt(1,1);
 		
 		ITable actualTable = connection.createTable("retrieve_prodottoordine", stm);
 		
@@ -70,19 +70,7 @@ public class ProdottoOrdineTestCase extends DBTestCase {
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM prodottoordine ");
-		
-		ITable actualTable = connection.createTable("cod_prodottoordine", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/prodottoOrdine/cod_prodottoordine_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_prodottoordine");
 
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
-	
 	
 	
 	@Override

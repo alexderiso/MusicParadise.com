@@ -13,13 +13,13 @@
   					cognome="Esposito"
   					pwd="12345678"/>
   				
-  <carta			cod="0"
+  <carta			cod="1"
   					scadenza="1/18"
   					numero="1234567890123456"
   					nomeProprietario="Antonio Spera"
   					cliente="Antonio"/>
   					
-  <carta            cod="1"
+  <carta            cod="2"
   					scadenza="1/17"
   					numero="7265365789187635"
   					nomeProprietario="Paolo Rossi"
@@ -60,7 +60,7 @@
   					  data_inserimento="2017-05-30"
   					  strumento="Chitarra"/>
   					  
-  <prodottoordine	  codice="0"
+  <prodottoordine	  codice="1"
   					  quantita="1"
   					  nome="YAMAHA C40M SATINATA"
   					  colore="Marrone chiaro"
@@ -70,7 +70,7 @@
   					  prezzo="115.00"
   					  strumento="Chitarra"/>
   					  
-  <prodottoordine	  codice="1"
+  <prodottoordine	  codice="2"
   					  quantita="1"
   					  nome="CASIO CDP130 Black"
   					  colore="Nero"
@@ -80,7 +80,7 @@
   					  prezzo="420.00"
   					  strumento="Tastiere"/>
   					  
-  <prodottoordine	  codice="2"
+  <prodottoordine	  codice="3"
   					  quantita="1"
   					  nome="YAMAHA C40M SATINATA"
   					  colore="Marrone chiaro"
@@ -92,48 +92,41 @@
   					  
   
   					
-  <composizione		prodotto="0"
-  					ordine="0"/>
-  					
-  <composizione 	prodotto="1"
-  					ordine="1"/>
-  					
-  <composizione		prodotto="2"
-  					ordine="2"/>
-  					
-  <foto				codice="0"
-  					codice_prodotto="0"
-  					immagine="immaginiProdotti/yamaha_batteria.jpg"/>
+
   					
   <foto				codice="1"
   					codice_prodotto="0"
-  					immagine="immaginiProdotti/yamaha_batteria2.jpg"/>
+  					immagine="immaginiProdotti/yamaha_batteria.jpg"/>
   					
   <foto				codice="2"
   					codice_prodotto="0"
-  					immagine="immaginiProdotti/yamaha_batteria3.jpg"/>
+  					immagine="immaginiProdotti/yamaha_batteria2.jpg"/>
   					
   <foto				codice="3"
-  					codice_prodotto="1"
-  					immagine="immaginiProdotti/tamburo_batteria.jpg"/>
+  					codice_prodotto="0"
+  					immagine="immaginiProdotti/yamaha_batteria3.jpg"/>
   					
   <foto				codice="4"
   					codice_prodotto="1"
+  					immagine="immaginiProdotti/tamburo_batteria.jpg"/>
+  					
+  <foto				codice="5"
+  					codice_prodotto="1"
   					immagine="immaginiProdotti/tamburo_batteria1.jpg"/>		
 			
-  <foto				codice="5"
+  <foto				codice="6"
   					codice_prodotto="1"
   					immagine="immaginiProdotti/tamburo_batteria2.jpg"/>
   					
-  <foto				codice="6"
+  <foto				codice="7"
   					codice_prodotto="2"
   					immagine="immaginiProdotti/chitarra_Yamaha.jpg"/>
   					
-  <foto				codice="7"
+  <foto				codice="8"
   					codice_prodotto="2"
   					immagine="immaginiProdotti/chitarra_Yamaha2.jpg"/>
   
-  <foto				codice="8"
+  <foto				codice="9"
   					codice_prodotto="2"
   					immagine="immaginiProdotti/chitarra_Yamaha3.jpg"/>
   
@@ -144,11 +137,11 @@
   					pwd="1234567@"
   					matricola="123456789"/>
   					
-  <incarrello       prodotto="0"
+  <incarrello       prodotto="1"
   					utente="Antonio"
   					quantita="1"/>
   
-  <indirizzo		codice="0"
+  <indirizzo		codice="1"
   					indirizzo="Via Po"
   					citta="Marigliano"
   					cap="80034"
@@ -158,39 +151,46 @@
   					cliente="Antonio"/>
   					
   <ordine			utente="Antonio"
-  					num_ordine="0"
+  					num_ordine="1"
   					data_ordine="2018-01-22"
   					totale="155.30"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="spedito"
   					numero_traking="1214235435"
   					corriere="Bartolini"
   					data_consegna="2018-01-22"/>
   					
   <ordine			utente="Antonio"
-  					num_ordine="1"
+  					num_ordine="2"
   					data_ordine="2018-01-22"
   					totale="527.40"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="consegnato"
   					numero_traking="2423423423"
   					corriere="Bartolini"
   					data_consegna="2018-01-23"/>
   					
    <ordine			utente="Antonio"
-  					num_ordine="2"
+  					num_ordine="3"
   					data_ordine="2018-01-22"
   					totale="155.30"
-  					indirizzo="0"
-  					carta = "0"
+  					indirizzo="1"
+  					carta = "1"
   					stato ="in preparazione"
   					numero_traking=""
   					corriere=""/>
   
   
-  
+  <composizione		prodotto="1"
+  					ordine="1"/>
+  					
+  <composizione 	prodotto="2"
+  					ordine="1"/>
+  					
+  <composizione		prodotto="3"
+  					ordine="2"/>
   					
   
   					

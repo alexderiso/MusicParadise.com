@@ -23,7 +23,7 @@ public class ProdottoModelTest_jdbc {
 	public void TestRicercaAll() throws SQLException {
 		ArrayList<ProdottoCatalogoBean> prodotti = model.doRetrieveAll();
 		assertNotNull(prodotti);
-		assertEquals(prodotti.size(),1);
+		assertEquals(prodotti.size(),3);
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class ProdottoModelTest_jdbc {
 		Collection<ProdottoCatalogoBean> prodotti = model.doRetrieveByInstruments("batteria");
 		Collection<ProdottoCatalogoBean> prodottoAssente = model.doRetrieveByInstruments("tastiera");
 		assertNotNull(prodotti);
-		assertEquals(prodotti.size(),1);
+		assertEquals(prodotti.size(),2);
 		assertEquals(prodottoAssente.size(),0);
 	}
 	
@@ -40,16 +40,16 @@ public class ProdottoModelTest_jdbc {
 		Collection<ProdottoCatalogoBean> prodotti = model.doRetrieveByMarca("Yamaha");
 		Collection<ProdottoCatalogoBean> prodottoAssente = model.doRetrieveByMarca("Casio");
 		assertNotNull(prodotti);
-		assertEquals(prodotti.size(),1);
+		assertEquals(prodotti.size(),2);
 		assertEquals(prodottoAssente.size(),0);
 	}
 	
 	@Test
 	public void TestRicercaPerID() throws SQLException {
-		ProdottoCatalogoBean prodotto = model.doRetrieveByKey(0);
-		ProdottoCatalogoBean prodottoAssente = model.doRetrieveByKey(1);
+		ProdottoCatalogoBean prodotto = model.doRetrieveByKey(1);
+		ProdottoCatalogoBean prodottoAssente = model.doRetrieveByKey(3);
 		assertNotNull(prodotto);
-		assertEquals(prodotto.getCodice(),0);
+		assertEquals(prodotto.getCodice(),1);
 		assertEquals(prodottoAssente,null);
 	}
 	
@@ -70,13 +70,13 @@ public class ProdottoModelTest_jdbc {
 		  foto.add("immaginiProdotti/yamaha_batteria2.jpg");
 		  foto.add("immaginiProdotti/yamaha_batteria3.jpg");
 		  
-		  ProdottoCatalogoBean prd = new ProdottoCatalogoBean(0,"Batteria Yamaha","Bianco","Yamaha","Bella",3500.00,1,"batteria",foto,1,new Date(117, 05, 29),2);
+		  ProdottoCatalogoBean prd = new ProdottoCatalogoBean(1,"Batteria Yamaha","Bianco","Yamaha","Bella",3500.00,1,"batteria",foto,1,new Date(117, 05, 29),2);
 		 
 		  carrello.add(prd);
 		  
 		  model.aggiorna(carrello);
 		  
-		  ProdottoCatalogoBean prodottoDB = model.doRetrieveByKey(0);
+		  ProdottoCatalogoBean prodottoDB = model.doRetrieveByKey(1);
 		  assertEquals(prodottoDB.getNumDisp(),prd.getNumDisp()-prd.getQuantAgg());
 	}
 

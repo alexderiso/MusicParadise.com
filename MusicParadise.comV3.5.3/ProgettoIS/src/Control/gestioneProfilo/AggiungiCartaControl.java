@@ -79,14 +79,9 @@ public class AggiungiCartaControl extends HttpServlet {
 		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else if(verificaParametri(numCarta,scadenza,nomProprietario)&& utente != null){
-			CartaBean carta= new CartaBean();
-			carta.setNumCarta(numCarta);
-			carta.setScadenza(scadenza);
-			carta.setNomeProprietario(nomProprietario);
-			utente.addCarta(carta);
 			try {
-				carta.setCodice(cartaModel.generaCodice());
-				cartaModel.doSave(carta,utente);
+				cartaModel.doSave(numCarta,scadenza,nomProprietario,utente);
+				utente.setCarte(cartaModel.leggi(utente.getNickName()));
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

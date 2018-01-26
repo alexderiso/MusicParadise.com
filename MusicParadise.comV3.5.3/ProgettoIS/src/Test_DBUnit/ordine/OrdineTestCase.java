@@ -40,11 +40,11 @@ public class OrdineTestCase extends DBTestCase{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("INSERT INTO ordine (utente, num_ordine, data_ordine, totale, indirizzo, carta, stato, numero_traking, corriere, data_consegna) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		stm.setString(1,"Ivan");
-		stm.setInt(2, 3);
+		stm.setInt(2, 4);
 		stm.setDate(3, new Date(118,0,24));
 		stm.setDouble(4, 155.30);
-		stm.setInt(5, 0);
-		stm.setInt(6, 0);
+		stm.setInt(5, 1);
+		stm.setInt(6, 1);
 		stm.setString(7, "in preparazione");
 		stm.setNull(8, java.sql.Types.VARCHAR);
 		stm.setNull(9, java.sql.Types.VARCHAR);
@@ -64,7 +64,7 @@ public class OrdineTestCase extends DBTestCase{
 		IDatabaseConnection connection = getConnection();
 
 		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT * FROM ordine WHERE NUM_ORDINE = ?");
-		stm.setInt(1,1);
+		stm.setInt(1,2);
 
 		ITable actualTable = connection.createTable("retrieve_ordine_by_codice", stm);
 
@@ -124,7 +124,7 @@ public class OrdineTestCase extends DBTestCase{
 			stm.setString(2, "GLS");
 			stm.setDate(3, new Date(118,0,24));
 			stm.setString(4, "spedito");
-			stm.setInt(5, 2);
+			stm.setInt(5, 3);
 			stm.executeUpdate();
 			
 			ITable actualTable = connection.createDataSet().getTable("ordine");
@@ -141,7 +141,7 @@ public class OrdineTestCase extends DBTestCase{
 		  
 			PreparedStatement stm = connection.getConnection().prepareStatement("UPDATE ordine SET stato = ? WHERE NUM_ORDINE= ?");
 			stm.setString(1, "consegnato");
-			stm.setInt(2, 0);
+			stm.setInt(2, 1);
 			stm.executeUpdate();
 			
 			ITable actualTable = connection.createDataSet().getTable("ordine");
@@ -153,17 +153,6 @@ public class OrdineTestCase extends DBTestCase{
 	        Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM ordine ");
-		
-		ITable actualTable = connection.createTable("cod_ordine", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/ordine/cod_ordine_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_ordine");
-
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
 	
 	@Override
 	protected IDataSet getDataSet() throws Exception {

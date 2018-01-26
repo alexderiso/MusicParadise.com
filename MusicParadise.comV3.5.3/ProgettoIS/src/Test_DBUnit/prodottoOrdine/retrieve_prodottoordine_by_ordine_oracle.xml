@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
- <prodottoordine	  codice="0"
+ <prodottoordine	  codice="1"
   					  quantita="1"
   					  nome="YAMAHA C40M SATINATA"
   					  colore="Marrone chiaro"
@@ -9,6 +9,18 @@
   					  peso="1.00"
   					  prezzo="115.00"
   					  strumento="Chitarra"
-  					  prodotto="0"
-  					ordine="0"/>
+  					  prodotto="1"
+  					ordine="1"/>
+  					
+  <prodottoordine	  codice="2"
+  					  quantita="1"
+  					  nome="CASIO CDP130 Black"
+  					  colore="Nero"
+  					  marca="CASIO"
+  					  descrizione="Effetti digitali eccellenti, 10 suoni e metronomo integrato: il CDP-130 è lo strumento ideale per accedere al fantastico mondo delle tastiere. Il sistema di altoparlanti migliorato produce un suono di pianoforte impressionante, reso ancora più spettacolare dal pulsante effetto auditorium integrato: basta premere il pulsante per donare al suono del pianoforte il reverbero di una sala da concerto, e l'esibizione diventa quasi un'esperienza reale. Grazie ai suoni di strumenti a corda migliorati, ogni brano è un'esperienza unica, indimenticabile."
+  					  peso="1.00"
+  					  prezzo="420.00"
+  					  strumento="Tastiere"
+  					  prodotto="2"
+  					  ordine="1"/>
 </dataset>

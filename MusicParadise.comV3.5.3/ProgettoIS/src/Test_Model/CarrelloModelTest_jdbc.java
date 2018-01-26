@@ -34,31 +34,30 @@ public class CarrelloModelTest_jdbc {
 
 	@Test 
 	public void TestLeggi() throws SQLException {
-		ArrayList<ProdottoCatalogoBean> carrello = new ArrayList<ProdottoCatalogoBean>();
 		ArrayList<String> foto = new ArrayList<String>();
 		foto.add("immaginiProdotti/yamaha_batteria.jpg");
 		foto.add("immaginiProdotti/yamaha_batteria2.jpg");
 		foto.add("immaginiProdotti/yamaha_batteria3.jpg");
 
-		ProdottoCatalogoBean prd = new ProdottoCatalogoBean(0,"Batteria Yamaha","Bianco","Yamaha","Bella",3500.00,1,"batteria",foto,1,new Date(117, 05, 29),1);
-
-		carrello.add(prd);
+		ProdottoCatalogoBean prd = new ProdottoCatalogoBean(0,"Batteria Yamaha","Bianco","Yamaha","Bella",3500.00,1,"batteria",foto,1,new Date(117, 05, 29),0);
+		ArrayList<ProdottoCatalogoBean> prodotti = new ArrayList<ProdottoCatalogoBean>();
+		prodotti.add(prd);
 		ClienteBean utente = new ClienteBean("a@gmail.com","123456","Antonio","Antonio","Spera",null);
-
+		model.doSave(prodotti,utente);
 
 		ArrayList<ProdottoCatalogoBean> carrelloDB = model.leggi("Antonio");
-		assertEquals(carrello.get(0).getColore(),carrelloDB.get(0).getColore());
-		assertEquals(carrello.get(0).getCodice(),carrelloDB.get(0).getCodice());
-		assertEquals(carrello.get(0).getData(),carrelloDB.get(0).getData());
-		assertEquals(carrello.get(0).getDescrizione(),carrelloDB.get(0).getDescrizione());
-		assertEquals(carrello.get(0).getFoto(),carrelloDB.get(0).getFoto());
-		assertEquals(carrello.get(0).getMarca(),carrelloDB.get(0).getMarca());
-		assertEquals(carrello.get(0).getNome(),carrelloDB.get(0).getNome());
-		assertEquals(carrello.get(0).getNumDisp(),carrelloDB.get(0).getNumDisp());
-		assertEquals(carrello.get(0).getPeso(),carrelloDB.get(0).getPeso());
-		assertEquals(carrello.get(0).getPrezzo(),carrelloDB.get(0).getPrezzo(),00);
-		assertEquals(carrello.get(0).getQuantAgg(),carrelloDB.get(0).getQuantAgg());
-		assertEquals(carrello.get(0).getStrumento(),carrelloDB.get(0).getStrumento());
+		assertEquals(prd.getColore(),carrelloDB.get(0).getColore());
+		assertEquals(prd.getCodice(),carrelloDB.get(0).getCodice());
+		assertEquals(prd.getData(),carrelloDB.get(0).getData());
+		assertEquals(prd.getDescrizione(),carrelloDB.get(0).getDescrizione());
+		assertEquals(prd.getFoto(),carrelloDB.get(0).getFoto());
+		assertEquals(prd.getMarca(),carrelloDB.get(0).getMarca());
+		assertEquals(prd.getNome(),carrelloDB.get(0).getNome());
+		assertEquals(prd.getNumDisp(),carrelloDB.get(0).getNumDisp());
+		assertEquals(prd.getPeso(),carrelloDB.get(0).getPeso());
+		assertEquals(prd.getPrezzo(),carrelloDB.get(0).getPrezzo(),00);
+		assertEquals(prd.getQuantAgg(),carrelloDB.get(0).getQuantAgg());
+		assertEquals(prd.getStrumento(),carrelloDB.get(0).getStrumento());
 	}
 
 

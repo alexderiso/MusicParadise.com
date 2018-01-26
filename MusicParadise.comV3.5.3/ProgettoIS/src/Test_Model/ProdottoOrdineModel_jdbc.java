@@ -22,7 +22,7 @@ public class ProdottoOrdineModel_jdbc {
 		//Inizia una connessione
 		String db = "dbtest";
 		String user = "root";
-		String pass = "root"; 
+		String pass = "antonio@"; 
 
 		try {
 			// jdbs:mysql://indirizzo dell'host/nome del database
@@ -89,7 +89,7 @@ public class ProdottoOrdineModel_jdbc {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLProd = "INSERT INTO " + ProdottoOrdineModel_jdbc.TABLE_NAME_PROD
-				+ " (codice, quantita, nome, colore, marca, descrizione, peso, prezzo, strumento) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (quantita, nome, colore, marca, descrizione, peso, prezzo, strumento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 
 		try {
@@ -97,15 +97,14 @@ public class ProdottoOrdineModel_jdbc {
 			preparedStatement = connection.prepareStatement(insertSQLProd);
 			
 			for(ProdottoCatalogoBean temp : prodotti) {
-				preparedStatement.setInt(1, generaCodice());
-				preparedStatement.setInt(2, temp.getQuantAgg());
-				preparedStatement.setString(3, temp.getNome());
-				preparedStatement.setString(4, temp.getColore());
-				preparedStatement.setString(5, temp.getMarca());
-				preparedStatement.setString(6, temp.getDescrizione());
-				preparedStatement.setInt(7, temp.getPeso());
-				preparedStatement.setDouble(8, temp.getPrezzo());
-				preparedStatement.setString(9, temp.getStrumento());
+				preparedStatement.setInt(1, temp.getQuantAgg());
+				preparedStatement.setString(2, temp.getNome());
+				preparedStatement.setString(3, temp.getColore());
+				preparedStatement.setString(4, temp.getMarca());
+				preparedStatement.setString(5, temp.getDescrizione());
+				preparedStatement.setInt(6, temp.getPeso());
+				preparedStatement.setDouble(7, temp.getPrezzo());
+				preparedStatement.setString(8, temp.getStrumento());
 
 				preparedStatement.executeUpdate();
 			}
@@ -114,31 +113,7 @@ public class ProdottoOrdineModel_jdbc {
 			e.printStackTrace();
 		}
 	}
-	
-	/**
-	 * Metodo che genera un codice per i prodotti
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ ProdottoOrdineModel_jdbc.TABLE_NAME_PROD;
-		connection = con;
-		preparedStatement = connection.prepareStatement(sql);
-		ResultSet rs = preparedStatement.executeQuery();
-		int rowCount = 0;
-		try{
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
 
-		return rowCount;
-	}
-	
 }
 
 

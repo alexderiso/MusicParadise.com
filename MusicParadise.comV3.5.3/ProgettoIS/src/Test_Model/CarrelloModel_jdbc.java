@@ -79,29 +79,7 @@ public class CarrelloModel_jdbc {
 			e.printStackTrace();
 		}
 	}
-	/**
-	 * Metodo che genera il codice univoco del carrello
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ CarrelloModel_jdbc.TABLE_NAME_INCARRELLO;
-		connection =con;
-		preparedStatement = connection.prepareStatement(sql);
-		ResultSet rs = preparedStatement.executeQuery();
-		int rowCount = 0;
-		try{
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
 
-		return rowCount;
-	}
 	/**
 	 * Metodo che legge il carrello dal database in base al nickname
 	 * @param nickname

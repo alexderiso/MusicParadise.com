@@ -68,22 +68,10 @@ public class IndirizzoTestCase extends DBTestCase {
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM indirizzo ");
-		
-		ITable actualTable = connection.createTable("cod_indirizzo", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/indirizzo/cod_indirizzo_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_indirizzo");
-
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
-	
 	public void testRimuoviIndirizzo() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM indirizzo WHERE CODICE = ?");
-		stm.setInt(1, 0);
+		stm.setInt(1, 1);
 		
 		stm.executeUpdate();
 		

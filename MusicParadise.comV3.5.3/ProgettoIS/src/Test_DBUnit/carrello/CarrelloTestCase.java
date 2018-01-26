@@ -68,7 +68,7 @@ public class CarrelloTestCase extends DBTestCase {
 	public void testRemove() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM incarrello WHERE UTENTE = ?");
-		stm.setString(1, "Ivan");
+		stm.setString(1, "Antonio");
 		
 		stm.executeUpdate();
 		
@@ -80,17 +80,6 @@ public class CarrelloTestCase extends DBTestCase {
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM incarrello ");
-		
-		ITable actualTable = connection.createTable("cod_carrello", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carrello/cod_carrello_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_carrello");
-
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
 	
 	
 	@Override

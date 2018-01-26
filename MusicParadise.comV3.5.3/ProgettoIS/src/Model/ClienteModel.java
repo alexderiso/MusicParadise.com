@@ -37,8 +37,12 @@ public class ClienteModel {
 	 * @param utente
 	 * @throws SQLException
 	 */
+	
 	public synchronized void doSave(ClienteBean utente) throws SQLException {
 
+		if(utente == null) {
+			return;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -77,6 +81,9 @@ public class ClienteModel {
 	 * @throws SQLException
 	 */
 	public synchronized ClienteBean leggi(String nick, String password) throws SQLException{
+		if(nick == null || password == null) {
+			return null;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		connection = ds.getConnection();

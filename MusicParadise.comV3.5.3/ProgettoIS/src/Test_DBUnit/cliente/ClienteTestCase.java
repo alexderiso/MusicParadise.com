@@ -65,19 +65,7 @@ public class ClienteTestCase extends DBTestCase{
 
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
-	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM cliente ");
-		
-		ITable actualTable = connection.createTable("cod_cliente", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/cliente/cod_cliente_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_cliente");
 
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
-	
 	@Override
 	protected IDataSet getDataSet() throws Exception {
 		return new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/full.xml"));

@@ -2,13 +2,13 @@
 <dataset>
 
 
-<carta			cod="0"
+<carta			cod="1"
   					scadenza="1/18"
   					numero="1234567890123456"
   					nomeProprietario="Antonio Spera"
   					cliente="Antonio"/>
   					
-  <carta            cod="1"
+  <carta            cod="2"
   					scadenza="1/17"
   					numero="7265365789187635"
   					nomeProprietario="Paolo Rossi"

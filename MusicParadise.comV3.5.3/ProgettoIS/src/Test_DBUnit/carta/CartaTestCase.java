@@ -64,22 +64,11 @@ public class CartaTestCase extends DBTestCase{
 		Assertion.assertEquals(expectedTable, actualTable);
 	}
 	
-	public void testGeneraCodice() throws Exception{
-		IDatabaseConnection connection = getConnection();
-		PreparedStatement stm = connection.getConnection().prepareStatement("SELECT COUNT(*) AS TOTAL FROM carta ");
-		
-		ITable actualTable = connection.createTable("cod_carta", stm);
-		
-		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/Test_DBUnit/carta/cod_carta_oracle.xml"));
-		ITable expectedTable = expectedDataSet.getTable("cod_carta");
-
-		Assertion.assertEquals(expectedTable, actualTable);
-	}
 	
 	public void testRimuoviIndirizzo() throws Exception{
 		IDatabaseConnection connection = getConnection();
 		PreparedStatement stm = connection.getConnection().prepareStatement("DELETE FROM carta WHERE COD = ?");
-		stm.setInt(1, 0);
+		stm.setInt(1, 1);
 		
 		stm.executeUpdate();
 		

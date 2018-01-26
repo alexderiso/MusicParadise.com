@@ -2,6 +2,7 @@ package Control.acquisto;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -97,8 +98,10 @@ public class ConfermaOrdineControl extends HttpServlet {
 			IndirizzoBean i = utente.trovaIndirizzo(codInd);
 			
 			try {
-				int codOrdine = ordineModel.generaCodice();
 				ordineModel.doSave(i,c,"in preparazione","","",totale,utente.getNickName());
+				ArrayList<OrdineBean> ordini =ordineModel.ordiniUtente(utente.getNickName());
+				int codOrdine = ordini.get(ordini.size()-1).getNumOrdine();
+				System.out.println("codice generato: "+codOrdine);
 				prodottoOrdineModel.doSave(carrello.getProducts());
 				composizioneModel.doSave(carrello.getProducts(),codOrdine);
 				carrelloModel.remove(utente);

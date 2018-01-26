@@ -2,16 +2,16 @@
 <dataset>
 
 
-<composizione		prodotto="0"
-  					ordine="0"/>
-  					
-  <composizione 	prodotto="1"
+<composizione		prodotto="1"
   					ordine="1"/>
   					
-  <composizione		prodotto="2"
+  <composizione 	prodotto="2"
+  					ordine="1"/>
+  					
+  <composizione		prodotto="3"
   					ordine="2"/>
   					
-  <composizione		prodotto="2"
+  <composizione		prodotto="3"
   					ordine="3"/>
 
 </dataset>

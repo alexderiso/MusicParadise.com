@@ -46,7 +46,7 @@ public class CartaModel_jdbc {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			String insertSQLProd = "INSERT INTO " + CartaModel_jdbc.TABLE_NAME_CARTA
-					+ " (cod, scadenza, numero, nomeProprietario, cliente) VALUES (?, ?, ?, ?, ?)";
+					+ " (scadenza, numero, nomeProprietario, cliente) VALUES (?, ?, ?, ?)";
 
 
 			try {
@@ -54,11 +54,11 @@ public class CartaModel_jdbc {
 				preparedStatement = connection.prepareStatement(insertSQLProd);
 
 				
-				preparedStatement.setInt(1, carta.getCodice());
-				preparedStatement.setString(2, carta.getScadenza());
-				preparedStatement.setString(3, carta.getNumCarta());
-				preparedStatement.setString(4, carta.getNomeProprietario());
-				preparedStatement.setString(5, cliente.getNickName());
+			
+				preparedStatement.setString(1, carta.getScadenza());
+				preparedStatement.setString(2, carta.getNumCarta());
+				preparedStatement.setString(3, carta.getNomeProprietario());
+				preparedStatement.setString(4, cliente.getNickName());
 				preparedStatement.executeUpdate();
 
 
@@ -66,29 +66,7 @@ public class CartaModel_jdbc {
 				e.printStackTrace();
 			}
 		}
-		/**
-		 * Metodo che genera il codice della carta di credito nel database
-		 * @return rowCount
-		 * @throws SQLException
-		 */
-		public synchronized int generaCodice() throws SQLException{
-			Connection connection = null;
-			PreparedStatement preparedStatement = null;
-			String sql = "SELECT COUNT(*) AS TOTAL FROM "+ CartaModel_jdbc.TABLE_NAME_CARTA;
-			connection = con;
-			preparedStatement = connection.prepareStatement(sql);
-			ResultSet rs = preparedStatement.executeQuery();
-			int rowCount = 0;
-			try{
-				while(rs.next()){
-					rowCount = rs.getInt("total");
-				}
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-
-			return rowCount;
-		}
+	
 		
 		
 		/**

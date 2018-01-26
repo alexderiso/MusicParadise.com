@@ -85,11 +85,12 @@ public class AggIndirizzoControl extends HttpServlet {
 			indirizzo.setCittà(ind[3]);
 			indirizzo.setCap(cap);
 			indirizzo.setTelefono(ind[4]);
-			utente.addIndirizzo(indirizzo);
+			
 			
 			try {
-				indirizzo.setCodice(indModel.generaCodice());
+		
 				indModel.doSave(indirizzo,utente.getNickName());
+				utente.setIndirizzi(indModel.leggi(utente.getNickName()));
 				
 				
 			} catch (SQLException e) {

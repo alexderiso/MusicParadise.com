@@ -17,6 +17,7 @@ import javax.sql.DataSource;
 import Bean.CartaBean;
 import Bean.IndirizzoBean;
 import Bean.OrdineBean;
+import Test_Model.OrdineModel_jdbc;
 /**
  * Classe che gestisce la transazione degli ordini
  * 
@@ -235,24 +236,21 @@ public class OrdineModel{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLOrd = "INSERT INTO " + OrdineModel.TABLE_NAME_ORD
-				+ " (utente, num_ordine, data_ordine, totale, indirizzo, carta, stato, numero_traking, corriere, data_consegna) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (utente, data_ordine, totale, indirizzo, carta, stato, numero_traking, corriere, data_consegna) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		java.util.Date utilDate = new java.util.Date();
 		Date data = new Date(utilDate.getTime());
-		int cod = generaCodice();
 		try {
 			connection =  ds.getConnection();
-			System.out.println(connection);
 			preparedStatement = connection.prepareStatement(insertSQLOrd);
 			preparedStatement.setString(1,cliente);
-			preparedStatement.setInt(2, cod);
-			preparedStatement.setDate(3, data);
-			preparedStatement.setDouble(4, totale);
-			preparedStatement.setInt(5,indirizzo.getCodice());
-			preparedStatement.setInt(6,carta.getCodice());
-			preparedStatement.setString(7,stato);
-			preparedStatement.setString(8,tracking);
-			preparedStatement.setString(9,corriere);
-			preparedStatement.setDate(10, null);
+			preparedStatement.setDate(2, data);
+			preparedStatement.setDouble(3, totale);
+			preparedStatement.setInt(4,indirizzo.getCodice());
+			preparedStatement.setInt(5,carta.getCodice());
+			preparedStatement.setString(6,stato);
+			preparedStatement.setString(7,tracking);
+			preparedStatement.setString(8,corriere);
+			preparedStatement.setDate(9, null);
 
 			preparedStatement.executeUpdate();
 
@@ -269,35 +267,6 @@ public class OrdineModel{
 		}
 	}
 	
-	/**
-	 * Metodo che genera il codice di un ordine
-	 * @post rowCount != null 
-	 * @return rowCount
-	 * @throws SQLException
-	 */
-	public synchronized int generaCodice() throws SQLException{
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ OrdineModel.TABLE_NAME_ORD;
-		int rowCount = 0;
-		try {
-			connection = ds.getConnection();
-			preparedStatement = connection.prepareStatement(sql);
-			ResultSet rs = preparedStatement.executeQuery();
-			while(rs.next()){
-				rowCount = rs.getInt("total");
-			}
-		}finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
-			}
-		}
-		return rowCount;
-	}
 
 
 	/**
@@ -387,6 +356,25 @@ public class OrdineModel{
 		return ordiniUtente;
 
 	}
+	
+	public synchronized int generaCodice() throws SQLException{
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		String sql = "SELECT COUNT(*) AS TOTAL FROM "+ OrdineModel.TABLE_NAME_ORD;
+		int rowCount = 0;
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(sql);
+			ResultSet rs = preparedStatement.executeQuery();
+			while(rs.next()){
+				rowCount = rs.getInt("total");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
+
+}
 
 	/**
 	 * Metodo che restituisce la lista di tutti gli ordini 

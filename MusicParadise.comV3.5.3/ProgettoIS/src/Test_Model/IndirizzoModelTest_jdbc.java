@@ -20,7 +20,7 @@ public class IndirizzoModelTest_jdbc {
 	  
 	  @Test
 	  public void TestDoSave() throws SQLException {
-		  IndirizzoBean indirizzo = new IndirizzoBean("Via Marigliano","Marigliano",80034,"Valentino","Rossi",model.generaCodice(),"0812347862");
+		  IndirizzoBean indirizzo = new IndirizzoBean("Via Marigliano","Marigliano",80034,"Valentino","Rossi",0,"0812347862");
 		  model.doSave(indirizzo, "Antonio");
 	  }
 	  
@@ -29,7 +29,7 @@ public class IndirizzoModelTest_jdbc {
 		  ArrayList<IndirizzoBean> indirizzi = new ArrayList<IndirizzoBean>();
 		  indirizzi = model.leggi("Antonio");
 		  assertNotNull(indirizzi);
-		  assertEquals(indirizzi.size(),4);
+		  assertEquals(indirizzi.size(),2);
 	  }
 
 }
