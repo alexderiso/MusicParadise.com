@@ -119,10 +119,10 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
-					
+
 					<div class="col-lg-3 col-md-6">
 						<div class="panel panel-red">
 							<div class="panel-heading">
@@ -136,12 +136,12 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-							
-					
+
+
 						</div>
 					</div>
-					
-					
+
+
 					<div class="col-lg-3 col-md-6">
 						<div class="panel panel-red">
 							<div class="panel-heading">
@@ -155,223 +155,230 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-					
+
 						</div>
 					</div>
-					
+
 				</div>
 
 				<div class="tab-content">
 
-				
-						<div class="row">
+
+					<div class="row">
 
 
-							<div class="col-lg-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini in preparazione
-										</h3>
-									</div>
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table table-bordered table-hover table-striped">
-												<thead>
-													<tr>
-														<th>N° ordine</th>
-														<th>Utente</th>
-														<th>Data ordine</th>
-														<th>Totale (EUR)</th>
-														<th>Stato</th>
-														<th>Corriere</th>
-														<th>N°Tracking</th>
-														<th>Data consegna</th>
-														<th>Modifica stato</th>
-													</tr>
-												</thead>
-												<%
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<i class="fa fa-shopping-cart fa-fw"></i>Ordini in
+										preparazione
+									</h3>
+								</div>
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th>N° ordine</th>
+													<th>Utente</th>
+													<th>Data ordine</th>
+													<th>Totale (EUR)</th>
+													<th>Stato</th>
+													<th>Corriere</th>
+													<th>N°Tracking</th>
+													<th>Data consegna</th>
+													<th>Modifica stato</th>
+													<th>Visualizza dettagli</th>
+												</tr>
+											</thead>
+											<%
 													if (inPreparazione != null && inPreparazione.size() != 0) {
 														for(OrdineBean ord : inPreparazione){
 												%>
-												<tbody>
-													<tr>
-														<td><%=ord.getNumOrdine()%></td>
-														<td><%=ord.getUser()%></td>
-														<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+											<tbody>
+												<tr>
+													<td><%=ord.getNumOrdine()%></td>
+													<td><%=ord.getUser()%></td>
+													<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 														String data = sdf.format(ord.getData());
 														%>
-														<td><%=data%></td>
-														<td><%=ord.getTotale()%></td>
-														<td><%=ord.getStato()%></td>
-														<td>in corso</td>
-														<td>in corso</td>
-														<td>in corso</td>
-														<td><a
-															href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
-															class="btn btn-success">modifica</a></td>
-													</tr>
-												</tbody>
+													<td><%=data%></td>
+													<td><%=ord.getTotale()%></td>
+													<td><%=ord.getStato()%></td>
+													<td>in corso</td>
+													<td>in corso</td>
+													<td>in corso</td>
+													<td><a
+														href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
+														class="btn btn-success">modifica</a></td>
+													<td><a
+														href="VisualizzaDettagliOrdine?codice=<%=ord.getNumOrdine()%>">Dettagli</a></td>
+												</tr>
+											</tbody>
 
-												<%
+											<%
 													}
 													}
 												%>
-											</table>
-										</div>
-
+										</table>
 									</div>
-								</div>
-							</div>
-						</div>
-				
-					
-					
-					
-					
-					
-						<div class="row">
 
-
-							<div class="col-lg-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini spediti
-										</h3>
-									</div>
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table table-bordered table-hover table-striped">
-												<thead>
-													<tr>
-														<th>N°</th>
-														<th>Utente</th>
-														<th>Data ordine</th>
-														<th>Totale (EUR)</th>
-														<th>Stato</th>
-														<th>Corriere</th>
-														<th>N°Tracking</th>
-														<th>Data consegna</th>
-														<th>Consegnato</th>
-													
-
-													</tr>
-												</thead>
-												<%
-													if (spedito != null && spedito.size() != 0) {
-														for(OrdineBean ord : spedito){
-												%>
-												<tbody>
-													<tr>
-														<td><%=ord.getNumOrdine()%></td>
-														<td><%=ord.getUser()%></td>
-														<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-														String data = sdf.format(ord.getData());
-														%>
-														<td><%=data%></td>
-														<td><%=ord.getTotale()%></td>
-														<td><%=ord.getStato()%></td>
-														<td><%=ord.getCorriere() %></td>
-														<td><%=ord.getTracking()%></td>
-														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
-														data = sdf.format(ord.getDataConsegna());%>
-														<td><%=data%></td>
-														<td><a
-															href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
-															class="btn btn-success">conseganto</a></td>
-															
-													</tr>
-												</tbody>
-
-												<%
-													}
-													}
-												%>
-											</table>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					
-					
-					
-				
-						<div class="row">
-
-
-							<div class="col-lg-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini consegnati
-										</h3>
-									</div>
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table table-bordered table-hover table-striped">
-												<thead>
-													<tr>
-														<th>N°</th>
-														<th>Utente</th>
-														<th>Data ordine</th>
-														<th>Totale (EUR)</th>
-														<th>Stato</th>
-														<th>Corriere</th>
-														<th>N°Tracking</th>
-														<th>Data consegna</th>
-													</tr>
-												</thead>
-												<%
-												if (consegnato != null && consegnato.size() != 0) {
-													for(OrdineBean ord : consegnato){
-												%>
-												<tbody>
-													<tr>
-														<td><%=ord.getNumOrdine()%></td>
-														<td><%=ord.getUser()%></td>
-														<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-														String data = sdf.format(ord.getData());
-														%>
-														<td><%=data%></td>
-														<td><%=ord.getTotale()%></td>
-														<td><%=ord.getStato()%></td>
-														<td><%=ord.getCorriere() %></td>
-														<td><%=ord.getTracking()%></td>
-														<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
-														data = sdf.format(ord.getDataConsegna());%>
-														<td><%=data%></td>
-															
-													</tr>
-												</tbody>
-
-												<%
-													}
-													}
-												%>
-											</table>
-										</div>
-
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
-					
-					
-					
-					
-					
+
+
+
+
+
+
+					<div class="row">
+
+
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<i class="fa fa-shopping-cart fa-fw"></i>Ordini spediti
+									</h3>
+								</div>
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th>N°</th>
+													<th>Utente</th>
+													<th>Data ordine</th>
+													<th>Totale (EUR)</th>
+													<th>Stato</th>
+													<th>Corriere</th>
+													<th>N°Tracking</th>
+													<th>Data consegna</th>
+													<th>Consegnato</th>
+
+
+												</tr>
+											</thead>
+											<%
+													if (spedito != null && spedito.size() != 0) {
+														for(OrdineBean ord : spedito){
+												%>
+											<tbody>
+												<tr>
+													<td><%=ord.getNumOrdine()%></td>
+													<td><%=ord.getUser()%></td>
+													<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+														String data = sdf.format(ord.getData());
+														%>
+													<td><%=data%></td>
+													<td><%=ord.getTotale()%></td>
+													<td><%=ord.getStato()%></td>
+													<td><%=ord.getCorriere() %></td>
+													<td><%=ord.getTracking()%></td>
+													<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
+														data = sdf.format(ord.getDataConsegna());%>
+													<td><%=data%></td>
+													<td><a
+														href="ModificaStatoOrdineControl?cod=<%=ord.getNumOrdine() %>"
+														class="btn btn-success">conseganto</a></td>
+
+												</tr>
+											</tbody>
+
+											<%
+													}
+													}
+												%>
+										</table>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="row">
+
+
+						<div class="col-lg-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										<i class="fa fa-shopping-cart fa-fw"></i>Ordini consegnati
+									</h3>
+								</div>
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th>N°</th>
+													<th>Utente</th>
+													<th>Data ordine</th>
+													<th>Totale (EUR)</th>
+													<th>Stato</th>
+													<th>Corriere</th>
+													<th>N°Tracking</th>
+													<th>Data consegna</th>
+													<th>Dettagli</th>
+												</tr>
+											</thead>
+											<%
+												if (consegnato != null && consegnato.size() != 0) {
+													for(OrdineBean ord : consegnato){
+												%>
+											<tbody>
+												<tr>
+													<td><%=ord.getNumOrdine()%></td>
+													<td><%=ord.getUser()%></td>
+													<% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+														String data = sdf.format(ord.getData());
+														%>
+													<td><%=data%></td>
+													<td><%=ord.getTotale()%></td>
+													<td><%=ord.getStato()%></td>
+													<td><%=ord.getCorriere() %></td>
+													<td><%=ord.getTracking()%></td>
+													<%  sdf = new SimpleDateFormat("dd/MM/yyyy");
+														data = sdf.format(ord.getDataConsegna());%>
+													<td><%=data%></td>
+													<td><a
+														href="VisualizzaDettagliOrdine?codice=<%=ord.getNumOrdine()%>">Dettagli</a></td>
+
+												</tr>
+											</tbody>
+
+											<%
+													}
+													}
+												%>
+										</table>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
+
+
+
+
+
 			</div>
-			<!-- /.row -->
 
 		</div>
-		<!-- /.container-fluid -->
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container-fluid -->
 
 	</div>
 	<!-- /#page-wrapper -->

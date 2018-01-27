@@ -49,7 +49,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per aggiungere un prodotto al carrello
 	 * @param request
 	 * @param respose
-	 * @pre bean != null
+	 * @pre bean != null && cart != null 
 	 * @post se il prodotto aggiunto non esiste nel carrello allora viene aggiunto al carrello
 	 * se nel carrello già esiste il prodotto allora la quantità del prodotto viene aumentata di 1
 	 * @throws IOExeption, ServletException

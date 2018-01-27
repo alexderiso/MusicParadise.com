@@ -38,8 +38,7 @@ public class TC_11_1_5 {
     driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
     driver.findElement(By.id("inputPassword")).sendKeys(Keys.ENTER);
     WebDriverWait wait2 = new WebDriverWait(driver, 10);
-    wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.panel-footer > span")));
-    driver.findElement(By.cssSelector("div.panel-footer")).click();
+    wait2.until(ExpectedConditions.elementToBeClickable(By.linkText("modifica")));
     driver.findElement(By.linkText("modifica")).click();
     driver.get("http://localhost:8080/ProgettoIS/ConfermaModOrdineControl?numTracking=1234567890&corriere=343");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();

@@ -91,7 +91,7 @@ UtenteBean utente= (UtenteBean)session.getAttribute("utente");
     <script> 
   	function remove(codice) {
 	      
-  		$.get("RimuoviProdottoCarrelloControl", { azC: "elimina",id: codice }, 
+  		$.get("RimuoviProdottoCarrelloControl", { id: codice }, 
 				   function (resp) {
 			   		if(resp == "finitiPrd") { location.reload();  }
 		   });

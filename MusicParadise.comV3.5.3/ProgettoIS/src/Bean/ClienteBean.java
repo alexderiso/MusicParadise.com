@@ -107,9 +107,11 @@ public class ClienteBean extends UtenteBean{
 	 * pre: cod maggiore di 0
 	 */
 	public CartaBean trovaCarta(int cod) {
+		System.out.println("Codice carta nella classe cliente: "+ cod);
 		for(CartaBean temp : carte) {
-			if(temp.getCodice() == cod);
+			if(temp.getCodice() == cod) {
 			return temp;
+		}
 		}
 		return null;
 	}
@@ -122,15 +124,16 @@ public class ClienteBean extends UtenteBean{
 	 * pre: cod maggiore di 0
 	 */
 	public IndirizzoBean trovaIndirizzo(int cod) {
+		System.out.println("Codice indirizzo nella classe cliente: " +cod+" grandezza "+indirizzi.size());
 		for(IndirizzoBean temp : indirizzi) {
-			if(temp.getCodice() == cod);
+			if(temp.getCodice() == cod) {
+			System.out.println("INDIRIZZO: " +temp.getCodice() +" "+cod);
 			return temp;
+		}
 		}
 		return null;
 	}
 	
 	
 	
-	
-
-}
+	}

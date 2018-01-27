@@ -40,7 +40,7 @@
 				<%
 					for (IndirizzoBean temp : utente.getIndirizzi()) {
 				%>
-				<option><%=temp.toString()%></option>
+				<option value="<%=temp.getCodice()%>" ><%=temp.toString()%></option>
 				<%
 					}
 				%>
@@ -76,7 +76,7 @@
 					for (CartaBean temp : utente.getCarte()) {
 				%>
 
-				<option><%=temp.toString()%></option>
+				<option value="<%=temp.getCodice()%>"><%=temp.toString()%></option>
 				<%
 					}
 				%>

@@ -210,7 +210,7 @@ if(prd == null){
                        
                         <p><strong><%=prodotto.getNome()%></strong></p>
         
-                        <a class = "btn btn-primary" href="ProdottoControl?prodotto=<%=prodotto.getCodice()%>" >acquista</a>
+                        <a class = "btn btn-primary" href="RicercaProdottoControl?prodotto=<%=prodotto.getCodice()%>" >acquista</a>
                     
                   </div>
                   <%}}} %>

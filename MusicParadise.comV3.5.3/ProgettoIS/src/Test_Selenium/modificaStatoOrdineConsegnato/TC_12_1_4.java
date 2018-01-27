@@ -29,6 +29,7 @@ public class TC_12_1_4 {
   public void testTC1214() throws Exception {
     driver.get("http://localhost:8080/ProgettoIS/index.jsp");
     driver.findElement(By.id("benvenuto")).click();
+    driver.findElement(By.id("form1")).click();
     driver.findElement(By.id("inputNick")).click();
     driver.findElement(By.id("inputNick")).clear();
     driver.findElement(By.id("inputNick")).sendKeys("paolo10");

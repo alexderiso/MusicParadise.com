@@ -35,6 +35,15 @@ public class AggiornaQuantit‡ProdottoCarrello extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/**
+	 * Effettua una richiesta HTTP POST per aggiornare la quantit‡ del prodotto nel carrello
+	 * @param request
+	 * @param respose
+	 * @pre cart != null && q != null c != null
+	 * @post se nel carrello c'Ë un prodotto con il codice uguale a quello passato allora la quantit‡ del prodotto nel
+	 * carrello viene incrementata
+	 * @throws IOExeption, ServletException
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		CarrelloBean cart = (CarrelloBean)request.getSession().getAttribute("cart");

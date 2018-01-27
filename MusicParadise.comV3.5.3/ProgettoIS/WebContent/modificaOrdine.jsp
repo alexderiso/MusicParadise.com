@@ -70,7 +70,7 @@
 
 					<li><a href="#"><i class="fa fa-fw fa-gear"></i> Opzioni</a></li>
 					<li class="divider"></li>
-					<li><a href="AccediRequest?action=esci"><i
+					<li><a href="LogoutControl?action=esci"><i
 							class="fa fa-fw fa-power-off"></i> Log Out</a></li>
 				</ul></li>
 		</ul>
@@ -120,7 +120,14 @@
 							name="dataConsegna">
 					</p>
 				</div>
+				<div class="row">
+				<div class="col-sm-6">
+				<a href="gestore-ordini.jsp" class="btn btn-default">annulla</a>
+				</div>
+				<div class="col-sm-6"></div>
 				<button type="submit" class="btn btn-default">conferma</button>
+				</div>
+				</div>
 			</form>
 
 

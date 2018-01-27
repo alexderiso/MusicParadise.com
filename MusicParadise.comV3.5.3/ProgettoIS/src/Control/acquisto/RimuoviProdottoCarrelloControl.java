@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Bean.CarrelloBean;
 import Bean.ProdottoBean;
+import Bean.ProdottoCatalogoBean;
 import Model.ProdottoModel;
 /**
  * Classe che implementa la servlet per rimuove un prodotto dal carrello
@@ -22,52 +23,69 @@ import Model.ProdottoModel;
 @WebServlet("/RimuoviProdottoCarrelloControl")
 public class RimuoviProdottoCarrelloControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+
 	/**
 	 * Chiama il costruttorer della superclasse
 	 */
-    public RimuoviProdottoCarrelloControl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
-    static ProdottoModel model = new ProdottoModel();
+	public RimuoviProdottoCarrelloControl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	static ProdottoModel model = new ProdottoModel();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
-    /**
-     * Effettua una richiesta HTTP GET per eliminare il prodotto dal carrello
-     * @param request
-     * @param respose
-     * @pre azione != null && cod != null
-     * @post il prodotto è stato rimosso dal carrello
-     * @throws ServletException, IOException
-     */
+
+	/**
+	 * Effettua una richiesta HTTP GET per eliminare il prodotto dal carrello
+	 * @param request
+	 * @param respose
+	 * @pre prd != null && cod != null
+	 * @post il prodotto è stato rimosso dal carrello
+	 * @throws ServletException, IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		CarrelloBean cart = (CarrelloBean)request.getSession().getAttribute("cart");
-		String azione = request.getParameter("azC");
-		
-		if(azione == null || cart == null) {
+
+
+		if(cart == null) {
+			String errore = "Carrello non esistente";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			try{
-				if(azione.equalsIgnoreCase("elimina")) {
-					int code = Integer.parseInt(request.getParameter("id"));
-					cart.deleteProduct(model.doRetrieveByKey(code));
-					request.getSession().setAttribute("cart", cart);
-					request.setAttribute("cart", cart);
-					if(cart.getProducts().size() == 0) {
-						response.getWriter().write("finitiPrd");
+
+				int code = Integer.parseInt(request.getParameter("id"));
+				ProdottoCatalogoBean prd = model.doRetrieveByKey(code); 
+				if(prd == null) {
+					String errore = "Prodotto non esistente";
+					request.getSession().setAttribute("errore",errore);
+					response.sendRedirect(request.getContextPath() + "/404.jsp");
+				}else {
+					int sizeCarrello = cart.getProducts().size();
+					cart.deleteProduct(prd);
+					int sizeCarrelloPostRemove = cart.getProducts().size();
+					if(sizeCarrello > sizeCarrelloPostRemove) {
+						request.getSession().setAttribute("cart", cart);
+						request.setAttribute("cart", cart);
+						if(cart.getProducts().size() == 0) {
+							response.getWriter().write("finitiPrd");
+						}
+						return;
+					}else {
+						String errore = "Prodotto selzeionato non presente nel carrello";
+						request.getSession().setAttribute("errore",errore);
+						response.sendRedirect(request.getContextPath() + "/404.jsp");
 					}
-					return;
-				}	
+				}
+
 			}catch (SQLException e) {
 			}catch (NumberFormatException e) {
 				String errore = "Codice prodotto non valido";
@@ -81,7 +99,7 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	
+
 	/**
 	 * Vuoto
 	 */

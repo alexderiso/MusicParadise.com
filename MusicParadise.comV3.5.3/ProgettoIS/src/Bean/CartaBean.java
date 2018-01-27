@@ -98,11 +98,13 @@ package Bean;
 		}
 		
 		
+
 		@Override
 		public String toString() {
-			return codice +"," + scadenza + "," + numCarta + ","
+			return scadenza + "," + numCarta + ","
 					+ nomeProprietario ;
 		}
+		
 		
 		
 		

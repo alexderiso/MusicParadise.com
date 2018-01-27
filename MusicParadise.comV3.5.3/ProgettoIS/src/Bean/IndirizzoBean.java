@@ -160,7 +160,7 @@ public class IndirizzoBean {
 	
 	@Override
 	public String toString() {
-		return codice + "," +indirizzo + "," + città + "," + cap + "," + nome
+		return indirizzo + "," + città + "," + cap + "," + nome
 				+ "," + cognome + "," + telefono;
 	}
 	

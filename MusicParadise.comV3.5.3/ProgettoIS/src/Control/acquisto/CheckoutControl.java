@@ -52,6 +52,7 @@ public class CheckoutControl extends HttpServlet {
      * Effettua una richiesta HTTP GET per gestire il checkout
      * @param request
      * @param respose
+     * @pre utente != null && carrello != null
      * @throws ServletException, IOException
      */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

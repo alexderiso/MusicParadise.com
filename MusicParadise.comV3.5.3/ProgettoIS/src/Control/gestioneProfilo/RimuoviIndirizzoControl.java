@@ -48,6 +48,8 @@ public class RimuoviIndirizzoControl extends HttpServlet {
 		ClienteBean cliente = (ClienteBean) request.getSession().getAttribute("utente");
 		
 		if(c == null || cliente == null) {
+			String errore = "Accesso non consentito";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			try {
@@ -57,6 +59,8 @@ public class RimuoviIndirizzoControl extends HttpServlet {
 				cliente.setIndirizzi(indirizzi);
 				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
 			}catch(NumberFormatException e) {
+				String errore = "Codice non esistente";
+				request.getSession().setAttribute("errore",errore);
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

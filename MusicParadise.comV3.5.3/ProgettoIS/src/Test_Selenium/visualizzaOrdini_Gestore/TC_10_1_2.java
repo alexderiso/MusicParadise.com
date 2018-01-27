@@ -28,16 +28,16 @@ public class TC_10_1_2 {
 
   @Test
   public void testTC1012() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
-    driver.findElement(By.id("benvenuto")).click();
-    driver.findElement(By.id("inputNick")).click();
-    driver.findElement(By.id("inputNick")).clear();
-    driver.findElement(By.id("inputNick")).sendKeys("paolo10");
-    driver.findElement(By.id("inputPassword")).click();
-    driver.findElement(By.id("inputPassword")).clear();
-    driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
-    driver.findElement(By.cssSelector("input.btn.btn-default")).click();
-    driver.findElement(By.cssSelector("div.panel-footer")).click();
+	  driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+	    driver.findElement(By.id("benvenuto")).click();
+	    driver.findElement(By.id("inputNick")).click();
+	    driver.findElement(By.id("inputNick")).clear();
+	    driver.findElement(By.id("inputNick")).sendKeys("paolo10");
+	    driver.findElement(By.id("inputPassword")).click();
+	    driver.findElement(By.id("inputPassword")).clear();
+	    driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
+	    driver.findElement(By.id("inputPassword")).sendKeys(Keys.ENTER);
+	    driver.get("http://localhost:8080/ProgettoIS/gestore-ordini.jsp");
   }
 
   @After
