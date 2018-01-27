@@ -142,10 +142,9 @@ String uri = request.getRequestURI();
 								</div>
 							</div>
 							<a data-toggle="tab" href="#ordiniSpediti">
-								<div class="panel-footer">
-									<span class="pull-left">Visualizza dettagli</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
+								<div class="panel-footer2">
+									<span">Visualizza dettagli</span> <span><i class="fa fa-arrow-circle-right"></i></span>
+									
 								</div>
 							</a>
 						</div>
@@ -166,10 +165,9 @@ String uri = request.getRequestURI();
 								</div>
 							</div>
 							<a data-toggle="tab" href="#ordiniConsegnati">
-								<div class="panel-footer">
-									<span class="pull-left">Visualizza dettagli</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
+								<div class="panel-footer3">
+									<span >Visualizza dettagli</span> <span><i class="fa fa-arrow-circle-right"></i></span>
+									
 								</div>
 							</a>
 						</div>

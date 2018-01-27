@@ -6,20 +6,11 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;;
 
-public class TC_11_1_4{
+public class TC_11_1_7{
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -34,7 +25,7 @@ public class TC_11_1_4{
   }
 
   @Test
-  public void testTC1114() throws Exception {
+  public void testTC1117() throws Exception {
     driver.get("http://localhost:8080/ProgettoIS/index.jsp");
     driver.findElement(By.id("benvenuto")).click();
     driver.findElement(By.id("inputNick")).click();
@@ -48,8 +39,18 @@ public class TC_11_1_4{
     wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.panel-footer > span")));
     driver.findElement(By.cssSelector("div.panel-footer")).click();
     driver.findElement(By.linkText("modifica")).click();
-    driver.get("http://localhost:8080/ProgettoIS/ConfermaModOrdineControl?numTracking=12345678sdf");
-    driver.findElement(By.linkText("vai alla pagina iniziale")).click();
+    driver.findElement(By.name("corriere")).click();
+    new Select(driver.findElement(By.name("corriere"))).selectByVisibleText("GLS");
+    driver.findElement(By.xpath("//div[@id='wrapper']/form/div/select/option[2]")).click();
+    driver.findElement(By.id("inputNumTracking")).click();
+    driver.findElement(By.id("inputNumTracking")).clear();
+    driver.findElement(By.id("inputNumTracking")).sendKeys("1234567890");
+    driver.findElement(By.cssSelector("p")).click();
+    driver.findElement(By.id("datepickerIniz")).click();
+    driver.findElement(By.linkText("27")).click();
+    WebDriverWait wait3 = new WebDriverWait(driver, 10);
+    wait3.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn.btn-default")));
+    driver.findElement(By.cssSelector("button.btn.btn-default")).click();
   }
 
   @After

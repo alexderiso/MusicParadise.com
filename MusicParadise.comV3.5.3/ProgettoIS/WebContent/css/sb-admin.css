@@ -175,6 +175,20 @@ ul.alert-dropdown {
     background-color: #5cb85c;
 }
 
+.panel-footer2 {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.panel-footer3 {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
 .panel-green > a {
     color: #5cb85c;
 }

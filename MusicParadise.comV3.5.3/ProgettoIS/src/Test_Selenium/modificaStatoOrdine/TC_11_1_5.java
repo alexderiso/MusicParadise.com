@@ -1,4 +1,5 @@
 package Test_Selenium.modificaStatoOrdine;
+
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -6,20 +7,11 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;;
 
-public class TC_11_1_4{
+public class TC_11_1_5 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -34,7 +26,8 @@ public class TC_11_1_4{
   }
 
   @Test
-  public void testTC1114() throws Exception {
+  public void testRC1115() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
     driver.get("http://localhost:8080/ProgettoIS/index.jsp");
     driver.findElement(By.id("benvenuto")).click();
     driver.findElement(By.id("inputNick")).click();
@@ -48,7 +41,7 @@ public class TC_11_1_4{
     wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.panel-footer > span")));
     driver.findElement(By.cssSelector("div.panel-footer")).click();
     driver.findElement(By.linkText("modifica")).click();
-    driver.get("http://localhost:8080/ProgettoIS/ConfermaModOrdineControl?numTracking=12345678sdf");
+    driver.get("http://localhost:8080/ProgettoIS/ConfermaModOrdineControl?numTracking=1234567890&corriere=343");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();
   }
 
