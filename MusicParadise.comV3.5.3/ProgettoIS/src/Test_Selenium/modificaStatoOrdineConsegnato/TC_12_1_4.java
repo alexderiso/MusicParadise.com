@@ -29,7 +29,6 @@ public class TC_12_1_4 {
   public void testTC1214() throws Exception {
     driver.get("http://localhost:8080/ProgettoIS/index.jsp");
     driver.findElement(By.id("benvenuto")).click();
-    driver.findElement(By.id("form1")).click();
     driver.findElement(By.id("inputNick")).click();
     driver.findElement(By.id("inputNick")).clear();
     driver.findElement(By.id("inputNick")).sendKeys("paolo10");
@@ -37,10 +36,8 @@ public class TC_12_1_4 {
     driver.findElement(By.id("inputPassword")).clear();
     driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
     driver.findElement(By.id("inputPassword")).sendKeys(Keys.ENTER);
-    WebElement myelement = driver.findElement(By.cssSelector("div.panel-footer2 > span"));
-    JavascriptExecutor jse2 = (JavascriptExecutor)driver;
-    jse2.executeScript("arguments[0].scrollIntoView()", myelement); 
-    driver.findElement(By.cssSelector("div.panel-footer2")).click();
+    WebDriverWait wait2 = new WebDriverWait(driver, 10);
+    wait2.until(ExpectedConditions.elementToBeClickable((By.linkText("conseganto"))));
     driver.findElement(By.linkText("conseganto")).click();
   }
 

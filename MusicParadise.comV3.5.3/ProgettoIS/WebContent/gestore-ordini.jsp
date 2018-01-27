@@ -119,12 +119,7 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-							<a data-toggle="tab" href="#ordiniInPreparazione">
-								<div class="panel-footer">
-									<span>Visualizza dettagli</span><i class="fa fa-arrow-circle-right"></i>
-									
-								</div>
-							</a>
+							
 						</div>
 					</div>
 					
@@ -141,12 +136,8 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-							<a data-toggle="tab" href="#ordiniSpediti">
-								<div class="panel-footer2">
-									<span">Visualizza dettagli</span> <span><i class="fa fa-arrow-circle-right"></i></span>
-									
-								</div>
-							</a>
+							
+					
 						</div>
 					</div>
 					
@@ -164,12 +155,7 @@ String uri = request.getRequestURI();
 									</div>
 								</div>
 							</div>
-							<a data-toggle="tab" href="#ordiniConsegnati">
-								<div class="panel-footer3">
-									<span >Visualizza dettagli</span> <span><i class="fa fa-arrow-circle-right"></i></span>
-									
-								</div>
-							</a>
+					
 						</div>
 					</div>
 					
@@ -177,8 +163,7 @@ String uri = request.getRequestURI();
 
 				<div class="tab-content">
 
-					<!-- Tebella ordini in preparazione -->
-					<div id="ordiniInPreparazione" class="tab-pane fade">
+				
 						<div class="row">
 
 
@@ -186,7 +171,7 @@ String uri = request.getRequestURI();
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini
+											<i class="fa fa-shopping-cart fa-fw"></i>Ordini in preparazione
 										</h3>
 									</div>
 									<div class="panel-body">
@@ -239,13 +224,12 @@ String uri = request.getRequestURI();
 								</div>
 							</div>
 						</div>
-					</div>
+				
 					
 					
 					
 					
-					<!-- Tebella ordini spediti-->
-					<div id="ordiniSpediti" class="tab-pane fade">
+					
 						<div class="row">
 
 
@@ -253,7 +237,7 @@ String uri = request.getRequestURI();
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini
+											<i class="fa fa-shopping-cart fa-fw"></i>Ordini spediti
 										</h3>
 									</div>
 									<div class="panel-body">
@@ -311,11 +295,10 @@ String uri = request.getRequestURI();
 								</div>
 							</div>
 						</div>
-					</div>
 					
 					
-					<!-- Tebella ordini consengati-->
-					<div id="ordiniConsegnati" class="tab-pane fade">
+					
+				
 						<div class="row">
 
 
@@ -323,7 +306,7 @@ String uri = request.getRequestURI();
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title">
-											<i class="fa fa-shopping-cart fa-fw"></i>Ordini
+											<i class="fa fa-shopping-cart fa-fw"></i>Ordini consegnati
 										</h3>
 									</div>
 									<div class="panel-body">
