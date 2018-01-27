@@ -1,6 +1,15 @@
-package Test_Selenium.aggiungiProdottoAlCarrello;
-
-
+package Test_Selenium.modificaStatoOrdine;
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -10,7 +19,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_8_1_1 {
+public class TC_11_1_4 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,10 +34,22 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
-    driver.findElement(By.linkText("vai alla pagina iniziale")).click();
+  public void testTC1114() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+    driver.findElement(By.id("benvenuto")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).clear();
+    driver.findElement(By.id("inputNick")).sendKeys("paolo10");
+    driver.findElement(By.id("inputPassword")).click();
+    driver.findElement(By.id("inputPassword")).clear();
+    driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
+    driver.findElement(By.id("inputPassword")).sendKeys(Keys.ENTER);
+    driver.findElement(By.cssSelector("div.panel-footer > span")).click();
+    driver.findElement(By.linkText("modifica")).click();
+    driver.findElement(By.id("inputNumTracking")).click();
+    driver.findElement(By.id("inputNumTracking")).clear();
+    driver.findElement(By.id("inputNumTracking")).sendKeys("34");
+    driver.findElement(By.cssSelector("button.btn.btn-default")).click();
   }
 
   @After

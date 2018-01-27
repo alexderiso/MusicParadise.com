@@ -1,6 +1,5 @@
 package Test_Selenium.aggiungiProdottoAlCarrello;
 
-
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -10,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_8_1_1 {
+public class TC_8_1_2 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,10 +24,21 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
-    driver.findElement(By.linkText("vai alla pagina iniziale")).click();
+  public void testTC812() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+    driver.findElement(By.id("benvenuto")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).clear();
+    driver.findElement(By.id("inputNick")).sendKeys("antonio10");
+    driver.findElement(By.id("inputPassword")).click();
+    driver.findElement(By.id("inputPassword")).clear();
+    driver.findElement(By.id("inputPassword")).sendKeys("12345678");
+    driver.findElement(By.cssSelector("input.btn.btn-default")).click();
+    driver.findElement(By.linkText("CATEGORIA")).click();
+    driver.findElement(By.linkText("Batterie")).click();
+    driver.findElement(By.xpath("(//a[contains(text(),'Vai al prodotto')])[2]")).click();
+    driver.findElement(By.cssSelector("#agg > span")).click();
+    driver.findElement(By.linkText("1")).click();
   }
 
   @After
@@ -73,3 +83,4 @@ public class TC_8_1_1 {
     }
   }
 }
+

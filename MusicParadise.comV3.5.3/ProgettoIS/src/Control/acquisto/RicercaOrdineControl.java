@@ -65,6 +65,8 @@ public class RicercaOrdineControl extends HttpServlet {
 		// TODO Auto-generated method stub
 		String c = request.getParameter("codOrdine"); //cod
 		if(c == null) {
+			String errore = "Codice prodotto non valido";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			
@@ -79,6 +81,8 @@ public class RicercaOrdineControl extends HttpServlet {
 				}
 				response.sendRedirect(request.getContextPath() + "/ordine.jsp");
 			}catch(NumberFormatException e) {
+				String errore = "Codice prodotto non valido";
+				request.getSession().setAttribute("errore",errore);
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		}

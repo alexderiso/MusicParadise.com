@@ -77,6 +77,8 @@ public class AggiungiCartaControl extends HttpServlet {
 		ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
 		
 		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
+			String errore = "Accesso non consentito";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else if(verificaParametri(numCarta,scadenza,nomProprietario)&& utente != null){
 			try {
@@ -97,6 +99,8 @@ public class AggiungiCartaControl extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/profiloCliente.jsp");
 			}
 		}else {
+			String errore = "Dati carta non validi";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
 		

@@ -68,32 +68,41 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 					int codice = Integer.parseInt(c);
 					OrdineBean ordine = ordineModel.doRetrieveByKey(codice);
 					
-
-					if(ordine.getStato().equalsIgnoreCase("in preparazione")) {
-						request.getSession().setAttribute("ordMod", ordine);
-						RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
-						rd.forward(request, response);
-					}else if(ordine.getStato().equalsIgnoreCase("spedito")) {
-						ordineModel.aggiornaConsegnato(codice);
-						ArrayList<OrdineBean> inPreparazione = ordineModel.doRetrieveByStato("in preparazione");
-						ArrayList<OrdineBean> spedito = ordineModel.doRetrieveByStato("spedito");
-						ArrayList<OrdineBean> consegnato = ordineModel.doRetrieveByStato("consegnato");
-						request.getSession().setAttribute("inPreparazione",inPreparazione);
-						request.getSession().setAttribute("spedito",spedito);
-						request.getSession().setAttribute("consegnato",consegnato);
-						response.sendRedirect(request.getContextPath() + "/gestore-ordini.jsp");
-					}else {
+					if(ordine == null) {
+						String errore = "Ordine non esistente";
+						request.getSession().setAttribute("errore",errore);
 						response.sendRedirect(request.getContextPath() + "/404.jsp");
+					}else {
+						if(ordine.getStato().equalsIgnoreCase("in preparazione")) {
+							request.getSession().setAttribute("ordMod", ordine);
+							RequestDispatcher rd = getServletContext().getRequestDispatcher("/modificaOrdine.jsp");
+							rd.forward(request, response);
+						}else if(ordine.getStato().equalsIgnoreCase("spedito")) {
+							ordineModel.aggiornaConsegnato(codice);
+							ArrayList<OrdineBean> inPreparazione = ordineModel.doRetrieveByStato("in preparazione");
+							ArrayList<OrdineBean> spedito = ordineModel.doRetrieveByStato("spedito");
+							ArrayList<OrdineBean> consegnato = ordineModel.doRetrieveByStato("consegnato");
+							request.getSession().setAttribute("inPreparazione",inPreparazione);
+							request.getSession().setAttribute("spedito",spedito);
+							request.getSession().setAttribute("consegnato",consegnato);
+							response.sendRedirect(request.getContextPath() + "/gestore-ordini.jsp");
+						}else {
+							response.sendRedirect(request.getContextPath() + "/404.jsp");
+						}
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}catch (NumberFormatException e) {
+					String errore = "Codice non valido";
+					request.getSession().setAttribute("errore",errore);
 					response.sendRedirect(request.getContextPath() + "/404.jsp");
 				}
 			}
 		}else {
-			response.sendRedirect(request.getContextPath() + "/index.jsp");
+			String errore = "Accesso non consentito";
+			request.getSession().setAttribute("errore",errore);
+			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
 
 	}

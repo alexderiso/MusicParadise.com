@@ -69,8 +69,9 @@ public class RimuoviProdottoCarrelloControl extends HttpServlet {
 					return;
 				}	
 			}catch (SQLException e) {
-				System.out.println("Error:" + e.getMessage());
 			}catch (NumberFormatException e) {
+				String errore = "Codice prodotto non valido";
+				request.getSession().setAttribute("errore",errore);
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		}

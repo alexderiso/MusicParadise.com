@@ -49,7 +49,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per aggiungere un prodotto al carrello
 	 * @param request
 	 * @param respose
-	 * @pre prodotto != null
+	 * @pre bean != null
 	 * @post se il prodotto aggiunto non esiste nel carrello allora viene aggiunto al carrello
 	 * se nel carrello già esiste il prodotto allora la quantità del prodotto viene aumentata di 1
 	 * @throws IOExeption, ServletException
@@ -65,6 +65,8 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 
 		ProdottoCatalogoBean bean = (ProdottoCatalogoBean) (request.getSession().getAttribute("prodotto"));
 		if(bean == null) {
+			String errore = "Nessun prodotto selezionato";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 

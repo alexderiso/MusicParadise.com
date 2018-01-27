@@ -1,4 +1,4 @@
-package Test_Selenium.aggiungiProdottoAlCarrello;
+package Test_Selenium.visualizzaOrdini_Gestore;
 
 
 import java.util.regex.Pattern;
@@ -8,9 +8,11 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TC_8_1_1 {
+public class TC_10_1_2 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,10 +27,17 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
-    driver.findElement(By.linkText("vai alla pagina iniziale")).click();
+  public void testTC1012() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+    driver.findElement(By.id("benvenuto")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).clear();
+    driver.findElement(By.id("inputNick")).sendKeys("paolo10");
+    driver.findElement(By.id("inputPassword")).click();
+    driver.findElement(By.id("inputPassword")).clear();
+    driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
+    driver.findElement(By.cssSelector("input.btn.btn-default")).click();
+    driver.findElement(By.cssSelector("div.panel-footer")).click();
   }
 
   @After

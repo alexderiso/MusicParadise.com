@@ -1,4 +1,4 @@
-package Test_Selenium.aggiungiProdottoAlCarrello;
+package Test_Selenium.modificaStatoOrdine;
 
 
 import java.util.regex.Pattern;
@@ -10,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_8_1_1 {
+public class TC_11_1_3 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,9 +25,22 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
+  public void testTC1113() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+    driver.findElement(By.id("benvenuto")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).clear();
+    driver.findElement(By.id("inputNick")).sendKeys("paolo");
+    driver.findElement(By.id("inputPassword")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).click();
+    driver.findElement(By.id("inputNick")).clear();
+    driver.findElement(By.id("inputNick")).sendKeys("paolo10");
+    driver.findElement(By.id("inputPassword")).click();
+    driver.findElement(By.id("inputPassword")).clear();
+    driver.findElement(By.id("inputPassword")).sendKeys("1234567@");
+    driver.findElement(By.cssSelector("input.btn.btn-default")).click();
+    driver.get("http://localhost:8080/ProgettoIS/ModificaStatoOrdineControl?cod=1");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();
   }
 

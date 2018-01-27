@@ -31,6 +31,15 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+ <link  href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+  <script type="text/javascript">
+        $(function(){
+            $('.datepicker').datepicker({showAnim: "fadeIn"});
+        })
+ </script>
+
 <title>Modifica ordine</title>
 </head>
 <body>
@@ -122,6 +131,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/validate.js"></script>
 
+
 	<script>
 	function isOk() {
 		if (ValidatePhone(document.getElementById("inputNumTracking"), document.getElementById("txtErr"))) {
@@ -164,7 +174,6 @@
 				$("#datepickerFine").datepicker().datepicker("setDate", d);
 		}
 	</script>
-
 
 </body>
 </html>

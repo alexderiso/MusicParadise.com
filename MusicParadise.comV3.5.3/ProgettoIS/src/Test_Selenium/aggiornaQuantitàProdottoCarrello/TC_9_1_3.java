@@ -1,4 +1,4 @@
-package Test_Selenium.aggiungiProdottoAlCarrello;
+package Test_Selenium.aggiornaQuantit‡ProdottoCarrello;
 
 
 import java.util.regex.Pattern;
@@ -10,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_8_1_1 {
+public class TC_9_1_3 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,10 +25,15 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
-    driver.findElement(By.linkText("vai alla pagina iniziale")).click();
+  public void testTC913() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/index.jsp");
+    driver.findElement(By.linkText("CATEGORIA")).click();
+    driver.findElement(By.linkText("Chitarre")).click();
+    driver.findElement(By.cssSelector("span.glyphicon.glyphicon-chevron-right")).click();
+    driver.findElement(By.cssSelector("#agg > span")).click();
+    driver.findElement(By.linkText("1")).click();
+    driver.get("http://localhost:8080/ProgettoIS/AggiornaQuantit‡ProdottoCarrello?quantit‡=2&id=2");
+    driver.get("http://localhost:8080/ProgettoIS/carrello.jsp");
   }
 
   @After
@@ -73,3 +78,4 @@ public class TC_8_1_1 {
     }
   }
 }
+

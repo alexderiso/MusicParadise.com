@@ -59,7 +59,6 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
 		String inizStr = request.getParameter("dataConsegna");
-		System.out.println(inizStr);
 		String corriere = request.getParameter("corriere");
 		String numeroTracking = request.getParameter("numTracking");
 		
@@ -67,6 +66,8 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		GestoreOrdiniBean gestore = (GestoreOrdiniBean) request.getSession().getAttribute("utente-gestore");
 		
 		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null) {
+			String errore = "Operazione non consentita";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else if(verificaParametri(inizStr,corriere,numeroTracking)&& gestore != null) {
 			LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
@@ -90,6 +91,8 @@ public class ConfermaModOrdineControl extends HttpServlet {
 			}
 			
 		}else {
+			String errore = "Parametri non validi";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}
 		

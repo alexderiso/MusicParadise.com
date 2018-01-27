@@ -3,7 +3,9 @@
 UtenteBean bean = (UtenteBean) session.getAttribute("utente-gestore");
 Boolean adminRoles = (Boolean) session.getAttribute("adminRoles");
 if((bean == null)||(!adminRoles.booleanValue())){
-	response.sendRedirect("./index.jsp");
+	String errore = "Accesso non consentito";
+	request.getSession().setAttribute("errore",errore);
+	response.sendRedirect("./404.jsp");
 	return;
 }
 String uri = request.getRequestURI();
@@ -119,9 +121,8 @@ String uri = request.getRequestURI();
 							</div>
 							<a data-toggle="tab" href="#ordiniInPreparazione">
 								<div class="panel-footer">
-									<span class="pull-left">Visualizza dettagli</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
+									<span>Visualizza dettagli</span><i class="fa fa-arrow-circle-right"></i>
+									
 								</div>
 							</a>
 						</div>

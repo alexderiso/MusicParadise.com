@@ -38,10 +38,16 @@ public class AggiornaQuantit‡ProdottoCarrello extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		CarrelloBean cart = (CarrelloBean)request.getSession().getAttribute("cart");
+		if(cart == null) {
+			cart = new CarrelloBean();
+			request.getSession().setAttribute("cart", cart);
+		}
 		String q = request.getParameter("quantit‡");
 		String c = request.getParameter("id");
 		
 		if(q == null || c == null || cart == null) {
+			String errore = "Aggiornamento quantit‡ prodotto non valida";
+			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			try {
@@ -53,6 +59,8 @@ public class AggiornaQuantit‡ProdottoCarrello extends HttpServlet {
 				return;
 				
 			}catch(NumberFormatException e){
+				String errore = "Argomenti non validi";
+				request.getSession().setAttribute("errore",errore);
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
 			}
 		}

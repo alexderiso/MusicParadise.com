@@ -1,4 +1,4 @@
-package Test_Selenium.aggiungiProdottoAlCarrello;
+package Test_Selenium.modificaStatoOrdine;
 
 
 import java.util.regex.Pattern;
@@ -10,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_8_1_1 {
+public class TC_11_1_1 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,8 +25,8 @@ public class TC_8_1_1 {
   }
 
   @Test
-  public void testTC811() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello");
+  public void testTC11111() throws Exception {
+    driver.get("http://localhost:8080/ProgettoIS/ModificaStatoOrdineControl");
     driver.get("http://localhost:8080/ProgettoIS/404.jsp");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();
   }
