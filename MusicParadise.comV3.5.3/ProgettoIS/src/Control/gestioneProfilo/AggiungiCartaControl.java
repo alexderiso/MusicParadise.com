@@ -76,11 +76,11 @@ public class AggiungiCartaControl extends HttpServlet {
 		String nomProprietario = request.getParameter("nomProprietario");
 		ClienteBean utente = (ClienteBean)request.getSession().getAttribute("utente");
 		
-		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null) {
+		if(numCarta == null || mese == null || anno == null || scadenza == null || nomProprietario == null || utente == null) {
 			String errore = "Accesso non consentito";
 			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(numCarta,scadenza,nomProprietario)&& utente != null){
+		}else if(verificaParametri(numCarta,scadenza,nomProprietario)){
 			try {
 				cartaModel.doSave(numCarta,scadenza,nomProprietario,utente);
 				utente.setCarte(cartaModel.leggi(utente.getNickName()));

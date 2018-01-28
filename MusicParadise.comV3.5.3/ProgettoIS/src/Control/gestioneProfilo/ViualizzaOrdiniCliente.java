@@ -52,19 +52,18 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per visualizzare gli ordini effettuati dal cliente
 	 * @param request
 	 * @param respose
-	 * @pre nickname != null
+	 * @pre cliente != null
 	 * @post ordiniUtente.size() == 0 || ordiniUtente.size() > 0
 	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nickname = request.getParameter("nickname");
 		ClienteBean cliente = (ClienteBean) request.getSession().getAttribute("utente");
-		if(nickname == null || cliente == null) {
+		if(cliente == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			try {
-				ArrayList<OrdineBean> ordiniUtente = ordineModel.ordiniUtente(nickname);
+				ArrayList<OrdineBean> ordiniUtente = ordineModel.ordiniUtente(cliente.getNickName());
 				for(OrdineBean ord : ordiniUtente) {
 					ord.setProdotti(prodottoOrdineModel.prodottiOrdine(ord.getNumOrdine()));
 				}

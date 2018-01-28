@@ -119,7 +119,7 @@
 					aria-expanded="false" id="benvenuto">Benvenuto: <%= bean.getNickName() %> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="ViualizzaOrdiniCliente?nickname=<%= bean.getNickName()%>" >I
+							href="ViualizzaOrdiniCliente" >I
 								miei ordini</a></li>
 						<li><a href="VisualizzaProfiloControl">Il mio account</a></li>
 						<li><a href="LogoutControl?action=esci">Esci</a></li>
