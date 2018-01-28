@@ -27,6 +27,14 @@ public class VisualizzaProfiloControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    /**
+	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
+	 * @param request
+     * @param respose
+     * @pre cliente != null 
+     * @post il cliente visualizza il suo profilo
+     * @throws ServletException, IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		

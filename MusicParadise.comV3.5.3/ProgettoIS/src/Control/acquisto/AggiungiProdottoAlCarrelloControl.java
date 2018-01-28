@@ -20,7 +20,7 @@ import Model.ProdottoModel;
 
 /**
  * Classe che modella la servlet per aggiungere un prodotto al carrello
- * @author Alessandro
+ * @author Antonio
  */
 @WebServlet("/AggiungiProdottoAlCarrelloControl")
 public class AggiungiProdottoAlCarrelloControl extends HttpServlet {

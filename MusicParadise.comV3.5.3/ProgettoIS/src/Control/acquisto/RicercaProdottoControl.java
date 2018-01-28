@@ -76,28 +76,23 @@ public class RicercaProdottoControl extends HttpServlet {
 					Collection<ProdottoCatalogoBean> collezione = model.doRetrieveByInstruments(strumento);
 					request.getSession().removeAttribute("prodotti");
 					request.getSession().setAttribute("prodotti", collezione);
-
-
 					response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 				}catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}else{
-				//TODO Errore non è stato trovato nulla
-			}
-			if(code != null){
+			}else if(code != null){
 				try {
 					int codeNum = Integer.parseInt(code);
 					ProdottoBean bean = model.doRetrieveByKey(codeNum);
 					if(bean == null){
-						request.setAttribute("errore", "Il prodotto selezionato non esiste");
+						String errore = "Prodotto non disponibile nel catalogo";
+						request.setAttribute("errore",errore);
 						response.sendRedirect(request.getContextPath() + "/404.jsp");
 					}else{
 						request.getSession().removeAttribute("prodotto");
 						request.getSession().setAttribute("prodotto", bean);
 						response.sendRedirect(request.getContextPath() + "/prodotto.jsp");
-
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -106,47 +101,27 @@ public class RicercaProdottoControl extends HttpServlet {
 					response.sendRedirect(request.getContextPath() + "/404.jsp");
 				}
 
-			}
-			if(name != null) {
-				System.out.println("sTO QUA");
+			}else if(name != null) {
 				Collection<ProdottoCatalogoBean> collezione;
 				try {
 					collezione = model.doRetrieveByName(name);
-					if(collezione == null) {
-						System.out.println("ERRORE");
-					} else {
-						request.getSession().removeAttribute("prodotti");
-						request.getSession().setAttribute("prodotti", collezione);
-
-						response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
-
-					}
-
+					request.getSession().removeAttribute("prodotti");
+					request.getSession().setAttribute("prodotti", collezione);
+					response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					System.out.println("sTO QUASQL");
 				}
-			}
-			if(marca != null) {
+			}else if(marca != null) {
 				Collection<ProdottoCatalogoBean> collezione;
 				try {
 					collezione = model.doRetrieveByMarca(marca);
-
-					if(collezione == null) {
-						System.out.println("ERRORE");
-					} else {
-						request.getSession().removeAttribute("prodotti");
-						request.getSession().setAttribute("prodotti", collezione);
-
-						response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
-
-					}
-
+					request.getSession().removeAttribute("prodotti");
+					request.getSession().setAttribute("prodotti", collezione);
+					response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					System.out.println("sTO QUASQL");
 				}
 			}
 		}

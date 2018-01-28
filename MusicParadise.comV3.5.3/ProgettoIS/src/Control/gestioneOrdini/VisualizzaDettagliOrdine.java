@@ -44,6 +44,14 @@ public class VisualizzaDettagliOrdine extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/**
+	 * Effettua una richiesta HTTP GET per visualizzare un ordine
+	 * @param request
+	 * @param respose
+	 * @pre codice != null && ordine != null && gestore != null
+	 * @post ordine != null
+	 * @throws ServletException, IOException
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String c = request.getParameter("codice");

@@ -51,7 +51,7 @@ public class ModificaStatoOrdineControl extends HttpServlet {
 	 * Effettua una richiesta HTTP GET per modificare lo stato di un ordine
 	 * @param request
 	 * @param respose
-	 * @pre codice != null
+	 * @pre codice != null && ordine != null && gestore != null
 	 * @post ordine != null
 	 * @throws ServletException, IOException
 	 */

@@ -57,22 +57,23 @@ public class RicercaOrdineControl extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per ricercare un ordine all'interno del sistema
 	 * @param request
      * @param respose
-     * @pre cod != null
+     * @pre cod != null && ordiniUtente != null
      * @post ordiniUtente.size() == 0 || ordiniUtente.size() > 0
      * @throws ServletException, IOException
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String c = request.getParameter("codOrdine"); //cod
-		if(c == null) {
-			String errore = "Codice prodotto non valido";
+		String c = request.getParameter("codOrdine"); 
+		ArrayList<OrdineBean> ordiniUtente = (ArrayList<OrdineBean>) request.getSession().getAttribute("ordiniUtente");//cod
+		if(c == null || ordiniUtente == null) {
+			String errore = "Accesso negato";
 			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			
 			try {
 				int cod = Integer.parseInt(request.getParameter("codOrdine"));
-				ArrayList<OrdineBean> ordiniUtente = (ArrayList<OrdineBean>) request.getSession().getAttribute("ordiniUtente");
+				
 				
 				for(OrdineBean temp : ordiniUtente) {
 					if(temp.getNumOrdine() == cod) {

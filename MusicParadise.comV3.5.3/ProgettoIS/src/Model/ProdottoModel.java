@@ -293,7 +293,7 @@ public class ProdottoModel{
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		ProdottoCatalogoBean bean = new ProdottoCatalogoBean();
+		ProdottoCatalogoBean bean = null;
 
 		String selectSQL = "SELECT * FROM " + ProdottoModel.TABLE_NAME_PROD + " WHERE CODICE = ?";
 
@@ -305,6 +305,7 @@ public class ProdottoModel{
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
+				bean = new ProdottoCatalogoBean();
 				bean.setCodice(rs.getInt("codice"));
 				bean.setNumDisp(rs.getInt("num_disponibilità"));
 				bean.setNome(rs.getString("nome"));

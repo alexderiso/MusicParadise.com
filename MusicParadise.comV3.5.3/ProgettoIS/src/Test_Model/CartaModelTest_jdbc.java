@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import Bean.CartaBean;
@@ -18,6 +20,15 @@ public class CartaModelTest_jdbc {
 	  static {
 	    model = new CartaModel_jdbc();
 	  }
+	  @Before
+	    public void setUp() throws Exception{
+	        DatabaseHelper.initializeDatabase();
+	    }
+
+	    @After
+	    public void tearDown() throws Exception{
+	        DatabaseHelper.initializeDatabase();
+	    }
 	  
 	  @Test
 	  public void TestDoSave() throws SQLException {
@@ -30,7 +41,7 @@ public class CartaModelTest_jdbc {
 	  public void TestLeggi() throws SQLException {
 		  ArrayList<CartaBean> carte = new ArrayList<CartaBean>();
 		  carte = model.leggi("Antonio");
-		  assertEquals(carte.size(),3);
+		  assertEquals(carte.size(),2);
 	  }
 
 }

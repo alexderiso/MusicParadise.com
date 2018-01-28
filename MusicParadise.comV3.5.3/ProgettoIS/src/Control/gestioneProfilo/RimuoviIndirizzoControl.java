@@ -42,6 +42,14 @@ public class RimuoviIndirizzoControl extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/**
+	 * Effettua una richiesta HTTP POST per aggiungere un indirizzo ad un account cliente
+	 * @param request
+     * @param respose
+     * @pre cliente != null && codice != null
+     * @post l'indirizzo di spedizione viene rimosso dal database 
+     * @throws ServletException, IOException
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String c = request.getParameter("cod");

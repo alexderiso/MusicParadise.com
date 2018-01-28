@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.ClienteBean;
 import Bean.OrdineBean;
 import Model.OrdineModel;
 import Model.ProdottoOrdineModel;
@@ -58,8 +59,8 @@ public class ViualizzaOrdiniCliente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String nickname = request.getParameter("nickname");
-
-		if(nickname == null) {
+		ClienteBean cliente = (ClienteBean) request.getSession().getAttribute("utente");
+		if(nickname == null || cliente == null) {
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
 		}else {
 			try {
