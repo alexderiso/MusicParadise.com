@@ -1,0 +1,18 @@
+[info] Playing test case Test_AggiungiProdottoAlCarrello / TC_8_1_2
+[info] Time: Fri Jan 26 2018 21:19:49 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516997989801
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | click | link=CATEGORIA |  |
+[info] Executing: | click | link=Batterie |  |
+[info] Executing: | click | xpath=(//a[contains(text(),'Vai al prodotto')])[2] |  |
+[info] Executing: | click | css=#agg > span |  |
+[info] Executing: | click | link=1 |  |
+[info] Time: Fri Jan 26 2018 21:20:11 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516998011191
+[info] Test case passed

@@ -1,0 +1,9 @@
+[info] Playing test case Test_VisualizzaOrdini / TC_10_1_1
+[info] Time: Fri Jan 26 2018 22:33:24 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517002404619
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/gestore-ordini.jsp |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Fri Jan 26 2018 22:33:28 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517002408138
+[info] Test case passed

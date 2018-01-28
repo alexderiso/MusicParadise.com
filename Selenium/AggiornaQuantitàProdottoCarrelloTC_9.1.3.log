@@ -1,0 +1,14 @@
+[info] Playing test case Test_AggiornaQuantitàProdottoCarrello / TC_9_1_3
+[info] Time: Fri Jan 26 2018 21:52:30 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516999950268
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | link=CATEGORIA |  |
+[info] Executing: | click | link=Chitarre |  |
+[info] Executing: | click | css=span.glyphicon.glyphicon-chevron-right |  |
+[info] Executing: | click | css=#agg > span |  |
+[info] Executing: | click | link=1 |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=2&id=2 |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/carrello.jsp |  |
+[info] Time: Fri Jan 26 2018 21:52:36 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516999956065
+[info] Test case passed

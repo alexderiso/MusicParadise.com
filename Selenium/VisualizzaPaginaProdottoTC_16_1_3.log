@@ -1,0 +1,9 @@
+[info] Playing test case Test_VisualizzaPaginaProdotto / TC_16_1_3
+[info] Time: Sat Jan 27 2018 23:37:57 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517092677370
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/RicercaProdottoControl?prodotto=aaa |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 23:37:59 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517092679279
+[info] Test case passed

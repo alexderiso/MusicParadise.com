@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Test_RimozioneProdottoCarrello</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_15_1_1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl<datalist><option>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/404.jsp<datalist><option>http://localhost:8080/ProgettoIS/404.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=vai alla pagina iniziale<datalist><option>link=vai alla pagina iniziale</option><option>css=a</option><option>//a[contains(text(),'vai alla pagina iniziale')]</option><option>//a[contains(@href, 'index.jsp')]</option><option>//a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_15_1_2</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=CATEGORIA<datalist><option>link=CATEGORIA</option><option>css=a.dropdown-toggle</option><option>//a[contains(text(),'CATEGORIA')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a</option><option>//a[contains(@href, '#')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Chitarre<datalist><option>link=Chitarre</option><option>//a[contains(text(),'Chitarre')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'RicercaProdottoControl?strumento=chitarra')]</option><option>//li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Vai al prodotto<datalist><option>link=Vai al prodotto</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Vai al prodotto')]</option><option>//a[contains(@href, 'RicercaProdottoControl?prodotto=2')]</option><option>//div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=agg<datalist><option>id=agg</option><option>link=Aggiungi al carrello</option><option>css=#agg</option><option>//a[@id='agg']</option><option>//span/a</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=aaa<datalist><option>link=1</option><option>css=a.fa.fa-shopping-cart.fa-3x</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li/a</option><option>//a[contains(@href, 'VisualizzaCarrelloControl')]</option><option>//ul[2]/li/a</option><option>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=aaa</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=vai alla pagina iniziale<datalist><option>link=vai alla pagina iniziale</option><option>css=a</option><option>//a[contains(text(),'vai alla pagina iniziale')]</option><option>//a[contains(@href, 'index.jsp')]</option><option>//a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_15_1_3</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=CATEGORIA<datalist><option>link=CATEGORIA</option><option>css=a.dropdown-toggle</option><option>//a[contains(text(),'CATEGORIA')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a</option><option>//a[contains(@href, '#')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Chitarre<datalist><option>link=Chitarre</option><option>//a[contains(text(),'Chitarre')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'RicercaProdottoControl?strumento=chitarra')]</option><option>//li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Vai al prodotto<datalist><option>link=Vai al prodotto</option><option>css=a.btn.btn-primary</option><option>//a[contains(text(),'Vai al prodotto')]</option><option>//a[contains(@href, 'RicercaProdottoControl?prodotto=2')]</option><option>//div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=agg<datalist><option>id=agg</option><option>link=Aggiungi al carrello</option><option>css=#agg</option><option>//a[@id='agg']</option><option>//span/a</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=56757<datalist><option>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=56757</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/carrello.jsp<datalist><option>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=aaa</option><option>link=1</option><option>css=a.fa.fa-shopping-cart.fa-3x</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li/a</option><option>//a[contains(@href, 'VisualizzaCarrelloControl')]</option><option>//ul[2]/li/a</option><option>http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=56757</option><option>http://localhost:8080/ProgettoIS/carrello.jsp</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_15_1_4</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=CATEGORIA<datalist><option>link=CATEGORIA</option><option>css=a.dropdown-toggle</option><option>//a[contains(text(),'CATEGORIA')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a</option><option>//a[contains(@href, '#')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Batterie<datalist><option>link=Batterie</option><option>css=ul.dropdown-menu &gt; li &gt; a</option><option>//a[contains(text(),'Batterie')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/ul/li/a</option><option>//a[contains(@href, 'RicercaProdottoControl?strumento=batteria')]</option><option>//li[2]/ul/li/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(//a[contains(text(),'Vai al prodotto')])[2]<datalist><option>xpath=(//a[contains(text(),'Vai al prodotto')])[2]</option><option>//a[contains(@href, 'RicercaProdottoControl?prodotto=1')]</option><option>//div[4]/div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=#agg &gt; span<datalist><option>css=#agg &gt; span</option><option>//a[@id='agg']/span</option><option>//span/a/span</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=1<datalist><option>link=1</option><option>css=a.fa.fa-shopping-cart.fa-3x</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li/a</option><option>//a[contains(@href, 'VisualizzaCarrelloControl')]</option><option>//ul[2]/li/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=button.remove-product<datalist><option>css=button.remove-product</option><option>xpath=(//button[@type='button'])[3]</option><option>//div[5]/button</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

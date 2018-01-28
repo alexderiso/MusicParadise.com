@@ -1,0 +1,20 @@
+[info] Playing test case Test_AggiungiIndirizzo / TC_4_1_2
+[info] Time: Sun Jan 28 2018 10:44:36 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132676814
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | link=Il mio account |  |
+[info] Executing: | click | link=inserisci indirizzo |  |
+[info] Executing: | click | id=inputNome |  |
+[info] Executing: | type | id=inputNome | a |
+[info] Executing: | click | css=body |  |
+[info] Executing: | click | css=div.row > div.form-group > div.col-sm-offset-2.col-sm-10 > input.btn.btn-default |  |
+[info] Time: Sun Jan 28 2018 10:44:45 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132685159
+[info] Test case passed

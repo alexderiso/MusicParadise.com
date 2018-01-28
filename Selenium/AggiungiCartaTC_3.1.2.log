@@ -1,0 +1,20 @@
+[info] Playing test case Test_AggiungiCarta / TC_3_1_2
+[info] Time: Fri Jan 26 2018 14:14:41 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516972481790
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | link=Il mio account |  |
+[info] Executing: | click | link=inserisci carta |  |
+[info] Executing: | click | id=inputCard |  |
+[info] Executing: | type | id=inputCard | 23423 |
+[info] Executing: | click | id=pagamento |  |
+[info] Time: Fri Jan 26 2018 14:14:49 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516972489989
+[info] Test case passed

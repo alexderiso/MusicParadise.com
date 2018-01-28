@@ -1,0 +1,14 @@
+[info] Playing test case Test_Login / TC_1_1_3
+[info] Time: Fri Jan 26 2018 12:46:53 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516967213882
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 1234567@1 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | click | //input[@value='annulla'] |  |
+[info] Time: Fri Jan 26 2018 12:46:58 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516967218552
+[info] Test case passed

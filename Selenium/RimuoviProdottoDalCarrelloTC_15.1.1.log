@@ -1,0 +1,9 @@
+[info] Playing test case Test_RimozioneProdottoCarrello / TC_15_1_1
+[info] Time: Sat Jan 27 2018 17:27:03 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517070423950
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 17:27:05 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517070425900
+[info] Test case passed

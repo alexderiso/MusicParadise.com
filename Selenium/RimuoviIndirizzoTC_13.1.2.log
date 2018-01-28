@@ -1,0 +1,16 @@
+[info] Playing test case Test_RimozioneIndirizzo / TC_13_1_2
+[info] Time: Sat Jan 27 2018 16:09:14 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065754090
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | open | http://localhost:8080/ProgettoIS/RimuoviIndirizzoControl?cod=sss |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 16:09:19 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065759544
+[info] Test case passed

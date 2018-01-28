@@ -1,0 +1,32 @@
+[info] Playing test case Test_AggiungiIndirizzo / TC_4_1_8
+[info] Time: Sun Jan 28 2018 10:46:37 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132797079
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | link=Il mio account |  |
+[info] Executing: | click | link=inserisci indirizzo |  |
+[info] Executing: | click | id=inputNome |  |
+[info] Executing: | type | id=inputNome | Antonio |
+[info] Executing: | click | css=div.col-xs-12 |  |
+[info] Executing: | click | id=inputCognome |  |
+[info] Executing: | type | id=inputCognome | Spera |
+[info] Executing: | click | id=inputIndirizzo |  |
+[info] Executing: | type | id=inputIndirizzo | Via Po |
+[info] Executing: | click | id=inputCittà |  |
+[info] Executing: | type | id=inputCittà | marigliano |
+[info] Executing: | click | id=inputCap |  |
+[info] Executing: | type | id=inputCap | 80034 |
+[info] Executing: | click | id=inputTelefono |  |
+[info] Executing: | type | id=inputTelefono | 0818412205 |
+[info] Executing: | click | css=body |  |
+[info] Executing: | click | css=div.row > div.form-group > div.col-sm-offset-2.col-sm-10 > input.btn.btn-default |  |
+[info] Time: Sun Jan 28 2018 10:46:52 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132812056
+[info] Test case passed

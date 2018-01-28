@@ -1,0 +1,9 @@
+[info] Playing test case Test_AggiungiProdottoAlCarrello / TC_8_1_1
+[info] Time: Fri Jan 26 2018 21:19:34 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516997974019
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/AggungiProdottoAlCarrello |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Fri Jan 26 2018 21:19:39 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516997979331
+[info] Test case passed

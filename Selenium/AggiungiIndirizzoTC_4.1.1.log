@@ -1,0 +1,8 @@
+[info] Playing test case Test_AggiungiIndirizzo / TC_4_1_1
+[info] Time: Fri Jan 26 2018 16:33:47 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516980827632
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/AggiungiIndirizzoControl |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Fri Jan 26 2018 16:33:48 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516980828875
+[info] Test case passed

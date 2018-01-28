@@ -1,0 +1,14 @@
+[info] Playing test case Test_RimozioneProdottoCarrello / TC_15_1_2
+[info] Time: Sat Jan 27 2018 17:31:37 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517070697619
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | link=CATEGORIA |  |
+[info] Executing: | click | link=Chitarre |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | link=Vai al prodotto |  |
+[info] Executing: | click | id=agg |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/RimuoviProdottoCarrelloControl?id=aaa |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 17:31:42 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517070702368
+[info] Test case passed

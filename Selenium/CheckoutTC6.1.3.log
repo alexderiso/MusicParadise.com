@@ -1,0 +1,23 @@
+[info] Playing test case Test_Checkout / TC_6_1_3
+[info] Time: Sun Jan 28 2018 10:51:01 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133061512
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | click | link=CATEGORIA |  |
+[info] Executing: | click | link=Chitarre |  |
+[info] Executing: | click | link=Vai al prodotto |  |
+[info] Executing: | click | css=#agg > span |  |
+[info] Executing: | click | id=iconCartNum |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | link=Checkout |  |
+[info] Executing: | click | css=button.btn.btn-primary |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | link=vai alla home |  |
+[info] Time: Sun Jan 28 2018 10:51:12 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133072733
+[info] Test case passed

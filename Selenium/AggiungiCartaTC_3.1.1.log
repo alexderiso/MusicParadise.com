@@ -1,0 +1,8 @@
+[info] Playing test case Test_AggiungiCarta / TC_3_1_1
+[info] Time: Fri Jan 26 2018 14:08:32 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516972112368
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/AggiungiCartaControl.jsp |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Fri Jan 26 2018 14:08:33 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516972113607
+[info] Test case passed

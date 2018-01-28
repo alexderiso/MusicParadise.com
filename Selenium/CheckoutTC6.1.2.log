@@ -1,0 +1,16 @@
+[info] Playing test case Test_Checkout / TC_6_1_2
+[info] Time: Sun Jan 28 2018 10:52:21 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133141498
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=form1 |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/CheckoutControl |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sun Jan 28 2018 10:52:27 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133147330
+[info] Test case passed

@@ -1,0 +1,25 @@
+[info] Playing test case Test_AggiungiCarta / TC_3_1_5
+[info] Time: Fri Jan 26 2018 16:07:41 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516979261715
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | antonio10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 12345678 |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | link=Il mio account |  |
+[info] Executing: | click | link=inserisci carta |  |
+[info] Executing: | click | id=inputCard |  |
+[info] Executing: | type | id=inputCard | 1234567890123456 |
+[info] Executing: | click | id=inputNome |  |
+[info] Executing: | type | id=inputNome | Antonio Spera |
+[info] Executing: | click | id=inputCode |  |
+[info] Executing: | type | id=inputCode | 12 |
+[info] Executing: | click | id=pagamento |  |
+[info] Time: Fri Jan 26 2018 16:07:52 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516979272184
+[info] Test case passed

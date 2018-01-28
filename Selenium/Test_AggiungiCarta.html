@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Test_AggiungiCarta</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_3_1_1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/AggiungiCartaControl.jsp<datalist><option>http://localhost:8080/ProgettoIS/404.jsp</option><option>http://localhost:8080/ProgettoIS/AggiungiCartaControl.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=vai alla pagina iniziale<datalist><option>link=vai alla pagina iniziale</option><option>css=a</option><option>//a[contains(text(),'vai alla pagina iniziale')]</option><option>//a[contains(@href, 'index.jsp')]</option><option>//a</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_3_1_2</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=Login</option><option>css=#benvenuto</option><option>//a[contains(text(),'Login')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td>antonio10</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td>12345678</td>
+</tr>
+<tr><td>click</td><td>css=input.btn.btn-default<datalist><option>css=input.btn.btn-default</option><option>//input[@value='Accedi']</option><option>//form[@id='form1']/div[3]/div/input</option><option>//div[3]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=exact:Benvenuto: antonio10</option><option>css=#benvenuto</option><option>//a[contains(text(),'Benvenuto: antonio10')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Il mio account<datalist><option>link=Il mio account</option><option>//a[contains(text(),'Il mio account')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'VisualizzaProfiloControl')]</option><option>//ul[2]/li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=inserisci carta<datalist><option>link=inserisci carta</option><option>//a[contains(text(),'inserisci carta')]</option><option>xpath=(//a[@type='button'])[2]</option><option>//a[contains(@href, 'aggiungiCarta.jsp')]</option><option>//div[4]/div/div[2]/div/div[2]/div/div/div/div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td>23423</td>
+</tr>
+<tr><td>click</td><td>id=pagamento<datalist><option>id=pagamento</option><option>css=#pagamento</option><option>//button[@id='pagamento']</option><option>//div[2]/button</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_3_1_3</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=Login</option><option>css=#benvenuto</option><option>//a[contains(text(),'Login')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td>antonio10</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td>12345678</td>
+</tr>
+<tr><td>click</td><td>css=input.btn.btn-default<datalist><option>css=input.btn.btn-default</option><option>//input[@value='Accedi']</option><option>//form[@id='form1']/div[3]/div/input</option><option>//div[3]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=exact:Benvenuto: antonio10</option><option>css=#benvenuto</option><option>//a[contains(text(),'Benvenuto: antonio10')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Il mio account<datalist><option>link=Il mio account</option><option>//a[contains(text(),'Il mio account')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'VisualizzaProfiloControl')]</option><option>//ul[2]/li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=inserisci carta<datalist><option>link=inserisci carta</option><option>//a[contains(text(),'inserisci carta')]</option><option>xpath=(//a[@type='button'])[2]</option><option>//a[contains(@href, 'aggiungiCarta.jsp')]</option><option>//div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>doubleClick</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td>1234567890123456</td>
+</tr>
+<tr><td>click</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td>ssa</td>
+</tr>
+<tr><td>click</td><td>id=pagamento<datalist><option>id=pagamento</option><option>css=#pagamento</option><option>//button[@id='pagamento']</option><option>//div[2]/button</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_3_1_5</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=Login</option><option>css=#benvenuto</option><option>//a[contains(text(),'Login')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td>antonio10</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td>12345678</td>
+</tr>
+<tr><td>click</td><td>css=input.btn.btn-default<datalist><option>css=input.btn.btn-default</option><option>//input[@value='Accedi']</option><option>//form[@id='form1']/div[3]/div/input</option><option>//div[3]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=exact:Benvenuto: antonio10</option><option>css=#benvenuto</option><option>//a[contains(text(),'Benvenuto: antonio10')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Il mio account<datalist><option>link=Il mio account</option><option>//a[contains(text(),'Il mio account')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'VisualizzaProfiloControl')]</option><option>//ul[2]/li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=inserisci carta<datalist><option>link=inserisci carta</option><option>//a[contains(text(),'inserisci carta')]</option><option>xpath=(//a[@type='button'])[2]</option><option>//a[contains(@href, 'aggiungiCarta.jsp')]</option><option>//div[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td>1234567890123456</td>
+</tr>
+<tr><td>click</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td>Antonio Spera</td>
+</tr>
+<tr><td>click</td><td>id=inputCode<datalist><option>id=inputCode</option><option>css=#inputCode</option><option>//input[@id='inputCode']</option><option>//div[3]/div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCode<datalist><option>id=inputCode</option><option>css=#inputCode</option><option>//input[@id='inputCode']</option><option>//div[3]/div[2]/div/input</option></datalist></td><td>12</td>
+</tr>
+<tr><td>click</td><td>id=pagamento<datalist><option>id=pagamento</option><option>css=#pagamento</option><option>//button[@id='pagamento']</option><option>//div[2]/button</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_3_1_6</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=Login</option><option>css=#benvenuto</option><option>//a[contains(text(),'Login')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNick<datalist><option>id=inputNick</option><option>name=nick</option><option>css=#inputNick</option><option>//input[@id='inputNick']</option><option>//form[@id='form1']/div/div/input</option><option>//div/div/input</option></datalist></td><td>antonio10</td>
+</tr>
+<tr><td>click</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputPassword<datalist><option>id=inputPassword</option><option>name=password</option><option>css=#inputPassword</option><option>//input[@id='inputPassword']</option><option>//form[@id='form1']/div[2]/div/input</option><option>//div[2]/div/input</option></datalist></td><td>12345678</td>
+</tr>
+<tr><td>click</td><td>css=input.btn.btn-default<datalist><option>css=input.btn.btn-default</option><option>//input[@value='Accedi']</option><option>//form[@id='form1']/div[3]/div/input</option><option>//div[3]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=benvenuto<datalist><option>id=benvenuto</option><option>link=exact:Benvenuto: antonio10</option><option>css=#benvenuto</option><option>//a[contains(text(),'Benvenuto: antonio10')]</option><option>//a[@id='benvenuto']</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/a</option><option>xpath=(//a[contains(@href, '')])[19]</option><option>//ul[2]/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Il mio account<datalist><option>link=Il mio account</option><option>//a[contains(text(),'Il mio account')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'VisualizzaProfiloControl')]</option><option>//ul[2]/li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=inserisci carta<datalist><option>link=inserisci carta</option><option>//a[contains(text(),'inserisci carta')]</option><option>xpath=(//a[@type='button'])[2]</option><option>//a[contains(@href, 'aggiungiCarta.jsp')]</option><option>//div[4]/div/div[2]/div/div[2]/div/div/div/div/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCard<datalist><option>id=inputCard</option><option>name=numCarta</option><option>css=#inputCard</option><option>//input[@id='inputCard']</option><option>//div/div/div/input</option></datalist></td><td>1234567890123456</td>
+</tr>
+<tr><td>click</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputNome<datalist><option>id=inputNome</option><option>name=nomProprietario</option><option>css=#inputNome</option><option>//input[@id='inputNome']</option><option>//div[2]/div/div/div/input</option></datalist></td><td>Antonio Spera</td>
+</tr>
+<tr><td>select</td><td>name=mese<datalist><option>name=mese</option><option>css=select[name="mese"]</option><option>//select[@name='mese']</option><option>//select</option></datalist></td><td>label=2</td>
+</tr>
+<tr><td>click</td><td>//option[2]<datalist><option>//option[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=anno<datalist><option>name=anno</option><option>css=select[name="anno"]</option><option>//select[@name='anno']</option><option>//select[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>name=anno<datalist><option>name=anno</option><option>css=select[name="anno"]</option><option>//select[@name='anno']</option><option>//select[2]</option></datalist></td><td>label=18</td>
+</tr>
+<tr><td>click</td><td>//select[2]/option[2]<datalist><option>//select[2]/option[2]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=inputCode<datalist><option>id=inputCode</option><option>css=#inputCode</option><option>//input[@id='inputCode']</option><option>//div[3]/div[2]/div/input</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=inputCode<datalist><option>id=inputCode</option><option>css=#inputCode</option><option>//input[@id='inputCode']</option><option>//div[3]/div[2]/div/input</option></datalist></td><td>123</td>
+</tr>
+<tr><td>click</td><td>id=pagamento<datalist><option>id=pagamento</option><option>css=#pagamento</option><option>//button[@id='pagamento']</option><option>//div[2]/button</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

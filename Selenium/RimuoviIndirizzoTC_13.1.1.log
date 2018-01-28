@@ -1,0 +1,9 @@
+[info] Playing test case Test_RimozioneIndirizzo / TC_13_1_1
+[info] Time: Sat Jan 27 2018 16:07:38 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065658970
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/RimuoviIndirizzoControl |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 16:07:40 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065660861
+[info] Test case passed

@@ -1,0 +1,21 @@
+[info] Playing test case Test_ModificaStatoOrdineConsegnato / TC_12_1_3
+[info] Time: Sun Jan 28 2018 10:39:04 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132344369
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | paolo |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | paolo10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 1234567@ |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Wait for all ajax requests to be done
+[info] Executing: | open | http://localhost:8080/ProgettoIS/ModificaStatoOrdineControl?cod=1 |  |
+[info] Wait for the new page to be fully loaded
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sun Jan 28 2018 10:39:11 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517132351750
+[info] Test case passed

@@ -1,0 +1,7 @@
+[info] Playing test case Test_Checkout / TC_6_1_1
+[info] Time: Sun Jan 28 2018 10:50:06 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133006968
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/CheckoutControl |  |
+[info] Time: Sun Jan 28 2018 10:50:07 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517133007544
+[info] Test case passed

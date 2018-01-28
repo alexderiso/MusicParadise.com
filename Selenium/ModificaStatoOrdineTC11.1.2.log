@@ -1,0 +1,19 @@
+[info] Playing test case Test_ModificaStatoOrdine / TC_11_1_3
+[info] Time: Sat Jan 27 2018 15:26:42 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517063202413
+[info] OS: Windows Version: 10
+[info] Browser: Firefox Version: 58.0
+[info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Executing: | click | id=benvenuto |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | paolo |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | click | id=inputNick |  |
+[info] Executing: | type | id=inputNick | paolo10 |
+[info] Executing: | click | id=inputPassword |  |
+[info] Executing: | type | id=inputPassword | 1234567@ |
+[info] Executing: | click | css=input.btn.btn-default |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/ModificaStatoOrdineControl?cod=1 |  |
+[info] Executing: | click | link=vai alla pagina iniziale |  |
+[info] Time: Sat Jan 27 2018 15:26:49 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517063209832
+[info] Test case passed
