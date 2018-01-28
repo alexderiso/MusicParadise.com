@@ -115,7 +115,7 @@ public class AccediControl extends HttpServlet {
 					response.setContentType( "application/json" );
 					response.setCharacterEncoding( "UTF-8" );
 
-					if(nick.length() < 5 || nick.length() > 15 || password.length() < 8 || password.length() > 20) {
+					if(nick.length() < 5 || nick.length() > 15 || password.length() < 8 || password.length() > 20 || nick == null || password == null) {
 						HashMap<String,String> lista = new HashMap<String,String>();
 						lista.put("role","falso");
 						response.getWriter().write(new Gson().toJson(lista));

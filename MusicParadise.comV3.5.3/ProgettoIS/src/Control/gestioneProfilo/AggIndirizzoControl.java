@@ -74,11 +74,11 @@ public class AggIndirizzoControl extends HttpServlet {
 		String[] ind = request.getParameterValues("paramOrder");
 		ClienteBean utente = (ClienteBean) request.getSession().getAttribute("utente");
 		String c = request.getParameter("cap"); //cap
-		if(ind == null || c == null) {
+		if( utente == null || ind == null || c == null) {
 			String errore = "Accesso non consentito";
 			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(ind[0],ind[1],ind[2],ind[3],c,ind[4]) && utente != null) {
+		}else if(verificaParametri(ind[0],ind[1],ind[2],ind[3],c,ind[4])) {
 			int cap = Integer.parseInt(c);
 			IndirizzoBean indirizzo = new IndirizzoBean();
 			indirizzo.setNome(ind[0]);
