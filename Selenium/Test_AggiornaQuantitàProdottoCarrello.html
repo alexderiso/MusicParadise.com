@@ -11,7 +11,7 @@
 <tr><td rowspan="1" colspan="3">TC_9_1_1</td></tr>
 </thead>
 <tbody>
-<tr><td>open</td><td>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=23432<datalist><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=sad</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantit%C3%A0ProdottoCarrello?quantit%C3%A0=23432</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=23432</option></datalist></td><td></td>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=aaa<datalist><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=sad</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantit%C3%A0ProdottoCarrello?quantit%C3%A0=23432</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=23432</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=aaa</option></datalist></td><td></td>
 </tr>
 <tr><td>open</td><td>http://localhost:8080/ProgettoIS/404.jsp<datalist><option>http://localhost:8080/ProgettoIS/404.jsp</option></datalist></td><td></td>
 </tr>
@@ -33,6 +33,28 @@
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
 <tr><td rowspan="1" colspan="3">TC_9_1_3</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=CATEGORIA<datalist><option>link=CATEGORIA</option><option>css=a.dropdown-toggle</option><option>//a[contains(text(),'CATEGORIA')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a</option><option>//a[contains(@href, '#')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Chitarre<datalist><option>link=Chitarre</option><option>//a[contains(text(),'Chitarre')]</option><option>//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/ul/li[2]/a</option><option>//a[contains(@href, 'RicercaProdottoControl?strumento=chitarra')]</option><option>//li[2]/ul/li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=span.glyphicon.glyphicon-chevron-right<datalist><option>css=span.glyphicon.glyphicon-chevron-right</option><option>//div[2]/a/span</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>css=#agg &gt; span<datalist><option>css=#agg &gt; span</option><option>//a[@id='agg']/span</option><option>//span/a/span</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=1<datalist><option>link=1</option><option>css=a.fa.fa-shopping-cart.fa-3x</option><option>//div[@id='bs-example-navbar-collapse-1']/ul[2]/li/a</option><option>//a[contains(@href, 'VisualizzaCarrelloControl')]</option><option>//ul[2]/li/a</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=100&amp;id=2<datalist><option>http://localhost:8080/ProgettoIS/AggiornaQuantit%C3%A0ProdottoCarrello?quantit%C3%A0=2&amp;id=2</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=2&amp;id=2</option><option>http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=100&amp;id=2</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:8080/ProgettoIS/carrello.jsp<datalist><option>http://localhost:8080/ProgettoIS/carrello.jsp</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TC_9_1_4</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:8080/ProgettoIS/index.jsp<datalist><option>http://localhost:8080/ProgettoIS/index.jsp</option></datalist></td><td></td>

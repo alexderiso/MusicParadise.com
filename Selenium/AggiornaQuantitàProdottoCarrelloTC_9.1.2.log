@@ -1,9 +1,9 @@
-[info] Playing test case Test_AggiornaQuantitàProdottoCarrello / TC_9_1_1
-[info] Time: Fri Jan 26 2018 21:43:36 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516999416601
+[info] Playing test case Test_AggiornaQuantitàProdottoCarrello / TC_9_1_2
+[info] Time: Mon Jan 29 2018 12:38:12 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517225892314
 [info] OS: Windows Version: 10
 [info] Browser: Firefox Version: 58.0
-[info] Executing: | open | http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantià=23432 |  |
+[info] Executing: | open | http://localhost:8080/ProgettoIS/AggiornaQuantitàProdottoCarrello?quantità=2&id=sajd |  |
 [info] Executing: | open | http://localhost:8080/ProgettoIS/404.jsp |  |
 [info] Executing: | click | link=vai alla pagina iniziale |  |
-[info] Time: Fri Jan 26 2018 21:43:38 GMT+0100 (ora solare Europa occidentale) Timestamp: 1516999418518
+[info] Time: Mon Jan 29 2018 12:38:14 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517225894220
 [info] Test case passed

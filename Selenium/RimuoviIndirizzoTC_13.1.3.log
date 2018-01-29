@@ -1,17 +1,17 @@
 [info] Playing test case Test_RimozioneIndirizzo / TC_13_1_3
-[info] Time: Sat Jan 27 2018 16:10:26 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065826648
+[info] Time: Mon Jan 29 2018 11:51:17 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517223077798
 [info] OS: Windows Version: 10
 [info] Browser: Firefox Version: 58.0
 [info] Executing: | open | http://localhost:8080/ProgettoIS/index.jsp |  |
+[info] Wait for the new page to be fully loaded
 [info] Executing: | click | id=benvenuto |  |
 [info] Executing: | click | id=inputNick |  |
 [info] Executing: | type | id=inputNick | antonio10 |
 [info] Executing: | click | id=inputPassword |  |
 [info] Executing: | type | id=inputPassword | 12345678 |
-[info] Executing: | sendKeys | id=inputPassword | ${KEY_ENTER} |
+[info] Executing: | click | css=input.btn.btn-default |  |
 [info] Executing: | click | id=benvenuto |  |
 [info] Executing: | click | link=Il mio account |  |
 [info] Executing: | click | link=Remove |  |
-[info] Executing: | click | link=procedi |  |
-[info] Time: Sat Jan 27 2018 16:10:33 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517065833205
+[info] Time: Mon Jan 29 2018 11:51:24 GMT+0100 (ora solare Europa occidentale) Timestamp: 1517223084057
 [info] Test case passed

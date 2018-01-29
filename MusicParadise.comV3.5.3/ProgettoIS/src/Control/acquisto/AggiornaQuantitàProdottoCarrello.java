@@ -45,7 +45,7 @@ public class AggiornaQuantitàProdottoCarrello extends HttpServlet {
 	 * Effettua una richiesta HTTP POST per aggiornare la quantità del prodotto nel carrello
 	 * @param request
 	 * @param respose
-	 * @pre cart != null && q != null c != null
+	 * @pre cart != null && q != null && c != null && quantità >0 && quantità > numdisponibilità
 	 * @post se nel carrello c'è un prodotto con il codice uguale a quello passato allora la quantità del prodotto nel
 	 * carrello viene incrementata
 	 * @throws IOExeption, ServletException
