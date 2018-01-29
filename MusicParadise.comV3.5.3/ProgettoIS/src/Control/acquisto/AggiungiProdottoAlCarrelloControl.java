@@ -64,7 +64,7 @@ public class AggiungiProdottoAlCarrelloControl extends HttpServlet {
 
 
 		ProdottoCatalogoBean bean = (ProdottoCatalogoBean) (request.getSession().getAttribute("prodotto"));
-		if(bean == null) {
+		if(bean == null || bean.getNumDisp() == 0) {
 			String errore = "Nessun prodotto selezionato";
 			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
