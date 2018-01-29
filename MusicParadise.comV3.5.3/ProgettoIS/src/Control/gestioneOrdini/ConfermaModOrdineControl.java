@@ -65,11 +65,11 @@ public class ConfermaModOrdineControl extends HttpServlet {
 		OrdineBean ordine = (OrdineBean) request.getSession().getAttribute("ordMod");
 		GestoreOrdiniBean gestore = (GestoreOrdiniBean) request.getSession().getAttribute("utente-gestore");
 		
-		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null) {
+		if(inizStr == null || corriere == null || numeroTracking == null || ordine == null || gestore == null) {
 			String errore = "Operazione non consentita";
 			request.getSession().setAttribute("errore",errore);
 			response.sendRedirect(request.getContextPath() + "/404.jsp");
-		}else if(verificaParametri(inizStr,corriere,numeroTracking)&& gestore != null) {
+		}else if(verificaParametri(inizStr,corriere,numeroTracking)) {
 			LocalDate dataConsegna = LocalDate.parse(inizStr, formatter);
 			java.sql.Date dataSql = Date.valueOf(dataConsegna); 
 			
