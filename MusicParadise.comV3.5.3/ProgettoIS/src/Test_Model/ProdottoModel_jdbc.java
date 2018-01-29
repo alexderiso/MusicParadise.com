@@ -91,9 +91,6 @@ public class ProdottoModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByInstruments(String strumento) throws SQLException {
-		if(strumento == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -144,9 +141,6 @@ public class ProdottoModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized ProdottoCatalogoBean doRetrieveByKey(int code) throws SQLException {
-		if(code < 0) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -196,9 +190,6 @@ public class ProdottoModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized void aggiorna(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException{
-		if(prodotti == null) {
-			return;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -215,9 +206,6 @@ public class ProdottoModel_jdbc {
 	}
 	
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByName(String nome) throws SQLException {
-		if(nome == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -267,9 +255,6 @@ public class ProdottoModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByMarca(String marca) throws SQLException {
-		if(marca == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 

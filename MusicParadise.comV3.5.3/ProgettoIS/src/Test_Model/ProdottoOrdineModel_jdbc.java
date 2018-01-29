@@ -47,9 +47,6 @@ public class ProdottoOrdineModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<ProdottoOrdineBean> prodottiOrdine(int codiceOrdine) throws SQLException{
-		if(codiceOrdine < 0) {
-			return null;
-		}
 		ArrayList<ProdottoOrdineBean> prdoottiOrdine = new ArrayList<ProdottoOrdineBean>();
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -88,9 +85,7 @@ public class ProdottoOrdineModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException {
-		if(prodotti == null) {
-			return;
-		}
+
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLProd = "INSERT INTO " + ProdottoOrdineModel_jdbc.TABLE_NAME_PROD

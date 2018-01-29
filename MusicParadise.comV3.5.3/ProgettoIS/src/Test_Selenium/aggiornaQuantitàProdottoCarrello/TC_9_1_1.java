@@ -1,5 +1,6 @@
 package Test_Selenium.aggiornaQuantit‡ProdottoCarrello;
 
+
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -9,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TC_9_1_1{
+public class TC_9_1_1 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,7 +26,7 @@ public class TC_9_1_1{
 
   @Test
   public void testTC911() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/AggiornaQuantit‡ProdottoCarrello?quanti‡=aaa");
+    driver.get("http://localhost:8080/ProgettoIS/AggiornaQuantit‡ProdottoCarrello?quanti‡=23432");
     driver.get("http://localhost:8080/ProgettoIS/404.jsp");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();
   }

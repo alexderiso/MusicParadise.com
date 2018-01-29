@@ -63,7 +63,7 @@ public class AggiungiCartaControl extends HttpServlet {
 	 * @param request
      * @param respose
      * @pre cliente != null numCarta != null && mese != null && anno != null && scadenza != null && nomeproprietario != null
-     * numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{1}[A-Za-z]{4,16}"))
+     * numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{1}[A-Za-z]{4,10}"))
      * @post la carta viene memoirzzata nel database 
      * @throws ServletException, IOException
 	 */
@@ -107,7 +107,7 @@ public class AggiungiCartaControl extends HttpServlet {
 	}
 	
 	private boolean verificaParametri(String numeroCarta, String scadenza, String nomeProprietario) {
-		if((numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{0,1}[A-Za-z]{0,16}"))) {
+		if((numeroCarta.matches("[0-9]{16}"))&&(scadenza.matches("[0-9]{1,2}[/]{1}[0-9]{2}"))&&(nomeProprietario.matches("[A-Za-z]{4,10}[ ]{0,1}[A-Za-z]{0,10}"))) {
 			return true;
 		}
 		return false;
