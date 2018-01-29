@@ -44,6 +44,10 @@ public class GestoreOrdineModel {
 	 * @throws SQLException
 	 */
 	public synchronized GestoreOrdiniBean leggi(String nick, String password) throws SQLException{
+		if(nick == null || password == null) {
+			return null;
+		}
+		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		connection = ds.getConnection();

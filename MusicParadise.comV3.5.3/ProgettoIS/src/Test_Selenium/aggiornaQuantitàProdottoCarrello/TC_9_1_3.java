@@ -1,6 +1,5 @@
 package Test_Selenium.aggiornaQuantit‡ProdottoCarrello;
 
-
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -32,7 +31,7 @@ public class TC_9_1_3 {
     driver.findElement(By.cssSelector("span.glyphicon.glyphicon-chevron-right")).click();
     driver.findElement(By.cssSelector("#agg > span")).click();
     driver.findElement(By.linkText("1")).click();
-    driver.get("http://localhost:8080/ProgettoIS/AggiornaQuantit‡ProdottoCarrello?quantit‡=2&id=2");
+    driver.get("http://localhost:8080/ProgettoIS/AggiornaQuantit‡ProdottoCarrello?quantit‡=100&id=2");
     driver.get("http://localhost:8080/ProgettoIS/carrello.jsp");
   }
 
@@ -78,4 +77,3 @@ public class TC_9_1_3 {
     }
   }
 }
-

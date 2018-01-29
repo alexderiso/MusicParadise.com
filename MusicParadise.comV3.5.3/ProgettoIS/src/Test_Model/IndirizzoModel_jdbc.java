@@ -45,7 +45,9 @@ public class IndirizzoModel_jdbc {
 		 * @throws SQLException
 		 */
 		public synchronized void doSave(IndirizzoBean indirizzo, String nickname) throws SQLException {
-
+			if(indirizzo == null || nickname == null) {
+				return;
+			}
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			String insertSQL = "INSERT INTO " + IndirizzoModel_jdbc.TABLE_NAME_IND
@@ -82,7 +84,9 @@ public class IndirizzoModel_jdbc {
 		 * @throws SQLException
 		 */
 	public synchronized ArrayList<IndirizzoBean> leggi(String nickname) throws SQLException {
-			
+		if(nickname == null) {
+			return null;
+		}
 			ArrayList<IndirizzoBean> indirizzi = new ArrayList<IndirizzoBean>();
 		
 			
@@ -116,5 +120,27 @@ public class IndirizzoModel_jdbc {
 			}
 			return indirizzi;
 		}
+	public synchronized void rimuoviIndirizzo(int codice) throws SQLException {
+		if(codice < 0) {
+			return;
+		}
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		String insertSQL = "DELETE FROM " + IndirizzoModel_jdbc.TABLE_NAME_IND + " WHERE CODICE = ?";
+		try{
+			try {
+				connection = con;
+				preparedStatement = connection.prepareStatement(insertSQL);
+				preparedStatement.setInt(1, codice);
+				preparedStatement.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 		
 }

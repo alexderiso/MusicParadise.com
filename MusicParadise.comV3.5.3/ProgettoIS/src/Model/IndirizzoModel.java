@@ -44,6 +44,9 @@ public class IndirizzoModel {
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, String nickname) throws SQLException {
+		if(indirizzo == null || nickname == null) {
+			return;
+		}
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -89,6 +92,9 @@ public class IndirizzoModel {
 	 * @throws SQLException
 	 */
 public synchronized ArrayList<IndirizzoBean> leggi(String nickname) throws SQLException {
+		if(nickname == null) {
+			return null;
+		}
 		
 		ArrayList<IndirizzoBean> indirizzi = new ArrayList<IndirizzoBean>();
 	
@@ -138,6 +144,9 @@ public synchronized ArrayList<IndirizzoBean> leggi(String nickname) throws SQLEx
  * @throws SQLException
  */
 public synchronized void rimuoviIndirizzo(int codice) throws SQLException {
+	if(codice < 0) {
+		return;
+	}
 	Connection connection = null;
 	PreparedStatement preparedStatement = null;
 	String insertSQL = "DELETE FROM " + IndirizzoModel.TABLE_NAME_IND + " WHERE CODICE = ?";
