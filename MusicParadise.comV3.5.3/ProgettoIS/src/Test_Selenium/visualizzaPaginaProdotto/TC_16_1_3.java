@@ -25,8 +25,7 @@ public class TC_16_1_3 {
 
   @Test
   public void testTC1613() throws Exception {
-    driver.get("http://localhost:8080/ProgettoIS/RicercaProdottoControl?prodotto=aaa");
-    driver.get("http://localhost:8080/ProgettoIS/404.jsp");
+    driver.get("http://localhost:8080/ProgettoIS/RicercaProdottoControl?prodotto=100");
     driver.findElement(By.linkText("vai alla pagina iniziale")).click();
   }
 
