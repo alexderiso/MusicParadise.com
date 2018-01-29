@@ -41,14 +41,8 @@ public class CartaModel_jdbc {
 		 * @param cliente
 		 * @throws SQLException
 		 */
-	 public synchronized void doSave(String numCarta,String scadenza,String nomProprietario, ClienteBean cliente) throws SQLException {
-			
-			
-			if(numCarta == null || scadenza == null || nomProprietario == null || cliente == null) {
-				return;
-			}
-			
-			
+		public synchronized void doSave(CartaBean carta, ClienteBean cliente) throws SQLException {
+
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			String insertSQLProd = "INSERT INTO " + CartaModel_jdbc.TABLE_NAME_CARTA
@@ -60,14 +54,15 @@ public class CartaModel_jdbc {
 				preparedStatement = connection.prepareStatement(insertSQLProd);
 
 				
-				preparedStatement.setString(1, scadenza);
-				preparedStatement.setString(2, numCarta);
-				preparedStatement.setString(3, nomProprietario);
+			
+				preparedStatement.setString(1, carta.getScadenza());
+				preparedStatement.setString(2, carta.getNumCarta());
+				preparedStatement.setString(3, carta.getNomeProprietario());
 				preparedStatement.setString(4, cliente.getNickName());
 				preparedStatement.executeUpdate();
 
 
-			} catch(Exception e) {
+			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -81,9 +76,6 @@ public class CartaModel_jdbc {
 		 * @throws SQLException
 		 */
 	public synchronized ArrayList<CartaBean> leggi(String nickname) throws SQLException {
-		if(nickname == null) {
-			return null;
-		}
 			
 			ArrayList<CartaBean> carte = new ArrayList<CartaBean>();
 		
@@ -116,27 +108,5 @@ public class CartaModel_jdbc {
 			}
 			return carte;
 		}
-	public synchronized void rimuoviCarta(int codice) throws SQLException {
-		if(codice < 0) {
-			return;
-		}
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		String insertSQL = "DELETE FROM " + CartaModel_jdbc.TABLE_NAME_CARTA + " WHERE COD = ?";
-		try{
-			try {
-				connection = con;
-				preparedStatement = connection.prepareStatement(insertSQL);
-				preparedStatement.setInt(1, codice);
-				preparedStatement.executeUpdate();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 }

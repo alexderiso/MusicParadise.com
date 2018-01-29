@@ -34,7 +34,7 @@ public class CartaModelTest_jdbc {
 	  public void TestDoSave() throws SQLException {
 		  CartaBean carta = new CartaBean("01/17","7265365789187635","Ivan Esposito",0);
 		  ClienteBean utente = new ClienteBean("a@gmail.com","123456","Antonio","Antonio","Spera",null);
-		  model.doSave(carta.getNumCarta(),carta.getScadenza(),carta.getNomeProprietario(),utente);
+		  model.doSave(carta, utente);
 	  }
 	  
 	  @Test
@@ -42,13 +42,6 @@ public class CartaModelTest_jdbc {
 		  ArrayList<CartaBean> carte = new ArrayList<CartaBean>();
 		  carte = model.leggi("Antonio");
 		  assertEquals(carte.size(),2);
-	  }
-	  @Test
-	  public void TestRimuoviCarta() throws SQLException {
-		  model.rimuoviCarta(1);
-		  ArrayList<CartaBean> carte = model.leggi("Antonio");
-		  assertNotNull(carte);
-		  assertEquals(carte.size(),0);
 	  }
 
 }

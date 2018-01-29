@@ -38,7 +38,7 @@ if(utente == null){
 						<div class="col-sm-10">
 
 							<input type="text" name="paramOrder" class="form-control"
-								id="inputNome" maxlength="20">
+								id="inputNome">
 
 						</div>
 					</div>
@@ -48,7 +48,7 @@ if(utente == null){
 						<div class="col-sm-10">
 
 							<input type="text" name="paramOrder" class="form-control"
-								id="inputCognome" maxlength="20">
+								id="inputCognome">
 
 						</div>
 					</div>
@@ -59,7 +59,7 @@ if(utente == null){
 						<div class="col-sm-10">
 
 							<input type="text" name="paramOrder" class="form-control"
-								id="inputIndirizzo" maxlength="20">
+								id="inputIndirizzo">
 
 						</div>
 					</div>
@@ -71,7 +71,7 @@ if(utente == null){
 						<div class="col-sm-10">
 
 							<input type="text" name="paramOrder" class="form-control"
-								id="inputCittà" maxlength="20">
+								id="inputCittà">
 
 						</div>
 					</div>
@@ -81,7 +81,7 @@ if(utente == null){
 						<label class="col-sm-6 labNamePag" id="txtErrCap"></label>
 						<div class="col-sm-10">
 
-							<input type="text" name="cap" class="form-control" id="inputCap" maxlength="5">
+							<input type="text" name="cap" class="form-control" id="inputCap">
 
 						</div>
 					</div>
@@ -94,7 +94,7 @@ if(utente == null){
 						<div class="col-sm-10">
 
 							<input type="text" name="paramOrder" class="form-control"
-								id="inputTelefono" maxlength="10">
+								id="inputTelefono">
 
 						</div>
 					</div>

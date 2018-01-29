@@ -35,12 +35,14 @@ public class TC_13_1_3 {
     driver.findElement(By.id("inputPassword")).click();
     driver.findElement(By.id("inputPassword")).clear();
     driver.findElement(By.id("inputPassword")).sendKeys("12345678");
+    driver.findElement(By.id("inputPassword")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector("input.btn.btn-default")).click();
     WebDriverWait wait2 = new WebDriverWait(driver, 10);
     wait2.until(ExpectedConditions.elementToBeClickable(By.id("benvenuto")));
     driver.findElement(By.id("benvenuto")).click();
     driver.findElement(By.linkText("Il mio account")).click();
     driver.findElement(By.linkText("Remove")).click();
+    driver.findElement(By.linkText("procedi")).click();
   }
 
   @After

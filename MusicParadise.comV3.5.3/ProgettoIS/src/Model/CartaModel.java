@@ -50,9 +50,7 @@ public class CartaModel {
 	public synchronized void doSave(String numCarta,String scadenza,String nomProprietario, ClienteBean cliente) throws SQLException {
 		
 		
-		if(numCarta == null || scadenza == null || nomProprietario == null || cliente == null) {
-			return;
-		}
+		
 		
 		
 		Connection connection = null;

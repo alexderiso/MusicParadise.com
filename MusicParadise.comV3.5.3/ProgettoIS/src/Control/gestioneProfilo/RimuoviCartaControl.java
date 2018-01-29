@@ -59,7 +59,6 @@ public class RimuoviCartaControl extends HttpServlet {
 		}else {
 			try {
 				int codice = Integer.parseInt(c);
-				System.out.println(codice+" codice carta rimossa");
 				model.rimuoviCarta(codice);
 				ArrayList<CartaBean> carte = model.leggi(cliente.getNickName());
 				cliente.setCarte(carte);

@@ -1,8 +1,6 @@
 package Control.acquisto;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,9 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.CarrelloBean;
-import Bean.ProdottoCatalogoBean;
-import Model.ProdottoModel;
-import Model.ProdottoOrdineModel;
 
 /**
  * Servlet implementation class AggiornaQuantitàProdottoCarrello
@@ -28,7 +23,6 @@ public class AggiornaQuantitàProdottoCarrello extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    ProdottoModel model = new ProdottoModel();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -68,24 +62,15 @@ public class AggiornaQuantitàProdottoCarrello extends HttpServlet {
 			try {
 				int code = Integer.parseInt(c);
 				int quantità = Integer.parseInt(q);
-				ProdottoCatalogoBean prd = model.doRetrieveByKey(code);
-				if(quantità > prd.getNumDisp() || quantità < 0) {
-					String errore = "Quantità non valida";
-					request.getSession().setAttribute("errore",errore);
-					response.sendRedirect(request.getContextPath() + "/404.jsp");
-				}else {
-					cart.aggiornaQuantità(code,quantità);
-					request.getSession().setAttribute("cart", cart);
-					request.setAttribute("cart", cart);
-					return;
-				}
+				cart.aggiornaQuantità(code,quantità);
+				request.getSession().setAttribute("cart", cart);
+				request.setAttribute("cart", cart);
+				return;
+				
 			}catch(NumberFormatException e){
 				String errore = "Argomenti non validi";
 				request.getSession().setAttribute("errore",errore);
 				response.sendRedirect(request.getContextPath() + "/404.jsp");
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 	}

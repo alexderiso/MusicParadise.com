@@ -61,9 +61,7 @@ public class ProdottoModel{
 	 */
 	
 	public synchronized void doSave(int codice,int numDisp, String nome, String colore,String marca, String descrizione, int peso, double prezzo, java.sql.Date data, String strumento) throws SQLException {
-		if(codice < 0 || nome == null || colore == null || descrizione == null || peso <0 || prezzo < 0 || data == null || strumento == null) {
-			return;
-		}
+
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLProd = "INSERT INTO " + ProdottoModel.TABLE_NAME_PROD
@@ -140,9 +138,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized void doDelete(int codice) throws SQLException {
-		if(codice < 0) {
-			return;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQL = "DELETE FROM " + ProdottoModel.TABLE_NAME_PROD + " WHERE CODICE = ?";
@@ -236,9 +231,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByInstruments(String strumento) throws SQLException {
-		if(strumento == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -298,9 +290,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized ProdottoCatalogoBean doRetrieveByKey(int code) throws SQLException {
-		if(code < 0) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -358,9 +347,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized void aggiorna(ArrayList<ProdottoCatalogoBean> prodotti) throws SQLException{
-		if(prodotti == null) {
-			return;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -386,9 +372,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByName(String nome) throws SQLException {
-		if(nome == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -447,9 +430,6 @@ public class ProdottoModel{
 	 * @throws SQLException
 	 */
 	public synchronized Collection<ProdottoCatalogoBean> doRetrieveByMarca(String marca) throws SQLException {
-		if(marca == null) {
-			return null;
-		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 

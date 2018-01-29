@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import Bean.ProdottoCatalogoBean;
@@ -22,15 +20,7 @@ public class ProdottoOrdineModelTest_jdbc {
 	static {
 		model = new ProdottoOrdineModel_jdbc();
 	}
-	 @Before
-	    public void setUp() throws Exception{
-	        DatabaseHelper.initializeDatabase();
-	    }
-
-	    @After
-	    public void tearDown() throws Exception{
-	        DatabaseHelper.initializeDatabase();
-	    }
+	
 	@Test
 	public void TestProdottiOrdine() throws SQLException {
 		Collection<ProdottoOrdineBean> prodotti= model.prodottiOrdine(1);
