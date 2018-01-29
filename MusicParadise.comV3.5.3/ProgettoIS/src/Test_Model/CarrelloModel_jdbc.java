@@ -54,7 +54,9 @@ public class CarrelloModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(List<ProdottoCatalogoBean> list, UtenteBean utente) throws SQLException {
-
+		if(list == null || utente == null) {
+			return;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
@@ -87,7 +89,9 @@ public class CarrelloModel_jdbc {
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<ProdottoCatalogoBean> leggi(String nickname) throws SQLException {
-		
+		if(nickname == null) {
+			return null;
+		}
 		ArrayList<ProdottoCatalogoBean> prodInCarrello = new ArrayList<ProdottoCatalogoBean>();
 	
 		
@@ -140,7 +144,10 @@ public class CarrelloModel_jdbc {
 	 */
 public synchronized void remove(UtenteBean utente) throws SQLException {
 		
-
+	if(utente == null) {
+		return;
+	}
+		
 	Connection connection = null;
 	PreparedStatement preparedStatement = null;
 	String insertSQL = "DELETE FROM " +CarrelloModel_jdbc.TABLE_NAME_INCARRELLO + " WHERE UTENTE = ?";

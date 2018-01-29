@@ -121,34 +121,10 @@
 												<td><%=temp.getCittà()%></td>
 												<td><%=temp.getCap()%></td>
 												<td><%=temp.getTelefono()%></td>
-												<td><a href="" data-toggle="modal" data-target="#modal">Remove</a>
+												<td><a href="RimuoviIndirizzoControl?cod=<%=temp.getCodice()%>">Remove</a>
 											</tr>
 										</tbody>
-										<!-- Modal -->
-										<div class="modal fade" id="modal" tabindex="-1" role="dialog"
-											aria-labelledby="myModalLabel">
-											<div class="modal-dialog" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-														<h4 class="modal-title" id="myModalLabel">ATTENZIONE</h4>
-													</div>
-													<div class="modal-body">Eliminando quest'indirizzo
-														verranno annullati eventuali ordini "in preparazione"
-														associati a questo indirizzo.</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default"
-															data-dismiss="modal">annulla</button>
-														<a
-															href="RimuoviIndirizzoControl?cod=<%=temp.getCodice()%>"
-															class="btn btn-primary">procedi</a>
-													</div>
-												</div>
-											</div>
-										</div>
+								
 										<%
 											}
 											}
@@ -225,34 +201,10 @@
 												<td><%=carta.getNumCarta()%></td>
 												<td><%=carta.getScadenza()%></td>
 												<td><%=carta.getNomeProprietario()%></td>
-												<td><a href="" data-toggle="modal"
-													data-target="#modal2">Remove</a>
+												<td><a href="RimuoviCartaControl?cod=<%=carta.getCodice()%>">Remove</a>
 											</tr>
 										</tbody>
-										<!-- Modal -->
-										<div class="modal fade" id="modal2" tabindex="-1"
-											role="dialog" aria-labelledby="myModalLabel">
-											<div class="modal-dialog" role="document">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal"
-															aria-label="Close">
-															<span aria-hidden="true">&times;</span>
-														</button>
-														<h4 class="modal-title" id="myModalLabel">ATTENZIONE</h4>
-													</div>
-													<div class="modal-body">Eliminando questa carta
-														verranno annullati eventuali ordini "in preparazione"
-														associati a questa carta.</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default"
-															data-dismiss="modal">annulla</button>
-														<a href="RimuoviCartaControl?cod=<%=carta.getCodice()%>"
-															class="btn btn-primary">procedi</a>
-													</div>
-												</div>
-											</div>
-										</div>
+		
 
 										<%
 											}

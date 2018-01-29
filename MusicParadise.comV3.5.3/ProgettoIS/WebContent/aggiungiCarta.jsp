@@ -52,7 +52,7 @@ if(utente == null){
                                 <div class="form-group">
                                     <label>NOME PROPRIETARIO</label>
                                     <div class="input-group">
-                                        <input type="text" name="nomProprietario" class="form-control" class="form-control" id="inputNome"/>
+                                        <input type="text" name="nomProprietario" class="form-control" class="form-control" id="inputNome" maxlength="20"/>
 									<label class="col-sm-12 labNamePag" id="txtErrNome"></label>
                                     </div>
                                 </div>

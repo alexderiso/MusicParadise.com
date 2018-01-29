@@ -53,6 +53,9 @@ public class OrdineModel{
  * @throws SQLException
  */
 	public synchronized OrdineBean doRetrieveByKey(int code)  throws SQLException {
+		if(code < 0) {
+			return null;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -139,6 +142,9 @@ public class OrdineModel{
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<OrdineBean> doRetrieveByStato(String stato) throws SQLException{
+		if(stato == null) {
+			return null;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -232,7 +238,9 @@ public class OrdineModel{
 	 * @throws SQLException
 	 */
 	public synchronized void doSave(IndirizzoBean indirizzo, CartaBean carta, String stato,String corriere, String tracking, double totale, String cliente) throws SQLException {
-
+		if(indirizzo == null || carta == null || stato == null || corriere == null || tracking == null || totale < 0 || cliente == null) {
+			return;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String insertSQLOrd = "INSERT INTO " + OrdineModel.TABLE_NAME_ORD
@@ -280,6 +288,9 @@ public class OrdineModel{
 	 * @throws SQLException
 	 */
 	public synchronized ArrayList<OrdineBean> ordiniUtente(String nickname) throws SQLException{
+		if(nickname == null) {
+			return null;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
@@ -470,6 +481,9 @@ public class OrdineModel{
 	 * @throws SQLException
 	 */
 	public synchronized void aggiorna(int cod, String num_tracking, Date dataConsegna, String corriere) throws SQLException{
+		if(cod < 0 || num_tracking == null || dataConsegna == null || corriere == null) {
+			return;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
@@ -522,6 +536,9 @@ public class OrdineModel{
 	 * @throws SQLException
 	 */
 	public synchronized void aggiornaConsegnato(int cod) throws SQLException{
+		if(cod < 0) {
+			return;
+		}
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
